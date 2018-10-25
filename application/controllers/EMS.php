@@ -8,7 +8,8 @@ class EMS extends CI_Controller {
         $this->load->database();        	
         $this->load->library('session');
 	$this->load->library('form_validation');
-        $this->load->model('swpl_model');
+        $this->load->model('jsw_model');
+        $this->jsw_model->is_logged_in();
         $this->load->helper('file');
         $this->load->helper(array('form', 'url'));
          /* cache control */

@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Swpl_model extends CI_Model {
+class Jsw_model extends CI_Model {
 
     function __construct() {
         parent::__construct();
@@ -76,37 +76,39 @@ class Swpl_model extends CI_Model {
         
     }
 
+     function is_logged_in()
+            {
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ) {                
+                   $this->session->set_userdata('last_page', current_url());  		
+                }
+                else{                 
+                    redirect(base_url().'Login');                     
+                }
+            }
+            
      /*****login funtionality start********/
     
-	function validate_login_info($user_name,$password){
+	function validate_login_info($email,$password){
 		
 		$password = strrev(sha1(md5($password)));
                 
-                $users = $this->db->get_where('tblusers', array('first_name' => $user_name,'password' => $password));	
+                $users = $this->db->get_where('tblusers', array('email' => $email,'password' => $password));	
 		if($users->num_rows() > 0) {
                         $row = $users->row();
-                        if($row->type==1){
+                        if($row->userType==1){
                         $this->session->set_userdata('admin_login', '1');
                         $this->session->set_userdata('log_id', $row->user_id);
                         $this->session->set_userdata('log_email', $row->email);
-                        $this->session->set_userdata('log_name', $row->first_name);
+                        $this->session->set_userdata('log_name', $row->firstname);
                         $this->session->set_userdata('log_type', 'admin');
                         echo '1';
                     }                      
-                     elseif ($row->type==2) {
-                        $this->session->set_userdata('electrical_login', '1');
+                     elseif ($row->userType==2) {
+                        $this->session->set_userdata('user_login', '1');
                         $this->session->set_userdata('log_id', $row->user_id);
                         $this->session->set_userdata('log_email', $row->email);
-                        $this->session->set_userdata('log_name', $row->first_name);
-                        $this->session->set_userdata('log_type', 'electrical');
-                        echo '1';
-                    }
-                      elseif ($row->type==3) {
-                        $this->session->set_userdata('mechanical_login', '1');
-                        $this->session->set_userdata('log_id', $row->user_id);
-                        $this->session->set_userdata('log_email', $row->email);
-                        $this->session->set_userdata('log_name', $row->first_name);
-                        $this->session->set_userdata('log_type', 'mechanical');
+                        $this->session->set_userdata('log_name', $row->firstname);
+                        $this->session->set_userdata('log_type', 'user');
                         echo '1';
                     }
                 }
