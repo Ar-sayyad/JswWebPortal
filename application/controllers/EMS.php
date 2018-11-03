@@ -23,7 +23,7 @@ class EMS extends CI_Controller {
             $data['mydiv2'] = "EMS";
             $data['mydiv3'] = "";
             $data['title'] = "EMS - 1";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20018";
             $this->load->view('jsw/emsOne',$data);            
 	}  
         
@@ -33,7 +33,7 @@ class EMS extends CI_Controller {
             $data['mydiv2'] = "EMS";
             $data['mydiv3'] = "";
             $data['title'] = "EMS - 1";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20018";
             $this->load->view('jsw/emsOne',$data);             
 	}   
         
@@ -43,7 +43,7 @@ class EMS extends CI_Controller {
             $data['mydiv2'] = "EMS";
             $data['mydiv3'] = "";
             $data['title'] = "EMS - 2";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20019";
             $this->load->view('jsw/emsTwo',$data);             
 	}          
         

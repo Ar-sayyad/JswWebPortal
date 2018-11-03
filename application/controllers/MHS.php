@@ -22,8 +22,8 @@ class MHS extends CI_Controller {
             $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
-            $data['title'] = "MHS PATH - 1";
-            $data['linkUrl'] = "";
+            $data['title'] = "New MHS Overview";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20072";
             $this->load->view('jsw/newmhsPathOne',$data);            
 	}  
         
@@ -33,8 +33,18 @@ class MHS extends CI_Controller {
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
             $data['title'] = "MHS PATH - 1";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20037";
             $this->load->view('jsw/newmhsPathOne',$data);             
+	}   
+        
+         public function newmhsPathTwo()
+	{
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "New MHS Overview";
+            $data['title'] = "MHS PATH - 2";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20070";
+            $this->load->view('jsw/newmhsPathTwo',$data);             
 	}   
         
         public function newmhsPathThree()
@@ -43,7 +53,7 @@ class MHS extends CI_Controller {
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
             $data['title'] = "MHS PATH - 3";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20039";
             $this->load->view('jsw/newmhsPathThree',$data);             
 	}   
         public function newmhsPathFour()
@@ -52,7 +62,7 @@ class MHS extends CI_Controller {
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
             $data['title'] = "MHS PATH - 4";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20040";
             $this->load->view('jsw/newmhsPathFour',$data);             
 	}   
         public function newmhsPathFive()
@@ -61,7 +71,7 @@ class MHS extends CI_Controller {
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
             $data['title'] = "MHS PATH - 5";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20041";
             $this->load->view('jsw/newmhsPathFive',$data);             
 	}   
         public function newmhsPathSeven()
@@ -70,7 +80,7 @@ class MHS extends CI_Controller {
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
             $data['title'] = "MHS PATH - 7";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20044";
             $this->load->view('jsw/newmhsPathSeven',$data);             
 	}   
         public function newmhsPathEight()
@@ -79,28 +89,38 @@ class MHS extends CI_Controller {
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
             $data['title'] = "MHS PATH - 8";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20068";
             $this->load->view('jsw/newmhsPathEight',$data);             
 	}   
         
+                
+        public function oldmhsOverview()
+	{
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "Old MHS Overview";
+            $data['title'] = "Old MHS Overview";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20048";
+            $this->load->view('jsw/oldmhsOverview',$data);             
+	} 
         
-        
-        public function oldmhsPathA()
+         public function oldmhsPathA()
 	{
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
             $data['title'] = "MHS PATH - A";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20059";
             $this->load->view('jsw/oldmhsPathA',$data);             
-	}   
+	}  
+        
         public function oldmhsPathB()
 	{
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
             $data['title'] = "MHS PATH - B";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20060";
             $this->load->view('jsw/oldmhsPathB',$data);             
 	}   
         public function oldmhsPathC()
@@ -109,7 +129,7 @@ class MHS extends CI_Controller {
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
             $data['title'] = "MHS PATH - C";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20061";
             $this->load->view('jsw/oldmhsPathC',$data);             
 	}   
         public function oldmhsPathD()
@@ -118,11 +138,55 @@ class MHS extends CI_Controller {
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
             $data['title'] = "MHS PATH - D";
-            $data['linkUrl'] = "";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20062";
             $this->load->view('jsw/oldmhsPathD',$data);             
 	}   
         
-        
+        public function oldmhsPathE()
+	{
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "Old MHS Overview";
+            $data['title'] = "MHS PATH - E";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20063";
+            $this->load->view('jsw/oldmhsPathE',$data);             
+	}   
+        public function oldmhsPathF()
+	{
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "Old MHS Overview";
+            $data['title'] = "MHS PATH - F";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20064";
+            $this->load->view('jsw/oldmhsPathF',$data);             
+	}   
+        public function oldmhsPathG()
+	{
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "Old MHS Overview";
+            $data['title'] = "MHS PATH - G";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20065";
+            $this->load->view('jsw/oldmhsPathG',$data);             
+	}   
+        public function oldmhsPathH()
+	{
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "Old MHS Overview";
+            $data['title'] = "MHS PATH - H";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20066";
+            $this->load->view('jsw/oldmhsPathH',$data);             
+	}   
+         public function oldmhsPathI()
+	{
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "Old MHS Overview";
+            $data['title'] = "MHS PATH - I";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20067";
+            $this->load->view('jsw/oldmhsPathI',$data);             
+	}   
         
          public function MotorTemperature()
 	{

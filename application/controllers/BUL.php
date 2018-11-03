@@ -23,7 +23,7 @@ class BUL extends CI_Controller {
             $data['mydiv2'] = "BUL";
             $data['mydiv3'] = "";
             $data['title'] = "BUL - 1";
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/3";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20076";
             $this->load->view('jsw/bulOne',$data);            
 	}  
         
@@ -33,7 +33,7 @@ class BUL extends CI_Controller {
             $data['mydiv2'] = "BUL";
             $data['mydiv3'] = "";
             $data['title'] = "BUL - 1";
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/3";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20076";
             $this->load->view('jsw/bulOne',$data);             
 	}   
         
@@ -43,7 +43,7 @@ class BUL extends CI_Controller {
             $data['mydiv2'] = "BUL";
             $data['mydiv3'] = "";
             $data['title'] = "BUL - 2";
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/7";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20077";
             $this->load->view('jsw/bulTwo',$data);             
 	}   
         public function bulThree()
@@ -52,7 +52,7 @@ class BUL extends CI_Controller {
             $data['mydiv2'] = "BUL";
             $data['mydiv3'] = "";
             $data['title'] = "BUL - 3";
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/9";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20078";
             $this->load->view('jsw/bulThree',$data);             
 	} 
         

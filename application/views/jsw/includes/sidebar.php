@@ -41,6 +41,74 @@
                         </a>
                          <?php if($mydiv=='DASHBOARD'){?><div class="collapse show" id="pagesExamples"> <?php }else{?> <div class="collapse" id="pagesExamples"><?php }?>                        
                             <ul class="nav">
+                                 <?php if($mydiv2=='DVMS'){?><li class="nav-item mydiv2 active"> <?php }else{?> <li class="nav-item mydiv2"><?php }?> 
+                                    <a class="nav-link" data-toggle="collapse" href="#dvmsExamples">
+                                        <i class="material-icons">airplay</i>
+                                        <p>
+                                            DVMS
+                                            <b class="caret"></b>
+                                        </p>
+                                    </a>
+                            <?php if($mydiv2=='DVMS'){?> <div class="collapse show" id="dvmsExamples"> <?php }else{?>  <div class="collapse" id="dvmsExamples"><?php }?>                                    
+                                        <ul class="nav">
+                                <?php if($title=='DVMS'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" href="<?php echo base_url();?>DVMS">
+                                                    <i class="material-icons">airplay</i>
+                                                    <span class="sidebar-normal"> DVMS </span>
+                                                </a>
+                                            </li>
+                                 <?php if($title=='Berth - 1'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" href="<?php echo base_url();?>DVMS/berthOne">
+                                                    <i class="material-icons">filter_1</i>
+                                                    <span class="sidebar-normal"> Berth - 1 </span>
+                                                </a>
+                                            </li>            
+                                <?php if($title=='Berth - 2'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" href="<?php echo base_url();?>DVMS/berthTwo">
+                                                   <i class="material-icons">filter_2</i>
+                                                    <span class="sidebar-normal"> Berth - 2 </span>
+                                                </a>
+                                            </li>
+                                <?php if($title=='Berth - 3'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" href="<?php echo base_url();?>DVMS/berthThree">
+                                                    <i class="material-icons">filter_3</i>
+                                                    <span class="sidebar-normal"> Berth - 3 </span>
+                                                </a>
+                                            </li>
+                                <?php if($title=='Berth - 4'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" href="<?php echo base_url();?>DVMS/berthFour">
+                                                    <i class="material-icons">filter_4</i>
+                                                    <span class="sidebar-normal"> Berth - 4 </span>
+                                                </a>
+                                            </li> 
+                                <?php if($title=='Berth - 5'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" href="<?php echo base_url();?>DVMS/berthFive">
+                                                    <i class="material-icons">filter_5</i>
+                                                    <span class="sidebar-normal"> Berth - 5 </span>
+                                                </a>
+                                            </li> 
+                                <?php if($title=='Berth - 6'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" href="<?php echo base_url();?>DVMS/berthSix">
+                                                    <i class="material-icons">filter_6</i>
+                                                    <span class="sidebar-normal"> Berth - 6 </span>
+                                                </a>
+                                            </li> 
+                                 <?php if($title=='Berth - 7'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" href="<?php echo base_url();?>DVMS/berthSeven">
+                                                    <i class="material-icons">filter_7</i>
+                                                    <span class="sidebar-normal"> Berth - 7 </span>
+                                                </a>
+                                            </li> 
+                                <?php if($title=='Berth - 8'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" href="<?php echo base_url();?>DVMS/berthEight">
+                                                    <i class="material-icons">filter_8</i>
+                                                    <span class="sidebar-normal"> Berth - 8 </span>
+                                                </a>
+                                            </li>             
+                                        </ul>
+                                    </div>
+                                </li>
+                                
                                 <?php if($mydiv2=='MHS'){?><li class="nav-item mydiv2 active"> <?php }else{?> <li class="nav-item mydiv2"><?php }?>                                
                                     <a class="nav-link" data-toggle="collapse" href="#MHSExamples" aria-expanded="true">
                                         <i class="material-icons">pages</i>
@@ -62,12 +130,24 @@
                                                 <?php if($mydiv3=='New MHS Overview'){?><div class="collapse show" id="NMOExamples"> <?php }else{?> <div class="collapse" id="NMOExamples"><?php }?> 
                                                     <ul class="nav">
                                                  <!--//if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('mechanical_login') == 1) {-->
-                                            <?php if($title=='MHS PATH - 1'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
-                                                            <a class="nav-link" href="<?php echo base_url();?>MHS/newmhsPathOne">
-                                                                <i class="material-icons">filter_1</i>
-                                                                <span class="sidebar-normal"> MHS PATH - 1 </span>
+                                            <?php if($title=='New MHS Overview'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                            <a class="nav-link" href="<?php echo base_url();?>MHS">
+                                                                <i class="material-icons">airplay</i>
+                                                                <span class="sidebar-normal"> New MHS Overview </span>
                                                             </a>
                                                         </li>
+                                            <?php if($title=='MHS PATH - 1'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                    <a class="nav-link" href="<?php echo base_url();?>MHS/newmhsPathOne">
+                                                        <i class="material-icons">filter_1</i>
+                                                        <span class="sidebar-normal"> MHS PATH - 1 </span>
+                                                    </a>
+                                                </li>
+                                             <?php if($title=='MHS PATH - 2'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                    <a class="nav-link" href="<?php echo base_url();?>MHS/newmhsPathTwo">
+                                                        <i class="material-icons">filter_2</i>
+                                                        <span class="sidebar-normal"> MHS PATH - 2 </span>
+                                                    </a>
+                                                </li>
                                             <?php if($title=='MHS PATH - 3'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
                                                             <a class="nav-link" href="<?php echo base_url();?>MHS/newmhsPathThree">
                                                                 <i class="material-icons">filter_3</i>
@@ -112,12 +192,18 @@
                                                 </a>
                                             <?php if($mydiv3=='Old MHS Overview'){?><div class="collapse show" id="OMOExamples"><?php }else{?> <div class="collapse" id="OMOExamples"><?php }?>                                                
                                                     <ul class="nav">
-                                            <?php if($title=='MHS PATH - A'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                            <?php if($title=='Old MHS Overview'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                            <a class="nav-link" href="<?php echo base_url();?>MHS/oldmhsOverview">
+                                                                 <i class="material-icons">airplay</i>
+                                                                <span class="sidebar-normal"> Old MHS Overview </span>
+                                                            </a>
+                                                        </li>
+                                             <?php if($title=='MHS PATH - A'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
                                                             <a class="nav-link" href="<?php echo base_url();?>MHS/oldmhsPathA">
                                                                 <i class="fa">A</i>
                                                                 <span class="sidebar-normal"> MHS PATH - A </span>
                                                             </a>
-                                                        </li>
+                                                        </li>            
                                             <?php if($title=='MHS PATH - B'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
                                                             <a class="nav-link" href="<?php echo base_url();?>MHS/oldmhsPathB">
                                                                 <i class="fa">B</i>
@@ -136,7 +222,37 @@
                                                                 <span class="sidebar-normal"> MHS PATH - D </span>
                                                             </a>
                                                         </li>
-
+                                             <?php if($title=='MHS PATH - E'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                            <a class="nav-link" href="<?php echo base_url();?>MHS/oldmhsPathE">
+                                                                <i class="fa">E</i>
+                                                                <span class="sidebar-normal"> MHS PATH - E </span>
+                                                            </a>
+                                                        </li>
+                                             <?php if($title=='MHS PATH - F'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                            <a class="nav-link" href="<?php echo base_url();?>MHS/oldmhsPathF">
+                                                                <i class="fa">F</i>
+                                                                <span class="sidebar-normal"> MHS PATH - F </span>
+                                                            </a>
+                                                        </li>
+                                             <?php if($title=='MHS PATH - G'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                            <a class="nav-link" href="<?php echo base_url();?>MHS/oldmhsPathG">
+                                                                <i class="fa">G</i>
+                                                                <span class="sidebar-normal"> MHS PATH - G </span>
+                                                            </a>
+                                                        </li>
+                                             <?php if($title=='MHS PATH - H'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                            <a class="nav-link" href="<?php echo base_url();?>MHS/oldmhsPathH">
+                                                                <i class="fa">H</i>
+                                                                <span class="sidebar-normal"> MHS PATH - H </span>
+                                                            </a>
+                                                        </li>            
+                                              <?php if($title=='MHS PATH - I'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                            <a class="nav-link" href="<?php echo base_url();?>MHS/oldmhsPathI">
+                                                                <i class="fa">I</i>
+                                                                <span class="sidebar-normal"> MHS PATH - I </span>
+                                                            </a>
+                                                        </li>            
+                                                      
                                                     </ul>
                                                 </div>
                                             </li>
