@@ -41,8 +41,12 @@ class Home extends CI_Controller {
         
         
         function error(){
+             $data['mydiv'] = "";
+                $data['mydiv2'] = "";
+                $data['mydiv3'] = "";
+                $data['linkUrl'] = "";
              $data['title'] = "Page Not Found";
-            $data['icons'] = "error";
+             $data['icons'] = "error";
              $this->load->view('jsw/error',$data);
         }
          //Validating login from ajax request

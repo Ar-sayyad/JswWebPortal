@@ -18,27 +18,17 @@
     <!-- End Navbar -->
 
 
-   <div class="content">
-        <div class="container-fluid">
+     <div class="content">
+        <div class="container-fluid" style="background: #9a32b1; height: 850px; background: url('<?php echo base_url();?>Theme/assets/img/bg.jpg'); background-size: cover;background-position: top center;">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <iframe id="frame" src="<?php echo $linkUrl;?>" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true">
-                                Under Development..!
-                            </iframe>
-
-                            <button style="float:right" id="fullscreen" class="btn btn-fullscreen button"><i class="material-icons" style="font-size: 50px;">fullscreen</i></button>
-                        </div>
-                        <!-- end content-->
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h1 style="color:white;text-align:center;margin-top:10%;font-size:72px;font-weight:bold">Page Not Found....<br /><br />
+                    </h1>
                     </div>
-                    <!--  end card  -->
                 </div>
-                <!-- end col-md-12 -->
+                </div>
+
             </div>
-            <!-- end row -->
-        </div>
-    </div>
 
             <!--Footer-->
            <?php include 'includes/footer.php';?>
