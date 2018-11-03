@@ -6,7 +6,7 @@
             <script>
                     document.write(new Date().getFullYear())
             </script>. Developed by
-            <a href="#" target="_blank">ECGIT PVT LTD</a>
+            <a href="#" target="_blank">ECGiT PVT LTD</a>
         </div>
     </div>
 </footer>
