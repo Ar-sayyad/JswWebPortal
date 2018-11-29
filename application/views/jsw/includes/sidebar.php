@@ -475,6 +475,12 @@
                             </ul>
                         </div>
                     </li>
+                    <?php if($mydiv=='Forms'){?><li class="nav-item mydiv active"> <?php }else{?> <li class="nav-item mydiv"><?php }?>
+                        <a class="nav-link" href="<?php echo base_url();?>FORMS">
+                            <i class="material-icons">insert_comment</i>
+                            <p> Forms </p>
+                        </a>
+                    </li>
 
                     <li class="nav-item mydiv">
                         <a class="nav-link" href="<?php echo base_url();?>Home/Logout">

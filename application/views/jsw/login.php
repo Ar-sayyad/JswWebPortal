@@ -86,8 +86,8 @@
                 $('#loginbtn').click(function(){
                    // alert("hello");
                  $('#res').html("<img style='width:25px;height:25px;'  src='<?php echo base_url();?>Theme/assets/img/loading.gif'>");
-             $email = $('#email').val();
-               $password = $('#password').val();
+                $email = $('#email').val();
+                $password = $('#password').val();
                if($email == '' || $password == '')
                {
                    //alert('Please enter all login details.');
