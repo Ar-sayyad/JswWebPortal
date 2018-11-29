@@ -25,8 +25,6 @@ class FORMS extends CI_Controller {
             $data['title'] = "Forms";
             $data['linkUrl'] = "";
             $this->load->view('jsw/Forms',$data);            
-	}  
-        
-      
+	}              
         
 }
