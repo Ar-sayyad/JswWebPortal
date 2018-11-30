@@ -1,0 +1,102 @@
+﻿/* Main CSS  - Tendance Theme by TopSharePoint.com */
+
+
+
+.wrapper{text-align:left; width:100%; margin:0; padding:0; border:0; background:#fff url(/Tendance/images/mainbg.png) repeat-x center 0;}
+
+.logoContainer {width:100%; padding:0; margin:25px 0 0 0; float:left; background-color:transparent;}
+.logo {padding:0; float:left; background-color:transparent;}
+.logo img {margin:14px 0px 0 0;}
+
+/* Header */
+.header {width:1560px; height:145px; margin:0 auto; padding:0; margin-top:0px;}
+
+/* Top Menu */
+.NavMainBar {width:100%; height:40px; padding:0; margin:0; font-size:small;font-weight:bold;}
+.s4-tn{padding:0; margin:0; background-color:transparent; color:#fff;}
+.s4-pr s4-notdlg {background-color:#dff2fd;}
+.s4-tn li.static > .menu-item{padding:11px 20px 0 10px; margin:0; text-transform: uppercase; font-size:12px; font-weight:bold; height:25px;}
+.s4-tn li.static > a:hover{color:#fff; text-decoration:none;}
+.s4-toplinks .s4-tn a.selected{border:0px solid #444; background-color:#dff2fd; color:#fff; padding:5px 10px; margin:0 2px 0 0;}
+.s4-toplinks .s4-tn a.selected:hover{color:#333;}
+/* Sub items border */
+.s4-tn ul.dynamic{background-color:transparent; border:0;}
+/* Menu Item */
+.s4-tn li.dynamic > .menu-item{display:block; padding:4px 10px; background-color:#5bbbea; width:200px; color:#333; border-bottom:1px solid #333;}
+.s4-tn li.dynamic > a, .s4-tn li.dynamic > a:visited {color:#333; font-weight:bold;}
+/* Menu Item Hover Over */
+.s4-tn li.dynamic > a:hover{color:#333; text-decoration:none; background-color:#78797b;}
+/* Hover over top menu */
+.s4-tn li.static > a:hover{color:#333;}
+
+/* Bread Crumb */
+.breadCrmb {width:830px; margin:0 0 0 5px; padding:4px 0 0 0; float:left; font-size:11px; text-align:left; height:20px;}
+.breadCrmb a{color:#446c84; text-decoration:none; font-size:11px; padding:3px 2px 2px 0;}
+.breadCrmb a:hover{color:#000;}
+
+/* Left Navigation */
+.leftNav {width:185px; margin:0; padding:0; float:left; display:none;}
+.leftNavHolder {margin:0; padding:0; width:185px; float:left;}
+/* Left Nav Style */ 
+.leftNavHolder li > .menu-item {padding:10px 0 10px 0; border-bottom:1px solid #ddd;}
+/* Left WP Title */
+.leftWPHolder {padding:5px;margin:250px 0 0 0; float:left; width:185px; display:block; position:absolute;}
+/* web part padding for left column */
+.leftWPHolder .ms-wpContentDivSpace {padding:0;}
+/* remove some white speace from web parts in left column */
+.leftWPHolder .ms-WPHeader .ms-wpTdSpace {display:none;}
+/* remove border from bottom of web parts in left column */
+.customLeftWPHolder	.ms-WPHeader td {border-bottom: none;}
+
+.menu-vertical {float:left; margin:0 0 0 5px; display:block; padding:0; width:186px; position:absolute; min-height:275px;}
+.menu-vertical ul li {margin:0; padding:0;}
+.menu-vertical ul li a {font-weight:bold; color:#666; text-indent:5px;}
+.menu-vertical ul li .selected {background: url(/Tendance/images/arrow.png) 175px center no-repeat #c9d1d6; color:#333;}
+.menu-vertical ul li a:hover {color:#000; text-decoration:none; background: url(/Tendance/images/arrow.png) 175px center no-repeat #dff2fd;}
+.menu-vertical ul li ul li a {margin:0; padding:0; font-size:11px; font-weight:bold;}
+.menu-vertical ul li ul li .menu-item-text {margin:0 0 0 10px; padding:0;}
+.menu-vertical .menu-item-text {margin:0 0 0 2px;}
+
+/* Footer */
+.footer{width:100%;  background-color:#dff2fd;  text-align:center; position:absolute;bottom:0px ;}
+
+/* Adavnced Search Box */
+.srcBoxAdvMain {margin: 0 0 10px 0; width:500px;}
+.srcBoxAdv{display:block}
+.srcBoxAdv *{display:block; height:1px; overflow:hidden; font-size:.01em; background:#c5e3d5}
+.srcBoxAdv1{margin-left:3px; margin-right:3px; padding-left:1px; padding-right:1px; border-left:1px solid #e6f2ec; border-right:1px solid #e6f2ec; background:#d3eadf}
+.srcBoxAdv2{margin-left:1px; margin-right:1px; padding-right:1px; padding-left:1px; border-left:1px solid #f9fcfa; border-right:1px solid #f9fcfa; background:#d0e8dc}
+.srcBoxAdv3{margin-left:1px; margin-right:1px; border-left:1px solid #d0e8dc; border-right:1px solid #d0e8dc;}
+.srcBoxAdv4{ border-left:1px solid #e6f2ec; border-right:1px solid #e6f2ec}
+.srcBoxAdv5{ border-left:1px solid #d3eadf; border-right:1px solid #d3eadf}
+.srcBoxAdvfg{background:#c5e3d5; padding:5px 10px 5px 10px; margin:0;}
+
+table.ms-sbtable.ms-sbtable-ex.s4-search {background: url(/Tendance/images/srcBG.png) no-repeat; width:220px; height:29px;}
+.s4-search input.ms-sbplain {background:none; max-width:182px; margin:0 0 0 5px; border: 0 solid #fff !important;}
+.s4-search .srch-gosearchimg{width:19px; height:25px; background:none; background-image:none; border:0 solid #fff !important;}
+td.ms-sbgo.ms-sbcell{border:0 solid #000;}
+
+/* corev4.css - SharePoint Fixes */
+#s4-topheader2 {border:0;}
+#s4-mainarea {border:0px solid #d8dccb;}
+.srch-sb-results2 {margin:2px 0 0 0; padding:15px 0 0 300px; background-color:#fff; height:50px; border:5px solid #ddd;}
+div.srch-refinearea {margin:0 0 0 5px;}
+
+div.article, div.welcome {padding: 5px 5px; }
+
+/* Logo Area */
+.s4-title{background-color:transparent; background:none; padding:0; margin:0; overflow:hidden; height:80px;}
+
+/* Search box */
+.s4-search{padding:10px 0 10px 17px !important; font-size:10px; margin:-60px 0 0 0; float:right;}
+.srch-sb-results {background-color:transparent; margin:0; padding:0;}
+.srch-stats {background-color:transparent; padding:10px; width:730px; border:1px solid #ccc;}
+.srch-sort-right2 {margin:6px 0 0 0;}
+
+.dfwp-column {background-color:transparent; margin:0;}
+.level-section {margin:0;}
+.level-section a, .level-section a:visited {font-size:11px; color:#446c84;}
+.level-header {margin-left:0;}
+.level-header a, .level-header a:visited {font-size:11px; color:#446c84;}
+.headermarker {margin:0;}
+.customAll {clear: both;}

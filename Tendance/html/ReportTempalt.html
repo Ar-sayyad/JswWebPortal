@@ -1,0 +1,150 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" id="pageone">
+  <div data-role="panel" id="myPanel"> 
+    <h2>Reports</h2>
+   
+    <p> <a href="http://10.80.100.9:8088/Reports_SQLEXPRESS/Pages/Report.aspx?ItemPath=%2fGoaReports%2fDPR" target="_blank" >SWPL DPR Report</a></p>
+    <p> <a href="http://10.80.100.9:8088/Reports_SQLEXPRESS/Pages/Report.aspx?ItemPath=%2fGoaReports%2fRakeExport" target="_blank">Rake Export Report</a></p>
+    <p> <a href="http://10.80.100.9:8088/Reports_SQLEXPRESS/Pages/Report.aspx?ItemPath=%2fGoaReports%2fRakeLoading" target="_blank">Rake Loading Report</a></p>
+    <p> <a href="http://10.80.100.9:8088/Reports_SQLEXPRESS/Pages/Report.aspx?ItemPath=%2fGoaReports%2fRakeReport" target="_blank">Rake Report </a></p>
+    <p> <a href="http://10.80.100.9:8088/Reports_SQLEXPRESS/Pages/Report.aspx?ItemPath=%2fGoaReports%2fRakewiseReport" target="_blank">Rake wise Report </a></p>
+	<p> <a href="http://10.80.100.9:8088/Reports_SQLEXPRESS/Pages/Report.aspx?ItemPath=%2fGoaReports%2fTransitDetails" >Transit Details</a></p>	
+	<p> <a href="http://10.80.100.9:8088/Reports_SQLEXPRESS/Pages/Report.aspx?ItemPath=%2fGoaReports%2fVesselOperations" >Vessel Operation</a></p>
+	<p> <a href="http://10.80.100.9:8088/Reports_SQLEXPRESS/Pages/Report.aspx?ItemPath=%2fGoaReports%2fReconciliation" >Reconciliation</a></p>
+	<p> <a href="http://10.80.100.9:8088/Reports_SQLEXPRESS/Pages/Report.aspx?ItemPath=%2fGoaReports%2fLayTime" >Lay Time</a></p>
+	<!--<p> <a href="http://10.81.100.250:8088/ReportServer_DWH/Pages/ReportViewer.aspx?%2fReport%2fDailyPerformanceReport_Format&rs:Command=Render" target="_blank" >NEW DPR</a></p> -->
+</div>
+<!--
+<div data-role="panel" id="myPanel2"> 
+    <h2>Reports</h2>
+    <p> <a href="http://pims-server.jsw.in:8088/SitePages/BerthOccupancy.aspx" target="_blank">Berth Occupancy Report</a></p> 
+    <p> <a href="http://pims-server.jsw.in:8088/SitePages/ECRM-MARINE.aspx" target="_blank">ECRM-MARINE</a></p>
+    <p> <a href="http://pims-server.jsw.in:8088/SitePages/MarineMIS.aspx" target="_blank">MarineMIS</a></p>
+</div> 
+-->
+<div data-role="panel" id="myPanel3"> 
+    <h2>Reports</h2>
+ <p> <a href="http://10.80.100.9/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fGoaReports%2fTERMINAL_MAINT&rs:Command=Render" target="_blank">Terminal Maintenance Report</a></p> 
+<p> <a href="http://10.80.100.9/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fGoaReports%2fMHSReport&rs:Command=Render" target="_blank">MHS Report</a></p>
+
+<p> <a href="http://10.80.100.9/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fGoaReports%2fMHS-AUR_Report&rs:Command=Render" target="_blank">MHS AUR Report</a></p> 
+
+<p> <a href="http://10.80.100.9/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fGoaReports%2fGantryCranesReport&rs:Command=Render" target="_blank">Gantry Cranes Report</a></p> 
+
+<p> <a href="http://10.80.100.9/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fGoaReports%2fGSUReport&rs:Command=Render" target="_blank">GSU Report</a></p> 
+
+<p> <a href="http://10.80.100.9/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fGoaReports%2fMHCReport&rs:Command=Render" target="_blank">MHC Report</a></p> 
+
+<p> <a href="http://10.80.100.9/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fGoaReports%2fHEMEDIESELCONSUMPTION&rs:Command=Rende" target="_blank">HEME Report</a></p> 
+
+  
+</div> 
+
+<div data-role="panel" id="myPanel4"> 
+    <h2>Reports</h2>
+     <p> <a href="http://10.80.100.9/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fGoaReports%2fSPARES_CONSUMABLES&rs:Command=Render" target="_blank">Spares and Consumable Report</a></p> 
+    <p> <a href="http://10.80.100.9/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fGoaReports%2fMONTH_SUMMARY&rs:Command=Render" target="_blank">Month Report</a></p>
+    <p> <a href="http://10.80.100.9/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fGoaReports%2fYEAR_SUMMARY&rs:Command=Render" target="_blank">Year Summery Report</a></p>
+
+</div> 
+
+
+
+<div data-role="panel" id="myPanel5"> 
+    <h2>Manual Form </h2>
+	
+	<!--
+ <p> <a href="http://pims:8087/CustomerMaster.aspx ">Customer Master </a></p>
+ 
+<p> <a href="http://pims:8087/PortPerformance2.aspx">Port Performance </a></p>
+
+<p> <a href="http://pims:8087/JPLPowerConsumptionBudget.aspx" target="_blank">Power Consumption Budget</a></p>    
+
+<p> <a href="http://pims:8087/JPLPortBudgetEntry.aspx" target="_blank">Port Budget Enty</a></p> 
+
+<p> <a href="http://pims:8087/DelayCapturingForm.aspx" target="_blank"> Delay Capture</a></p> 
+
+<p> <a href="http://pims:8087/JPLOperationPowerBudget.aspx" target="_blank">Operation Power Consumption</a></p>  
+
+<p> <a href="http://pims:8087/JPLOperationFuelBudget.aspx" target="_blank">Operation Fuel Consumption</a></p>      
+
+<p> <a href="http://pims:8087/JPLMaintenanceBudget.aspx" target="_blank">Maintainance Budget</a></p>
+
+<p> <a href="http://pims:8087/JPLEquipmentTarget.aspx" target="_blank">Equipment Target</a></p>
+
+<p> <a href="http://pims:8087/ExpectedVessels2.aspx" target="_blank">Expected Vessels</a></p>
+
+<p> <a href="http://10.80.100.10:8090/weatherdpr.aspx" target="_blank">Weather</a></p>
+
+<p> <a href="http://pims:8087/RunningHoursForm.aspx" target="_blank">Running Hours Form</a></p>
+
+
+<p> <a href="http://pims:8087/Manualformrate.aspx" target="_blank">Wharfage Rate</a></p> 
+-->
+<p> <a href="http://10.80.100.10:8090/DelayCapturingForm.aspx" target="_blank"> Delay Capture</a></p> 
+
+<p> <a href="http://10.80.100.10:8090/weatherdpr.aspx" target="_blank">Weather</a></p>
+</div> 
+
+
+  <div data-role="header">
+    <h1>Departments</h1>
+<table style="width:50%">
+    <tr>
+    <td>
+
+<div data-role="main" class="ui-content">
+    <a href="#myPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow"  alt="Operation"><img border="0"  src="images/Vessel.png" width="100" height="100">
+</a>
+
+</td>
+
+ <td>
+<div data-role="main" class="ui-content">
+    <a href="#myPanel5" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" ><img border="0"  src="images/MasterEntry.png" width="100" height="100">
+</a>
+</td>
+
+<!--    <td>
+<div data-role="main" class="ui-content">
+    <a href="#myPanel2" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" ><img border="0"  src="images/Marine.png" width="100" height="100">
+</a>
+</td>
+
+
+    <td>
+<div data-role="main" class="ui-content">
+    <a href="#myPanel5" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" ><img border="0"  src="images/MasterEntry.png" width="100" height="100">
+</a>
+</td>
+
+
+  </tr>
+  -->
+  <tr>
+    <td>
+
+<div data-role="main" class="ui-content">
+    <a href="#myPanel3" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" ><img border="0"  src="images/Mechanical.png" width="100" height="100">
+</a>
+
+</td>
+    <td>
+<div data-role="main" class="ui-content">
+    <a href="#myPanel4" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" ><img border="0"  src="images/Elec.png" width="100" height="100"></a>
+
+
+
+  </tr>
+  </tr>
+</table>
+  </div>
+
+ </body>
+</html>
