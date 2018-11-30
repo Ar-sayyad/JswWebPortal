@@ -20,11 +20,58 @@ class FORMS extends CI_Controller {
        public function index()
 	{
             $data['mydiv'] = "Forms";
-            $data['mydiv2'] = "";
+            $data['mydiv2'] = "Jetty";
             $data['mydiv3'] = "";
-            $data['title'] = "Forms";
+            $data['title'] = "Jetty";
             $data['linkUrl'] = "";
-            $this->load->view('jsw/Forms',$data);            
-	}              
+            $this->load->view('jsw/Jettyforms',$data);            
+	} 
+        
+        public function Jetty()
+	{
+            $data['mydiv'] = "Forms";
+            $data['mydiv2'] = "Jetty";
+            $data['mydiv3'] = "";
+            $data['title'] = "Jetty";
+            $data['linkUrl'] = "";
+            $this->load->view('jsw/Jettyforms',$data);            
+	} 
+        
+        public function MBC()
+	{
+            $data['mydiv'] = "Forms";
+            $data['mydiv2'] = "MBC";
+            $data['mydiv3'] = "";
+            $data['title'] = "MBC";
+            $data['linkUrl'] = "";
+            $this->load->view('jsw/MBCform',$data);            
+	}   
+         public function CargoDespatch()
+	{
+            $data['mydiv'] = "Forms";
+            $data['mydiv2'] = "Cargo Despatch";
+            $data['mydiv3'] = "";
+            $data['title'] = "Cargo Despatch";
+            $data['linkUrl'] = "";
+            $this->load->view('jsw/CargoDespatchform',$data);            
+	}  
+         public function RateForm()
+	{
+            $data['mydiv'] = "Forms";
+            $data['mydiv2'] = "Rate Form";
+            $data['mydiv3'] = "";
+            $data['title'] = "Rate Form";
+            $data['linkUrl'] = "";
+            $this->load->view('jsw/RateForm',$data);            
+	}  
+         public function EquipmentDelay()
+	{
+            $data['mydiv'] = "Forms";
+            $data['mydiv2'] = "Equipment Delay";
+            $data['mydiv3'] = "";
+            $data['title'] = "Equipment Delay";
+            $data['linkUrl'] = "";
+            $this->load->view('jsw/EquipmentDelayform',$data);            
+	}  
         
 }

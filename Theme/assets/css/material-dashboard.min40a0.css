@@ -12415,7 +12415,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .card .card-header .title,.card [class*=card-header-],.card [class*=card-header-] .card-title,.card [class*=card-header-] .card-title a,.card [class*=card-header-] .icon i,.card[class*=bg-],.card[class*=bg-] .card-title,.card[class*=bg-] .card-title a,.card[class*=bg-] .icon i {
-    color: #fff
+    color: #212529;
 }
 
 .card .card-footer .stats .material-icons {
@@ -12539,7 +12539,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .card .card-header-rose .card-icon,.card .card-header-rose .card-text,.card .card-header-rose:not(.card-header-icon):not(.card-header-text) {
-    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px #7882f0;
+    box-shadow: 1px 1px 10px 0px #999;
 }
 
 .card .card-header-purple .card-icon,.card .card-header-purple .card-text,.card .card-header-purple:not(.card-header-icon):not(.card-header-text) {
@@ -12780,9 +12780,9 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .card [class*=card-header-]:not(.card-header-icon):not(.card-header-text):not(.card-header-image) {
-    border-radius: 3px;
-    margin-top: -20px;
-    padding: 15px
+    border-radius: 0px;
+    margin-top: 0px;
+    padding: 10px;
 }
 
 .card [class*=card-header-] .card-icon,.card [class*=card-header-] .card-text {

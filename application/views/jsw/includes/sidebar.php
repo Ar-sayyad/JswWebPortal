@@ -475,13 +475,62 @@
                             </ul>
                         </div>
                     </li>
+                    
+                        
+                 
                     <?php if($mydiv=='Forms'){?><li class="nav-item mydiv active"> <?php }else{?> <li class="nav-item mydiv"><?php }?>
-                        <a class="nav-link" href="<?php echo base_url();?>FORMS">
-                            <i class="material-icons">insert_comment</i>
-                            <p> Forms </p>
+                        <a class="nav-link" data-toggle="collapse" href="#FormsExamples">
+                            <i class="material-icons">web</i>
+                            <p>
+                               MANUAL FORMS
+                                <b class="caret"></b>
+                            </p>
                         </a>
-                    </li>
-
+                         <?php if($mydiv=='Forms'){?><div class="collapse show" id="FormsExamples"><?php }else{?> <div class="collapse" id="FormsExamples"><?php }?>
+                        
+                            <ul class="nav">
+                                <?php if($mydiv2=='Jetty'){?><li class="nav-item mydiv2 active"> <?php }else{?> <li class="nav-item mydiv2"><?php }?>
+                                     <a class="nav-link" href="<?php echo base_url();?>FORMS/Jetty">
+                                        <i class="material-icons">filter_1</i>
+                                        <p>
+                                            Jetty Form
+                                        </p>
+                                    </a>
+                                </li>
+                                 <?php if($mydiv2=='MBC'){?><li class="nav-item mydiv2 active"> <?php }else{?> <li class="nav-item mydiv2"><?php }?>
+                                     <a class="nav-link" href="<?php echo base_url();?>FORMS/MBC">
+                                        <i class="material-icons">filter_2</i>
+                                        <p>
+                                            MBC
+                                        </p>
+                                    </a>
+                                </li>
+                                <?php if($mydiv2=='Cargo Despatch'){?><li class="nav-item mydiv2 active"> <?php }else{?> <li class="nav-item mydiv2"><?php }?>
+                                     <a class="nav-link" href="<?php echo base_url();?>FORMS/CargoDespatch">
+                                        <i class="material-icons">filter_3</i>
+                                        <p>
+                                            Cargo Despatch
+                                        </p>
+                                    </a>
+                                </li>
+                                 <?php if($mydiv2=='Rate Form'){?><li class="nav-item mydiv2 active"> <?php }else{?> <li class="nav-item mydiv2"><?php }?>
+                                     <a class="nav-link" href="<?php echo base_url();?>FORMS/RateForm">
+                                        <i class="material-icons">filter_4</i>
+                                        <p>
+                                            Rate Form
+                                        </p>
+                                    </a>
+                                </li>
+                                 <?php if($mydiv2=='Equipment Delay'){?><li class="nav-item mydiv2 active"> <?php }else{?> <li class="nav-item mydiv2"><?php }?>
+                                     <a class="nav-link" href="<?php echo base_url();?>FORMS/EquipmentDelay">
+                                        <i class="material-icons">filter_5</i>
+                                        <p>
+                                            Equipment Delay
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                                 </li>
                     <li class="nav-item mydiv">
                         <a class="nav-link" href="<?php echo base_url();?>Home/Logout">
                             <i class="material-icons">power_settings_new</i>
