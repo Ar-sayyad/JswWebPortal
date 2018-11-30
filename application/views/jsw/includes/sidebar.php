@@ -166,16 +166,16 @@
                                                                 <span class="sidebar-normal"> MHS PATH - 5 </span>
                                                             </a>
                                                         </li>
+                                            <?php if($title=='MHS PATH - 6'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                            <a class="nav-link" href="<?php echo base_url();?>MHS/newmhsPathSix">
+                                                                <i class="material-icons">filter_6</i>
+                                                                <span class="sidebar-normal"> MHS PATH - 6 </span>
+                                                            </a>
+                                                        </li>
                                             <?php if($title=='MHS PATH - 7'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
                                                             <a class="nav-link" href="<?php echo base_url();?>MHS/newmhsPathSeven">
                                                                 <i class="material-icons">filter_7</i>
                                                                 <span class="sidebar-normal"> MHS PATH - 7 </span>
-                                                            </a>
-                                                        </li>
-                                            <?php if($title=='MHS PATH - 8'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
-                                                            <a class="nav-link" href="<?php echo base_url();?>MHS/newmhsPathEight">
-                                                                <i class="material-icons">filter_8</i>
-                                                                <span class="sidebar-normal"> MHS PATH - 8 </span>
                                                             </a>
                                                         </li>
                                                     </ul>

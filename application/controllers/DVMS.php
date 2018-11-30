@@ -23,7 +23,7 @@ class DVMS extends CI_Controller {
             $data['mydiv2'] = "DVMS";
             $data['mydiv3'] = "";
             $data['title'] = "DVMS";
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20057";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20081";
             $this->load->view('jsw/DVMS',$data);            
 	}  
         
