@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 <title>
- JSW Dashboard
+ JSW Dashboard | <?php echo $title;?>
 </title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 <!--     Fonts and icons     -->
@@ -104,6 +104,13 @@
     border-radius: 5px;
     /* background: linear-gradient(60deg,#f8f9fa87,#f8f9fae0); */
     /* box-shadow: 0px 1px 6px 1px rgba(204, 204, 204, 0.43); */
+}
+.landing-bg {
+    background: url(<?php echo base_url();?>Tendance/NewPage/img/img/landing-bg.jpg) no-repeat 50% 50% fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
 }
     </style>
  </head>

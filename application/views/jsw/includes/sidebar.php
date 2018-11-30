@@ -25,7 +25,7 @@
 
                 <ul class="nav">
                     <?php if($mydiv=='HOME'){?><li class="nav-item mydiv active"> <?php }else{?> <li class="nav-item mydiv"><?php }?>
-                        <a class="nav-link" href="<?php echo base_url();?>">
+                        <a class="nav-link" href="<?php echo base_url().'Home/home';?>">
                             <i class="material-icons">home</i>
                             <p> HOME </p>
                         </a>

@@ -16,7 +16,18 @@ class Home extends CI_Controller {
         $this->output->set_header('Pragma: no-cache');
     }
     
-	public function index()
+    public function index()
+	{
+                $this->jsw_model->is_logged_in();                 
+                $data['mydiv'] = "HOME";
+                $data['mydiv2'] = "";
+                $data['mydiv3'] = "";
+                $data['title'] = "HOME";
+                $data['linkUrl'] = "";
+                 $this->load->view('Landing/landing',$data);	
+	} 
+        
+	public function home()
 	{
                 $this->jsw_model->is_logged_in();                 
                 $data['mydiv'] = "HOME";
@@ -26,6 +37,7 @@ class Home extends CI_Controller {
                 $data['linkUrl'] = "";
                  $this->load->view('jsw/index',$data);	
 	} 
+        
                 
           public function popup($account_type = '', $page_name = '', $param2 = '', $param3 = '', $param4 = '',$param5 = '',$param6 = '')
 	{

@@ -6076,7 +6076,7 @@ a.bg-dark:focus,a.bg-dark:hover,button.bg-dark:focus,button.bg-dark:hover {
 }
 
 .fixed-top {
-    top: 0
+    top: 0;
 }
 
 .fixed-bottom {
@@ -8228,8 +8228,8 @@ a.text-dark:focus,a.text-dark:hover {
 }
 
 .btn.btn-white,.btn.btn-white:focus,.btn.btn-white:hover {
-    background-color: #212529;
-    color: #f8f9fa;
+    background-color: #fff;
+    color: #2744a0;
 }
 
 .btn.btn-white.btn-link {
@@ -8824,14 +8824,14 @@ a.text-dark:focus,a.text-dark:hover {
 }
 
 .btn.btn-fab,.btn.btn-just-icon {
-    font-size: 24px;
-    height: 41px;
-    min-width: 41px;
-    width: 41px;
+    font-size: 21px;
+    height: 35px;
+    min-width: 35px;
+    width: 35px;
     padding: 0;
     overflow: hidden;
     position: relative;
-    line-height: 41px
+    line-height: 32px;
 }
 
 .btn.btn-fab.btn-round,.btn.btn-just-icon.btn-round {
@@ -8869,8 +8869,8 @@ a.text-dark:focus,a.text-dark:hover {
     left: 0;
     top: 0;
     height: 100%;
-    line-height: 41px;
-    font-size: 20px
+    line-height: 35px;
+    font-size: 20px;
 }
 
 .btn-group-lg>.btn-just-icon.btn,.btn-just-icon.btn-lg {
@@ -10373,12 +10373,13 @@ textarea {
 .navbar {
     border: 0;
     border-radius: 3px;
-    padding: .625rem 0;
+    padding: 1px 0px;
     margin-bottom: 20px;
     height: auto!important;
-    color: #555;
-    background-color: #fff!important;
-    box-shadow: 0 4px 18px 0 rgba(0,0,0,.12),0 7px 10px -5px rgba(0,0,0,.15)
+    color: #fff;
+    font-weight: bolder;
+    background-color: #0072c6;
+    box-shadow: 0 4px 18px 0 rgba(0,0,0,.12),0 7px 10px -5px rgba(0,0,0,.15);
 }
 
 .navbar .dropdown-item:focus,.navbar .dropdown-item:hover {
@@ -10479,8 +10480,8 @@ textarea {
 .navbar.navbar-absolute {
     position: absolute;
     width: 100%;
-    padding-top: 10px;
-    z-index: 1029
+    padding-top: 0px;
+    z-index: 1029;
 }
 
 .navbar .navbar-wrapper {
@@ -10491,12 +10492,12 @@ textarea {
 .navbar .navbar-brand {
     position: relative;
     color: inherit;
-    height: 50px;
+    height: 45px;
     font-size: 1.125rem;
     line-height: 30px;
     padding: .625rem 0;
     font-weight: 300;
-    margin-left: 1rem
+    margin-left: 1rem;
 }
 
 .navbar>.container {
@@ -10616,8 +10617,8 @@ textarea {
 }
 
 .navbar.navbar-transparent {
-    background-color: transparent!important;
-    box-shadow: none
+    background-color: #0072c6!important;
+    /* box-shadow: none; */
 }
 
 .navbar .notification {
@@ -14801,7 +14802,7 @@ a .material-icons {
 }
 
 .main-panel>.navbar {
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
 .main-panel .header {
