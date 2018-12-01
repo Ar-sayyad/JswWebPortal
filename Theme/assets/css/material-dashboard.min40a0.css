@@ -10373,7 +10373,7 @@ textarea {
 .navbar {
     border: 0;
     border-radius: 3px;
-    padding: 1px 0px;
+    padding: 5px 0px;
     margin-bottom: 20px;
     height: auto!important;
     color: #fff;
@@ -10480,7 +10480,7 @@ textarea {
 .navbar.navbar-absolute {
     position: absolute;
     width: 100%;
-    padding-top: 0px;
+    padding-top: 5px;
     z-index: 1029;
 }
 
