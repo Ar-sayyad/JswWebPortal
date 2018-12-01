@@ -27,6 +27,15 @@ class DVMS extends CI_Controller {
             $this->load->view('jsw/DVMS',$data);            
 	}  
         
+        public function test()
+	{
+            $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "DVMS";
+            $data['mydiv3'] = "";
+            $data['title'] = "DVMS";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20081";
+            $this->load->view('jsw/Test',$data);            
+	}  
         public function berthOne()
 	{
            $data['mydiv'] = "DASHBOARD";
