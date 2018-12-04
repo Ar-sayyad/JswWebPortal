@@ -490,7 +490,7 @@
                         
                             <ul class="nav">
                                 <?php if($mydiv2=='Jetty'){?><li class="nav-item mydiv2 active"> <?php }else{?> <li class="nav-item mydiv2"><?php }?>
-                                     <a class="nav-link" href="<?php echo base_url();?>FORMS/Jetty">
+                                     <a class="nav-link" href="<?php echo base_url();?>Jetty">
                                         <i class="material-icons">filter_1</i>
                                         <p>
                                             Jetty Form
@@ -498,7 +498,7 @@
                                     </a>
                                 </li>
                                  <?php if($mydiv2=='MBC'){?><li class="nav-item mydiv2 active"> <?php }else{?> <li class="nav-item mydiv2"><?php }?>
-                                     <a class="nav-link" href="<?php echo base_url();?>FORMS/MBC">
+                                     <a class="nav-link" href="<?php echo base_url();?>MBC">
                                         <i class="material-icons">filter_2</i>
                                         <p>
                                             MBC
@@ -506,7 +506,7 @@
                                     </a>
                                 </li>
                                 <?php if($mydiv2=='Cargo Despatch'){?><li class="nav-item mydiv2 active"> <?php }else{?> <li class="nav-item mydiv2"><?php }?>
-                                     <a class="nav-link" href="<?php echo base_url();?>FORMS/CargoDespatch">
+                                     <a class="nav-link" href="<?php echo base_url();?>CargoDespatch">
                                         <i class="material-icons">filter_3</i>
                                         <p>
                                             Cargo Despatch
@@ -514,7 +514,7 @@
                                     </a>
                                 </li>
                                  <?php if($mydiv2=='Rate Form'){?><li class="nav-item mydiv2 active"> <?php }else{?> <li class="nav-item mydiv2"><?php }?>
-                                     <a class="nav-link" href="<?php echo base_url();?>FORMS/RateForm">
+                                     <a class="nav-link" href="<?php echo base_url();?>RateForm">
                                         <i class="material-icons">filter_4</i>
                                         <p>
                                             Rate Form
@@ -522,7 +522,7 @@
                                     </a>
                                 </li>
                                  <?php if($mydiv2=='Equipment Delay'){?><li class="nav-item mydiv2 active"> <?php }else{?> <li class="nav-item mydiv2"><?php }?>
-                                     <a class="nav-link" href="<?php echo base_url();?>FORMS/EquipmentDelay">
+                                     <a class="nav-link" href="<?php echo base_url();?>EquipmentDelay">
                                         <i class="material-icons">filter_5</i>
                                         <p>
                                             Equipment Delay

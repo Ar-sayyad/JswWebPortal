@@ -33,7 +33,7 @@
                           </p>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="<?php echo base_url();?>Home/Logout">Logout</a>
+                          <a class="dropdown-item" href="<?php echo base_url();?>Home/Logout"><i class="material-icons">power_settings_new</i> Logout</a>
                         </div>
                   </li>
                    

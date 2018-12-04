@@ -24,6 +24,7 @@ class FORMS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Jetty";
             $data['linkUrl'] = "";
+            $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
             $this->load->view('jsw/Jettyforms',$data);            
 	} 
         
@@ -34,6 +35,7 @@ class FORMS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Jetty";
             $data['linkUrl'] = "";
+            $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
             $this->load->view('jsw/Jettyforms',$data);            
 	} 
         
