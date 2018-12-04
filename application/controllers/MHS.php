@@ -80,7 +80,7 @@ class MHS extends CI_Controller {
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
             $data['title'] = "MHS PATH - 6";
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20044";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20083";
             $this->load->view('jsw/newmhsPathSix',$data);             
 	}   
         public function newmhsPathSeven()
@@ -89,7 +89,7 @@ class MHS extends CI_Controller {
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
             $data['title'] = "MHS PATH - 7";
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20068";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20044";
             $this->load->view('jsw/newmhsPathSeven',$data);             
 	}   
         public function newmhsPathEight()
