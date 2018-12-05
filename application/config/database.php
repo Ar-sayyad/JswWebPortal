@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '172.21.25.29\SQLEXPRESS',
+	'hostname' => '172.21.25.29\DPPL_DWH',
 	'username' => 'sa',
 	'password' => 'auto@777',
 	'database' => 'DPPL_PIMS',

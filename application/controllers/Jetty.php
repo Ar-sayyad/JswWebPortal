@@ -25,6 +25,7 @@ class Jetty extends CI_Controller {
             $data['title'] = "Jetty";
             $data['linkUrl'] = "";
             $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
+             $data['JettyForm_data'] = $this->jsw_model->select_data_info('dbo.tbl_JettyForm_MF_DPR');  
             $this->load->view('jsw/Jettyforms',$data);            
 	} 
         

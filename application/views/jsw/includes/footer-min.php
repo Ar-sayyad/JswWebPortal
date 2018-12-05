@@ -1,8 +1,11 @@
+<script src="<?php echo base_url();?>Theme/assets/js/data-table/datatables.min.js"></script>
+<script src="<?php echo base_url();?>Theme/assets/js/data-table/datatables-init.js"></script>
 <script src="<?php echo base_url();?>Theme/assets/js/core/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>Theme/assets/js/core/popper.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>Theme/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
 
 <script src="<?php echo base_url();?>Theme/assets/js/plugins/perfect-scrollbar.jquery.min.js" ></script>
+
 
 
 <!-- Plugin for the momentJs  -->
@@ -11,7 +14,7 @@
 <!--  Plugin for Sweet Alert -->
 <script src="<?php echo base_url();?>Theme/assets/js/plugins/sweetalert2.js"></script>
 
-<!-- Forms Validations Plugin -->
+ <!--Forms Validations Plugin--> 
 <script src="<?php echo base_url();?>Theme/assets/js/plugins/jquery.validate.min.js"></script>
 
 <script src="<?php echo base_url();?>Theme/assets/js/plugins/jquery.bootstrap-wizard.js"></script>
@@ -46,12 +49,12 @@
 <!-- Chartist JS -->
 <script src="<?php echo base_url();?>Theme/assets/js/plugins/chartist.min.js"></script>
 
-<!--  Notifications Plugin    -->
+  <!--Notifications Plugin-->    
 <script src="<?php echo base_url();?>Theme/assets/js/plugins/bootstrap-notify.js"></script>
 
 <script src="<?php echo base_url();?>Theme/assets/js/material-dashboard.min40a0.js?v=2.0.2" type="text/javascript"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?php echo base_url();?>Theme/assets/demo/demo.js"></script>
 
-<!-- Sharrre libray -->
+ <!--Sharrre libray--> 
 <script src="<?php echo base_url();?>Theme/assets/demo/jquery.sharrre.js"></script>
