@@ -23,4 +23,4 @@
 <link href="<?php echo base_url();?>Theme/assets/css/jsw-styles.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo base_url();?>Theme/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo base_url();?>Theme/assets/css/material-dashboard.css" rel="stylesheet" type="text/css"/>
- </head>
+</head>

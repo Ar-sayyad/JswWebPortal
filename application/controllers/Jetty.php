@@ -29,6 +29,19 @@ class Jetty extends CI_Controller {
             $this->load->view('jsw/Jettyforms',$data);            
 	} 
         
+          public function loadForm()
+	{
+            $data['mydiv'] = "Forms";
+            $data['mydiv2'] = "Jetty";
+            $data['mydiv3'] = "";
+            $data['title'] = "Jetty";
+            $data['linkUrl'] = "";
+//            $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
+//             $data['JettyForm_data'] = $this->jsw_model->select_data_info('dbo.tbl_JettyForm_MF_DPR');  
+            $this->load->view('jsw/modelName',$data);            
+	} 
+        
+        
         public function searchJetty(){            
             $this->form_validation->set_rules('month', 'Month', 'required');
             $this->form_validation->set_rules('year', 'Year', 'required');

@@ -91,3 +91,14 @@
     margin: 20px 0 !important;
     padding: 20px !important;
 }
+    .modal-dialog{
+       width: 1000px !important;
+    } 
+    .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 0px 6px;
+    color:black;
+    text-align: center;
+    }
+    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {   
+    line-height: 2.428571 !important;
+}

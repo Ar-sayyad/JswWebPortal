@@ -10,9 +10,28 @@
         </div>
     </div>
 </footer>
-
+    <script type="text/javascript">
+	function showAjaxModal(url)
+	{
+            $.post(url, { id: '1' }, function(data){
+            
+			if(data)
+			{
+                            jQuery('#modal_ajax .modal-body').html(data);
+				//$("#popup").html(data);
+			}
+                    });
+                     jQuery('#modal_ajax .modal-body').html('<div style="text-align:center;margin-top:120px;"><img src="<?php echo base_url();?>site/content/img/loading.gif" style="height:80px;" /></div>');
+//		
+//		// LOADING THE AJAX MODAL
+                    jQuery('#modal_ajax').modal('show', {backdrop: 'true'});
+//                
+       
+	}        
+     
+	
+	</script>
 <script type="text/javascript">
-
 
     var button = document.querySelector('#fullscreen');
     button.addEventListener('click', fullscreen);

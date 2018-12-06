@@ -41,12 +41,12 @@ class Home extends CI_Controller {
                 
           public function popup($account_type = '', $page_name = '', $param2 = '', $param3 = '', $param4 = '',$param5 = '',$param6 = '')
 	{
-		$page_data['param2']		=	$param2;
+                $page_data['param2']		=	$param2;
                 $page_data['param3']		=	$param3;
                 $page_data['param4']		=	$param4;
                 $page_data['param5']		=	$param5;
                 $page_data['param6']		=	$param6;
-                $page_data['month_info'] = $this->jsw_model->select_data_info('dbo.tblMonth');
+               // $page_data['month_info'] = $this->jsw_model->select_data_info('dbo.tblMonth');
 		//echo "hello";
 		$this->load->view($account_type.'/'.$page_name,$page_data);		
 	}

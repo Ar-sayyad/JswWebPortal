@@ -14,108 +14,146 @@
       <?php include 'includes/navbar.php';?>       
 
     <!-- End Navbar -->
-    <div class="content">
-        <div class="container-fluid">
+<div class="content">
+<div class="container-fluid">
+  <div class="row">
+    <div class="header text-center ml-auto mr-auto">
+      <h3 class="title">Notifications</h3>
+      <p class="category">Handcrafted by our friend
+        <a target="_blank" href="https://github.com/mouse0270">Robert McIntosh</a>. Please checkout the
+        <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank">full documentation.</a>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Notifications Style</h4>
+        </div>
+        <div class="card-body">
+          <div class="alert alert-info">
+            <span>This is a plain notification</span>
+          </div>
+          <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+            </button>
+            <span>This is a notification with close button.</span>
+          </div>
+          <div class="alert alert-info alert-with-icon" data-notify="container">
+            <i class="material-icons" data-notify="icon">notifications</i>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+            </button>
+            <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+            <span data-notify="message">This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
+          </div>
+          <div class="alert alert-rose alert-with-icon" data-notify="container">
+            <i class="material-icons" data-notify="icon">notifications</i>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+            </button>
+            <span data-notify="message">This is a notification with close button and icon and is made with ".alert-rose". You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Notification states</h4>
+        </div>
+        <div class="card-body">
+          <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+            </button>
+            <span>
+              <b> Info - </b> This is a regular notification made with ".alert-info"</span>
+          </div>
+          <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+            </button>
+            <span>
+              <b> Success - </b> This is a regular notification made with ".alert-success"</span>
+          </div>
+          <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+            </button>
+            <span>
+              <b> Warning - </b> This is a regular notification made with ".alert-warning"</span>
+          </div>
+          <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+            </button>
+            <span>
+              <b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
+          </div>
+          <div class="alert alert-primary">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+            </button>
+            <span>
+              <b> Primary - </b> This is a regular notification made with ".alert-primary"</span>
+          </div>
+          <div class="alert alert-rose">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+            </button>
+            <span>
+              <b> Rose - </b> This is a regular notification made with ".alert-rose"</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="places-buttons">
             <div class="row">
-                <div class="col-md-12"> 
-                            <div class="form-div card">
-                                <div class="col-md-2"></div>
-                                    <div class="col-md-8">
-                                    <form action="<?php echo base_url();?>mhsPerformance/searchMhs" method="POST" enctype="multipart/form-data">
-                                        <table class="table form">                                                
-                                            <thead class="">
-
-                                                <tr>
-                                                     <th> Month :<span class="required">*</span></th>
-                                                    <th>
-                                                        <select id="month" name="month" placeholder="month" required="" class="clsmon form-control">
-                                                            <option value="">---Select Month---</option>
-                                                             <?php $sr=1; foreach($month_info as $mon){?>                                       
-                                                            <option data-id="<?php echo trim($mon['MonID']);?>" value="<?php echo trim($mon['MonName']);?>"><?php echo trim($mon['MonthFullName']);?></option>                                      
-                                                             <?php $sr++;}?>  
-                                                        </select>
-                                                    </th>
-
-                                                    <th> Year :<span class="required">*</span></th>
-                                                    <th>
-                                                        <select id="year" name="year" placeholder="year" required="" class="form-control">
-                                                            <option value="">---Select Year---</option>
-                                                            <option value="<?php echo date('Y')-1;?>"><?php echo date('Y')-1;?></option>
-                                                            <option value="<?php echo date('Y');?>"><?php echo date('Y');?></option>
-                                                            <option value="<?php echo date('Y')+1;?>"><?php echo date('Y')+1;?></option>
-                                                        </select>
-                                                    </th>
-
-
-                                                    <th colspan="4" style="text-align:center">
-                                                        <button type="submit" name="save" data-id="hello" id="saveEnvironment" class="btn btn-success" value="save"> 
-                                                            <i class="material-icons">search</i> Search</button>
-                                                         <button type="reset" name="Reset" class="btn btn-info" value="reset"><i class="material-icons">replay</i> Reset</button>
-                                                    </th>
-                                                </tr>
-
-                                            </thead>
-
-                                        </table>
-                                    </form>
-                                     </div>
-                                <div class="col-md-2">
-                                    <div class="addbtn">
-                                         <button data-toggle="modal" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/modelName');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add Jetty Data</button>
-                                    </div>
-                                </div>
-                            </div>
-                       
-                        <div class="bootstrap-data-table-panel card">
-                            <div class="table-responsive">
-                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered table-hover">   
-                                    <thead>
-                                      <tr>
-                                          <th>SR</th>
-                                        <th>Date</th>
-                                        <th>At Jetty <br>Under Discharge</th>
-                                        <th>At Jetty <br>Waiting for Discharge</th>
-                                        <th>At R-19 Waiting (Loaded)</th>
-                                        <th>At Gulf - Waiting (Loaded)</th>
-                                        <th>In transit from <br>MV/GULL to Jetty(Loaded)</th>
-                                        <th>Under <br>Loading at MV</th>
-                                        <th>Waiting for Loading</th>
-                                        <th>Waiting at Jetty</th>
-                                        <th>Empty at Gull R-19</th>
-                                        <th>In Transit - <br>from Jetty to MV</th>
-                                        <th>Breakdown/off hired</th>
-                                      </tr>
-                                    </thead>
-                                   
-                                    <tbody>
-                                      <?php  if(!empty($JettyForm_data)){  $sr=1; foreach($JettyForm_data as $jetty){?>
-                                        <tr>
-                                        <td><?php echo $sr;?></td>   
-                                        <td><?php echo $jetty['trans_date'];?></td>
-                                        <td><?php echo $jetty['At_Jetty_under_discharge'];?></td>
-                                        <td><?php echo $jetty['At_Jetty_waiting_for_discharge'];?></td>
-                                        <td><?php echo $jetty['At_R_19_waiting_loaded'];?></td>
-                                        <td><?php echo $jetty['At_gulf_waiting_loaded'];?></td>
-                                        <td><?php echo $jetty['In_transit_from_MV_GULL_toJetty_Loaded'];?></td>
-                                        <td><?php echo $jetty['Under_loading_at_MV'];?></td>
-                                        <td><?php echo $jetty['Waiting_for_Loading'];?></td>
-                                        <td><?php echo $jetty['Waiting_at_jetty'];?></td>
-                                        <td><?php echo $jetty['Empty_at_gull_R_19'];?></td>
-                                        <td><?php echo $jetty['In_transit_from_jetty_to_MV'];?></td>
-                                        <td><?php echo $jetty['Breakdown_offHired'];?></td>
-                                      </tr>
-                                      <?php $sr++; } }?>                                     
-                                     
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                   
-                </div>
-                <!-- end col-md-12 -->
+              <div class="col-md-6 ml-auto mr-auto text-center">
+                <h4 class="card-title">
+                  Notifications Places
+                  <p class="category">Click to view notifications</p>
+                </h4>
+              </div>
             </div>
-            <!-- end row -->
-             <div class="row">
+            <div class="row">
+              <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                <div class="row">
+                  <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" onclick="md.showNotification('top','left')">Top Left</button>
+                  </div>
+                  <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" onclick="md.showNotification('top','center')">Top Center</button>
+                  </div>
+                  <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" onclick="md.showNotification('top','right')">Top Right</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                <div class="row">
+                  <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" onclick="md.showNotification('bottom','left')">Bottom Left</button>
+                  </div>
+                  <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" onclick="md.showNotification('bottom','center')">Bottom Center</button>
+                  </div>
+                  <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" onclick="md.showNotification('bottom','right')">Bottom Right</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
             <div class="col-md-12 text-center">
               <div class="card-header">
                 <h4 class="card-title">Modal</h4>
@@ -228,8 +266,13 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
-        <?php include 'includes/modal.php';?>
+  </div>
+</div>
+
+                  </div>
+
             <!--Footer-->
            <?php include 'includes/footer.php';?>
             <!--/End Footer-->

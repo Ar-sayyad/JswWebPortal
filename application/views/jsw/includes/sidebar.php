@@ -357,22 +357,27 @@
                                     <a class=" nav-link" data-toggle="collapse" href="#Operational">
                                         <i class="material-icons">build</i>
                                         <p>
-                                            Operation
+                                            Operational
                                             <b class="caret"></b>
                                         </p>
                                     </a>
                                     <?php if($mydiv2=='Operation'){?><div class="collapse show" id="Operational"> <?php }else{?> <div class="collapse" id="Operational"><?php }?>                                    
                                         <ul class="nav">
-                                    <?php if($title=='Equipment Utilization Summary'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+<!--                                    <?php if($title=='Equipment Utilization Summary'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
                                                 <a class="nav-link" href="<?php echo base_url();?>REPORTS/EquipmentUtilizationSummary">
                                                     <span class="sidebar-normal"> Equipment Utilization Summary </span>
                                                 </a>
-                                            </li>
+                                            </li>-->
                                     <?php if($title=='Day wise Equipment Utilization'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
                                                 <a class="nav-link" href="<?php echo base_url();?>REPORTS/DaywiseEquipmentUtilization">
                                                     <span class="sidebar-normal"> Day wise Equipment Utilization </span>
                                                 </a>
                                             </li>
+                                    <?php if($title=='DPR'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                       <a class="nav-link" href="<?php echo base_url();?>REPORTS/DPR">
+                                           <span class="sidebar-normal"> DPR </span>
+                                       </a>
+                                   </li>
                                     <?php if($title=='Jetty & RMHS Delays Report'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
                                                 <a class="nav-link" href="<?php echo base_url();?>REPORTS/JettyRMHSDelaysReport">
                                                     <span class="sidebar-normal"> Jetty & RMHS Delays Report</span>
@@ -398,26 +403,57 @@
                                     </a>
                                     <?php if($mydiv2=='Electrical'){?><div class="collapse show" id="Electrical"> <?php }else{?> <div class="collapse" id="Electrical"><?php }?>                                    
                                         <ul class="nav">
-                                        <?php if($title=='DPPL Energy Consumption'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
-                                                <a class="nav-link" href="<?php echo base_url();?>REPORTS/DPPLEnergyConsumption">
-                                                    <span class="sidebar-normal"> DPPL Energy Consumption </span>
+                                         <?php if($title=='Daily Power Consumption New Jetty'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                             <a class="nav-link" title="Daily Power Consumption New Jetty" href="<?php echo base_url();?>REPORTS/DailyPowerConsumptionNewJetty">
+                                                    <span class="sidebar-normal"> Daily Power Consumption New Jetty </span>
+                                                </a>
+                                            </li>                                            
+                                             <?php if($title=='Daily Power Consumption Old Jetty'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                 <a class="nav-link" title="Daily Power Consumption Old Jetty" href="<?php echo base_url();?>REPORTS/DailyPowerConsumptionOldJetty">
+                                                    <span class="sidebar-normal"> Daily Power Consumption Old Jetty </span>
+                                                </a>
+                                            </li> 
+                                            <?php if($title=='Cargo Commodity Wise Power Consumption New Jetty'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" title="Cargo Commodity Wise Power Consumption New Jetty" href="<?php echo base_url();?>REPORTS/CargoCommodityWisePowerConsumptionnewjetty">
+                                                    <span class="sidebar-normal"> Cargo Commodity Wise Power Consumption New Jetty </span>
                                                 </a>
                                             </li>
-                                        <?php if($title=='Cargo Commodity & Equip. Power Consumption'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
-                                                <a class="nav-link" href="<?php echo base_url();?>REPORTS/CargoCommodityEquipmentPowerConsumption">
-                                                    <span class="sidebar-normal">Cargo Commodity & Equip. Power Consumption</span>
+                                             <?php if($title=='Cargo Commodity Wise Power Consumption Old Jetty'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" title="Cargo Commodity Wise Power Consumption Old Jetty" href="<?php echo base_url();?>REPORTS/CargoCommodityWisePowerConsumptionOldjetty">
+                                                    <span class="sidebar-normal"> Cargo Commodity Wise Power Consumption Old Jetty </span>
+                                                </a>
+                                            </li> 
+                                            <?php if($title=='DPPL Electrical New Jetty System EQ Delays'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" title="DPPL Electrical New Jetty System EQ Delays" href="<?php echo base_url();?>REPORTS/DPPLElectricalNewJettySystemEQDelays">
+                                                        <span class="sidebar-normal"> DPPL Electrical New Jetty System EQ Delays  </span>
                                                 </a>
                                             </li>
-                                        <?php if($title=='MTTR and MTBF'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
-                                                <a class="nav-link" href="<?php echo base_url();?>REPORTS/MTTRandMTBF">
-                                                    <span class="sidebar-normal"> MTTR and MTBF </span>
+                                            <?php if($title=='DPPL Electrical Old Jetty System EQ Delays'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" title="DPPL Electrical Old Jetty System EQ Delays" href="<?php echo base_url();?>REPORTS/DPPLElectricalOldJettySystemEQDelays">
+                                                        <span class="sidebar-normal"> DPPL Electrical Old Jetty System EQ Delays  </span>
                                                 </a>
                                             </li>
-                                        <?php if($title=='Equipment Delay'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
-                                                <a class="nav-link" href="<?php echo base_url();?>REPORTS/EquipmentDelay">
-                                                    <span class="sidebar-normal"> Equipment Delay </span>
+                                            <?php if($title=='Daily Equipment Wise Power Consumption New'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" title="Daily Equipment Wise Power Consumption New" href="<?php echo base_url();?>REPORTS/DailyEquipmentWisePowerConsumptionNew">
+                                                        <span class="sidebar-normal"> Daily Equipment Wise Power Consumption New  </span>
                                                 </a>
                                             </li>
+                                             <?php if($title=='Daily Equipment Wise Power Consumption Old'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" title="Daily Equipment Wise Power Consumption Old" href="<?php echo base_url();?>REPORTS/DailyEquipmentWisePowerConsumptionOld">
+                                                        <span class="sidebar-normal"> Daily Equipment Wise Power Consumption Old  </span>
+                                                </a>
+                                            </li>
+                                            <?php if($title=='DPPL Electrical New Jetty System (MTTR,MTBF)'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" title="DPPL Electrical New Jetty System (MTTR,MTBF)" href="<?php echo base_url();?>REPORTS/DPPLElectricalNewJettySystemMTTRvMTBF">
+                                                        <span class="sidebar-normal"> DPPL Electrical New Jetty System (MTTR,MTBF)  </span>
+                                                </a>
+                                            </li>
+                                             <?php if($title=='DPPL Electrical Old Jetty System (MTTR,MTBF)'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+                                                <a class="nav-link" title="DPPL Electrical Old Jetty System (MTTR,MTBF)" href="<?php echo base_url();?>REPORTS/DPPLElectricalOldJettySystemMTTRvMTBF">
+                                                        <span class="sidebar-normal"> DPPL Electrical Old Jetty System (MTTR,MTBF)  </span>
+                                                </a>
+                                            </li>
+                                           
 
                                         </ul>
                                     </div>
@@ -433,7 +469,7 @@
                                     </a>
                                     <?php if($mydiv2=='Mechanical'){?><div class="collapse show" id="Mechanical"> <?php }else{?> <div class="collapse" id="Mechanical"><?php }?>
                                         <ul class="nav">
-                                         <?php if($title=='Conveyor Lubrication Pump'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+<!--                                         <?php if($title=='Conveyor Lubrication Pump'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
                                                 <a class="nav-link" href="<?php echo base_url();?>REPORTS/ConveyorLubricationPump">
                                                     <span class="sidebar-normal"> Conveyor Lubrication Pump </span>
                                                 </a>
@@ -442,7 +478,7 @@
                                                 <a class="nav-link" href="<?php echo base_url();?>REPORTS/ConveyorTempLoad">
                                                     <span class="sidebar-normal"> Conveyor Temp & Load </span>
                                                 </a>
-                                            </li>
+                                            </li>-->
                                          <?php if($title=='Cycle Time Report BUL'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
                                                 <a class="nav-link" href="<?php echo base_url();?>REPORTS/CycleTimeReportBUL">
                                                     <span class="sidebar-normal"> Cycle Time Report BUL </span>
@@ -453,11 +489,11 @@
                                                     <span class="sidebar-normal"> Equipment Compressor</span>
                                                 </a>
                                             </li>
-                                         <?php if($title=='Equipment Temp & Load'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
+<!--                                         <?php if($title=='Equipment Temp & Load'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
                                                 <a class="nav-link" href="<?php echo base_url();?>REPORTS/EquipmentTempLoad">
                                                     <span class="sidebar-normal"> Equipment Temp & Load</span>
                                                 </a>
-                                            </li>
+                                            </li>-->
                                          <?php if($title=='Running Hours Conveyors'){?><li class="nav-item mydiv4 active"> <?php }else{?> <li class="nav-item mydiv4"><?php }?>
                                                 <a class="nav-link" href="<?php echo base_url();?>REPORTS/RunningHoursConveyors">
                                                     <span class="sidebar-normal"> Running Hours Conveyors</span>
