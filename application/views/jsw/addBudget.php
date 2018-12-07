@@ -1,6 +1,4 @@
-<style>
 
-</style>
 
 <div class="row main-section">			
         <div class="col-lg-12 col-md-12">

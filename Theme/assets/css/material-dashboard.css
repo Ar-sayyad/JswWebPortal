@@ -4108,8 +4108,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 
 .modal-content .modal-header {
     border-bottom: none;
-    padding-top: 24px;
-    padding-right: 24px;
+    /* padding-top: 24px; */
+    /* padding-right: 24px; */
     padding-bottom: 0;
     padding-left: 24px;
 }

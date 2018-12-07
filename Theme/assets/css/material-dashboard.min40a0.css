@@ -4642,8 +4642,8 @@ button.close {
 
 @media (min-width: 576px) {
     .modal-dialog {
-        max-width:500px;
-        margin: 1.75rem auto
+        /* max-width:500px; */
+        margin: 1.75rem auto;
     }
 
     .modal-dialog-centered {
@@ -11132,7 +11132,7 @@ h2.title {
 
 .modal-dialog .modal-header {
     border-bottom: none;
-    padding: 24px 24px 0
+    /* padding: 24px 24px 0; */
 }
 
 .modal-dialog .modal-header .modal-title {

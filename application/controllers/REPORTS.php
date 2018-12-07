@@ -7,7 +7,7 @@ class REPORTS extends CI_Controller {
         parent::__construct();
         $this->load->database();        	
         $this->load->library('session');
-	$this->load->library('form_validation');
+        $this->load->library('form_validation');
         $this->load->model('jsw_model');
         $this->jsw_model->is_logged_in();
         $this->load->helper('file');
@@ -15,7 +15,6 @@ class REPORTS extends CI_Controller {
          /* cache control */
         $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
         $this->output->set_header('Pragma: no-cache');
-        //$report
     }
         
        public function index()
