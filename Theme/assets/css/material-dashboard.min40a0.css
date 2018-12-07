@@ -11136,8 +11136,8 @@ h2.title {
 }
 
 .modal-dialog .modal-header .modal-title {
-    text-align: center;
-    width: 100%
+    text-align: left;
+    width: 100%;
 }
 
 .modal-dialog .modal-header .close {

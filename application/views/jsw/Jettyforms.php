@@ -21,9 +21,9 @@
             <div class="row">
                 <div class="col-md-12"> 
                             <div class="form-div card">
-                                <div class="col-md-2"></div>
+                                <div class="col-md-10"></div>
 <!--                                    <div class="col-md-8">
-                                    <form action="<?php echo base_url();?>mhsPerformance/searchMhs" method="POST" enctype="multipart/form-data">
+                                    <form action="<?php echo base_url();?>Jetty/searchJetty" method="POST" enctype="multipart/form-data">
                                         <table class="table form">                                                
                                             <thead class="">
 
@@ -63,12 +63,12 @@
                                      </div>-->
                                 <div class="col-md-2">
                                     <div class="addbtn">
-                                         <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addBudget');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add Jetty Data</button>
+                                         <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addJettyData');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add Jetty Data</button>
                                     </div>
                                 </div>
                             </div>
                        
-<!--                        <div class="bootstrap-data-table-panel card">
+                        <div class="bootstrap-data-table-panel card">
                             <div class="table-responsive">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered table-hover">   
                                     <thead>
@@ -111,7 +111,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>-->
+                        </div>
                    
                 </div>
                 <!-- end col-md-12 -->
