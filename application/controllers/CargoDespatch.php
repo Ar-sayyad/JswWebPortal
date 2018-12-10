@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class MBC extends CI_Controller {
+class CargoDespatch extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
         $this->load->database();        	
         $this->load->library('session');
-	$this->load->library('form_validation');
+        $this->load->library('form_validation');
         $this->load->library('user_agent');
         $this->load->model('jsw_model');
         $this->jsw_model->is_logged_in();
@@ -21,99 +21,99 @@ class MBC extends CI_Controller {
        public function index()
 	{
             $data['mydiv'] = "Forms";
-            $data['mydiv2'] = "MBC";
+            $data['mydiv2'] = "Cargo Despatch";
             $data['mydiv3'] = "";
-            $data['title'] = "MBC";
+            $data['title'] = "Cargo Despatch";
             $data['linkUrl'] = "";
             $data['mnth'] = "";
             $data['year'] ="";
             $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
-            $data['MBCForm_data'] = "";//$this->jsw_model->select_data_info('dbo.tbl_JettyForm_MF_DPR');  
-            $this->load->view('jsw/MBCform',$data);            
+            $data['CargoDespatchform_data'] = "";//$this->jsw_model->select_data_info('dbo.tbl_JettyForm_MF_DPR');  
+            $this->load->view('jsw/CargoDespatchform',$data);            
 	} 
                 
-        public function searchMBC(){            
+        public function searchCargoDespatch(){            
             $this->form_validation->set_rules('month', 'Month', 'required');
             $this->form_validation->set_rules('year', 'Year', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
-                              $this->session->set_flashdata('err_msg',validation_errors());
-                                redirect(base_url() . 'MBC');
+                      $this->session->set_flashdata('err_msg',validation_errors());
+                      redirect(base_url() . 'CargoDespatch');
                     }
                     else
                      { 
                         $month = $this->input->post('month');
                         $year = $this->input->post('year');
                         $cond = array('month' => $month,'year' => $year);
-                        $MBCForm_data= $this->jsw_model->check_data_info('dbo.tbl_MBC_MF_DPR',$cond);                         
-                        $this->MBC($MBCForm_data,$month,$year);
+                        $CargoDespatch_data= $this->jsw_model->check_data_info('dbo.tbl_cargo_despatch_road_MF_DPR',$cond);                         
+                        $this->CargoDespatch($CargoDespatch_data,$month,$year);
                      }                   
             
         }
         
-        public function MBC($MBCForm_data,$month,$year){
+        public function CargoDespatch($CargoDespatch_data,$month,$year){
             $data['mydiv'] = "Forms";
-            $data['mydiv2'] = "MBC";
+            $data['mydiv2'] = "Cargo Despatch";
             $data['mydiv3'] = "";
-            $data['title'] = "MBC";
+            $data['title'] = "Cargo Despatch";
             $data['linkUrl'] = "";
             $data['mnth'] = $month;
             $data['year'] =$year;
             $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
-            $data['MBCForm_data'] = $MBCForm_data;
-            $this->load->view('jsw/MBCform',$data);              
+            $data['CargoDespatchform_data'] = $CargoDespatch_data;
+            $this->load->view('jsw/CargoDespatchform',$data);              
         }
         
       public function save(){
-            $this->form_validation->set_rules('ETA_Dharamtar', 'Date-Time', 'required');
+            $this->form_validation->set_rules('date', 'Date', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();
                     }
                     else
                      {   
-                            $trans_date = $this->input->post('ETA_Dharamtar');
+                            $trans_date = $this->input->post('date');
                             $time=strtotime($trans_date);
                             $month=date("F",$time);
                             $year=date("Y",$time);
                             $data= array(
-                                    'ETA_Dharamtar'=> $trans_date,
-                                    'MBC_name'=> $this->input->post('MBC_name'),
-                                    'Cargo'=> $this->input->post('Cargo'),
-                                    'bl_qty'=> $this->input->post('bl_qty'),
-                                    'Load_Port'=> $this->input->post('Load_Port'),
+                                    'date'=> $trans_date,
+                                    'Mother_vessel'=> $this->input->post('Mother_vessel'),
+                                    'cargo'=> $this->input->post('cargo'),
+                                    'cargo_qty_for_day'=> $this->input->post('cargo_qty_for_day'),
+                                    'TripsForDay_FromBerthNo'=> $this->input->post('TripsForDay_FromBerthNo'),
                                     'month'=> $month,
                                     'year'=> $year
                                );
-                            $this->jsw_model->save_data_info('dbo.tbl_MBC_MF_DPR',$data);
+                            $this->jsw_model->save_data_info('dbo.tbl_cargo_despatch_road_MF_DPR',$data);
                             echo 1;
                       }
                           
       }
         
         public function update($id){
-            $this->form_validation->set_rules('ETA_Dharamtar', 'Date-Time', 'required');
+            $this->form_validation->set_rules('date', 'Date', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();
                     }
                     else
                      {   
-                            $trans_date = $this->input->post('ETA_Dharamtar');
+                           $trans_date = $this->input->post('date');
                             $time=strtotime($trans_date);
                             $month=date("F",$time);
                             $year=date("Y",$time);
                             $data= array(
-                                    'ETA_Dharamtar'=> $trans_date,
-                                    'MBC_name'=> $this->input->post('MBC_name'),
-                                    'Cargo'=> $this->input->post('Cargo'),
-                                    'bl_qty'=> $this->input->post('bl_qty'),
-                                    'Load_Port'=> $this->input->post('Load_Port'),
+                                    'date'=> $trans_date,
+                                    'Mother_vessel'=> $this->input->post('Mother_vessel'),
+                                    'cargo'=> $this->input->post('cargo'),
+                                    'cargo_qty_for_day'=> $this->input->post('cargo_qty_for_day'),
+                                    'TripsForDay_FromBerthNo'=> $this->input->post('TripsForDay_FromBerthNo'),
                                     'month'=> $month,
                                     'year'=> $year
                                );
                             $where =array('Id'=>$id);
-                            $this->jsw_model->update_data_info('dbo.tbl_MBC_MF_DPR',$data,$where);
+                            $this->jsw_model->update_data_info('dbo.tbl_cargo_despatch_road_MF_DPR',$data,$where);
                       echo 1;
                      }
                          
@@ -121,8 +121,8 @@ class MBC extends CI_Controller {
         
         public function delete($id){
                 $where =array('Id'=>$id);
-                $this->jsw_model->delete_data_info('dbo.tbl_MBC_MF_DPR',$where);
-                $this->session->set_flashdata('msg', ('<i class="material-icons">check_circle_outline</i> MBC Details Deleted Successfully'));
+                $this->jsw_model->delete_data_info('dbo.tbl_cargo_despatch_road_MF_DPR',$where);
+                $this->session->set_flashdata('msg', ('<i class="material-icons">check_circle_outline</i> Cargo Dispatch Details Deleted Successfully'));
                 //redirect(base_url() . 'MBC');    
                 redirect($this->agent->referrer());
         }
