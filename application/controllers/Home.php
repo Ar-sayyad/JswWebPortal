@@ -46,7 +46,7 @@ class Home extends CI_Controller {
                 $page_data['param4']		=	$param4;
                 $page_data['param5']		=	$param5;
                 $page_data['param6']		=	$param6;
-                $page_data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth');
+                //$page_data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth');
                 $this->load->view($account_type.'/'.$page_name,$page_data);		
 	}
         

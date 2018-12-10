@@ -37,12 +37,36 @@
             </div>
         </div>
     </div>
+ <!-- (Normal Modal)-->
+  
+    <script type="text/javascript">
+	function confirm_modal(delete_url , post_refresh_url)
+	{
+		$('#preloader-delete').html('');
+		jQuery('#modal_delete').modal('show', {backdrop: 'static'});
+		document.getElementById('delete_link').setAttribute("onClick" , "delete_data('" + delete_url + "' , '" + post_refresh_url + "')" );
+		document.getElementById('delete_link').focus();
+	}
+        
+	 function checkDelete()
+    {
+        var chk=confirm("Are You Sure To Delete This !");
+        if(chk)
+        {
+          return true;  
+        }
+        else{
+            return false;
+        }
+    }
     
-    
-   
-
-    
-
-    
-    <!-- (Normal Modal)-->
+     function hidetab(){    
+            //$('#mssg').hide();
+            $('.success_msg').hide();
+            $('.error_msg').hide();  
+             $('.succes_msg').hide();
+            $('.erro_msg').hide();  
+          }
+            //setTimeout(hidetab,5000);
+</script>
     

@@ -38,13 +38,13 @@
                                 Date
                             </th>
                             <th>
-                                <input type="date" class="form-control" placeholder="Date" id="trans_date">
+                                <input type="date" class="form-control" required="" placeholder="Date" max="<?php echo date('Y-m-d');?>" id="trans_date">
                             </th>
                             <th>
                                 Jetty Under Discharge
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Jetty Under Discharge">
+                                <input type="text" class="form-control" placeholder="Jetty Under Discharge" id="At_Jetty_under_discharge">
                             </th>
                         </tr>
                         <tr>
@@ -52,13 +52,13 @@
                                 Jetty Waiting for Discharge
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Jetty Waiting for Discharge">
+                                <input type="text" class="form-control" placeholder="Jetty Waiting for Discharge" id="At_Jetty_waiting_for_discharge">
                             </th>
                             <th>
                                 R-19 Waiting (Loaded)
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="R-19 Waiting (Loaded)">
+                                <input type="text" class="form-control" placeholder="R-19 Waiting (Loaded)" id="At_R_19_waiting_loaded">
                             </th>
                         </tr>
                         <tr>
@@ -66,13 +66,13 @@
                                 Gulf - Waiting (Loaded)
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Gulf - Waiting (Loaded)">
+                                <input type="text" class="form-control" placeholder="Gulf - Waiting (Loaded)" id="At_gulf_waiting_loaded">
                             </th>
                             <th>
                                 In transit from MV/GULL to Jetty(Loaded
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="In transit from MV/GULL to Jetty(Loaded">
+                                <input type="text" class="form-control" placeholder="In transit from MV/GULL to Jetty(Loaded" id="In_transit_from_MV_GULL_toJetty_Loaded">
                             </th>
                         </tr>
                          <tr>
@@ -80,13 +80,13 @@
                                Under Loading at MV
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Under Loading at MV">
+                                <input type="text" class="form-control" placeholder="Under Loading at MV" id="Under_loading_at_MV">
                             </th>
                             <th>
                                 Waiting for Loading
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Waiting for Loading">
+                                <input type="text" class="form-control" placeholder="Waiting for Loading" id="Waiting_for_Loading">
                             </th>
                         </tr>
                          <tr>
@@ -94,13 +94,13 @@
                                Waiting at Jetty
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Waiting at Jetty">
+                                <input type="text" class="form-control" placeholder="Waiting at Jetty" id="Waiting_at_jetty">
                             </th>
                             <th>
                                 Empty at Gull R-19
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Empty at Gull R-19">
+                                <input type="text" class="form-control" placeholder="Empty at Gull R-19" id="Empty_at_gull_R_19">
                             </th>
                         </tr>
                          <tr>
@@ -108,18 +108,18 @@
                                In Transit - from Jetty to MV
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="In Transit-from Jetty to MV">
+                                <input type="text" class="form-control" placeholder="In Transit-from Jetty to MV" id="In_transit_from_jetty_to_MV">
                             </th>
                             <th>
                                 Breakdown/off hired
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Breakdown/off hired">
+                                <input type="text" class="form-control" placeholder="Breakdown/off hired" id="Breakdown_offHired">
                             </th>
                         </tr>
                             <tr>
                                 <th colspan="4" style="text-align:center">
-                                    <button type="button" name="save" data-id="hello" id="saveBudget" class="btn btn-success" value="save"><i class="material-icons">save</i> Save</button>
+                                    <button type="button" name="save" data-id="hello" id="saveJetty" class="btn btn-success" value="save"><i class="material-icons">save</i> Save</button>
                                      <button type="reset" name="Reset" class="btn btn-primary" value="reset"><i class="material-icons">replay</i> Reset</button>
                                 </th>
                             </tr>
@@ -131,6 +131,67 @@
                 </div>
             </div>
         </div>	
-
-
 </div>
+<script>
+   $(document).ready(function(){ 
+    $("#saveJetty").click(function(){
+      $("#saveJetty").html('<img src="<?php echo base_url();?>Theme/assets/img/loading.gif" style="width:25px;height:20px;" />');
+//      $Month= $("#Month").val();
+//      $year= $("#year").val();      
+        $trans_date = $("#trans_date").val(); 
+        $At_Jetty_under_discharge = $("#At_Jetty_under_discharge").val();
+        $At_Jetty_waiting_for_discharge = $("#At_Jetty_waiting_for_discharge").val();
+        $At_R_19_waiting_loaded = $("#At_R_19_waiting_loaded").val();
+        $At_gulf_waiting_loaded = $("#At_gulf_waiting_loaded").val();
+        $In_transit_from_MV_GULL_toJetty_Loaded = $("#In_transit_from_MV_GULL_toJetty_Loaded").val();
+        $Under_loading_at_MV= $("#Under_loading_at_MV").val();
+        $Waiting_for_Loading = $("#Waiting_for_Loading").val();
+        $Waiting_at_jetty = $("#Waiting_at_jetty").val();
+        $Empty_at_gull_R_19 = $("#Empty_at_gull_R_19").val();
+        $In_transit_from_jetty_to_MV = $("#In_transit_from_jetty_to_MV").val();
+        $Breakdown_offHired = $("#Breakdown_offHired").val();
+           
+      $.post('<?php echo base_url();?>Jetty/save', {trans_date:$trans_date,At_Jetty_under_discharge:$At_Jetty_under_discharge,At_Jetty_waiting_for_discharge:$At_Jetty_waiting_for_discharge,
+      At_R_19_waiting_loaded:$At_R_19_waiting_loaded,At_gulf_waiting_loaded:$At_gulf_waiting_loaded,In_transit_from_MV_GULL_toJetty_Loaded:$In_transit_from_MV_GULL_toJetty_Loaded,
+      Under_loading_at_MV:$Under_loading_at_MV,Waiting_for_Loading:$Waiting_for_Loading,Waiting_at_jetty:$Waiting_at_jetty,Empty_at_gull_R_19:$Empty_at_gull_R_19,
+      In_transit_from_jetty_to_MV:$In_transit_from_jetty_to_MV,Breakdown_offHired:$Breakdown_offHired}, function(data){
+          //alert(data);
+                    if(data==1)
+                          {                                  
+                                $(".success_msg").html('<i class="material-icons">check_circle_outline</i> Jetty Data Added Successfully');
+                                $(".success_msg").show();
+                                window.location.reload();
+                                setTimeout(hidetab,4000);
+                          }
+                          else{
+                                  $(".error_msg").html(data);
+                                  $(".error_msg").show();
+                                  setTimeout(hidetab,4000);
+                                  $("#saveJetty").html('<i class="material-icons">save</i> Save');
+                          }
+		});
+      
+    });
+    $('.Budget').keypress(function (event) {
+            return isNumber(event, this);
+        });        
+    // THE SCRIPT THAT CHECKS IF THE KEY PRESSED IS A NUMERIC OR DECIMAL VALUE.
+    function isNumber(evt, element) {
+
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+
+        if (
+            (charCode !== 45 || $(element).val().indexOf('-') !== -1) &&      // “-” CHECK MINUS, AND ONLY ONE.
+            (charCode !== 46 || $(element).val().indexOf('.') !== -1) &&      // “.” CHECK DOT, AND ONLY ONE.
+            (charCode < 48 || charCode > 57)){
+                $(".error_msg").html('Characters Not Allowed..!');
+                $(".error_msg").show();
+                //$(element).val('');
+                setTimeout(hidetab,2000);
+            return false;
+        }
+
+        return true;
+    }
+});
+</script>
