@@ -21,8 +21,7 @@
             <div class="row">
                 <div class="col-md-12"> 
                             <div class="form-div card">
-                                <div class="col-md-10"></div>
-<!--                                    <div class="col-md-8">
+                                    <div class="col-md-9">
                                     <form action="<?php echo base_url();?>Jetty/searchJetty" method="POST" enctype="multipart/form-data">
                                         <table class="table form">                                                
                                             <thead class="">
@@ -33,7 +32,7 @@
                                                         <select id="month" name="month" placeholder="month" required="" class="clsmon form-control">
                                                             <option value="">---Select Month---</option>
                                                              <?php $sr=1; foreach($month_info as $mon){?>                                       
-                                                            <option data-id="<?php echo trim($mon['MonID']);?>" value="<?php echo trim($mon['MonName']);?>"><?php echo trim($mon['MonthFullName']);?></option>                                      
+                                                            <option data-id="<?php echo $mon['MonID'];?>" value="<?php echo $mon['MonthFullName'];?>" <?php if($mnth==$mon['MonthFullName']){ echo 'selected'; }else{  } ?>><?php echo trim($mon['MonthFullName']);?></option>                                      
                                                              <?php $sr++;}?>  
                                                         </select>
                                                     </th>
@@ -42,17 +41,17 @@
                                                     <th>
                                                         <select id="year" name="year" placeholder="year" required="" class="form-control">
                                                             <option value="">---Select Year---</option>
-                                                            <option value="<?php echo date('Y')-1;?>"><?php echo date('Y')-1;?></option>
-                                                            <option value="<?php echo date('Y');?>"><?php echo date('Y');?></option>
-                                                            <option value="<?php echo date('Y')+1;?>"><?php echo date('Y')+1;?></option>
+                                                             <option value="<?php echo $prev = (date('Y')-1);?>" <?php if($year== $prev){ echo 'selected'; }else{ } ?>><?php echo date('Y')-1;?></option>
+                                        <option value="<?php echo $curr = date('Y');?>" <?php if($year== $curr){ echo 'selected'; }else{ } ?>><?php echo date('Y');?></option>
+                                        <option value="<?php echo $post = date('Y')+1;?>" <?php if($year== $post){ echo 'selected'; }else{ } ?>><?php echo date('Y')+1;?></option>
                                                         </select>
                                                     </th>
 
 
                                                     <th colspan="4" style="text-align:center">
-                                                        <button type="submit" name="save" data-id="hello" id="saveEnvironment" class="btn btn-success" value="save"> 
+                                                        <button type="submit" name="save" data-id="hello" id="Search" class="btn btn-success" value="save"> 
                                                             <i class="material-icons">search</i> Search</button>
-                                                         <button type="reset" name="Reset" class="btn btn-info" value="reset"><i class="material-icons">replay</i> Reset</button>
+                                                         <!--<button type="reset" name="Reset" class="btn btn-info" value="reset"><i class="material-icons">replay</i> Reset</button>-->
                                                     </th>
                                                 </tr>
 
@@ -60,9 +59,9 @@
 
                                         </table>
                                     </form>
-                                     </div>-->
-                                <div class="col-md-2">
-                                    <div class="addbtn">
+                                     </div>
+                                <div class="col-md-3">
+                                    <div class="addbtn" style="margin-top: 15px;">
                                          <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addJettyData');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add Jetty Data</button>
                                     </div>
                                 </div>
@@ -73,7 +72,7 @@
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered table-hover">   
                                     <thead>
                                       <tr>
-                                          <th>SR</th>
+                                        <th>SR</th>
                                         <th>Date</th>
                                         <th>At Jetty <br>Under Discharge</th>
                                         <th>At Jetty <br>Waiting for Discharge</th>
@@ -130,6 +129,31 @@
 
 <!--   Core JS Files   -->
  <?php include 'includes/footer-min.php';?>
-
+ <script>
+   $(document).ready(function(){
+    $( "form" ).on( "submit", function() {    
+      $("#Search").html('<img src="<?php echo base_url();?>Theme/assets/img/loading.gif" style="width:25px;height:20px;" />');
+      $Month= $("#month").val();
+      $year= $("#year").val();
+          //alert($Month);
+            if($Month =='' || $year ==''){
+                          $(".error_msgg").html('All Fields are Required..!');
+                          $(".error_msgg").show();
+                          setTimeout(hidetab,4000);
+                          $("#Search").html('<i class="material-icons">search</i> Search');
+                           return false;
+                  }
+                  else{
+                      return true;
+                  }
+            
+	function hidetab(){    
+            $('#mssg').hide();
+            $('.error_msgg').hide();
+          }	
+      
+    });
+});
+</script>    
 </body>
 </html>
