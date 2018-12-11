@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class CargoDespatch extends CI_Controller {
+class EquipmentDelay extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -21,47 +21,47 @@ class CargoDespatch extends CI_Controller {
        public function index()
 	{
             $data['mydiv'] = "Forms";
-            $data['mydiv2'] = "Cargo Despatch";
+            $data['mydiv2'] = "Equipment Delay";
             $data['mydiv3'] = "";
-            $data['title'] = "Cargo Despatch";
+            $data['title'] = "Equipment Delay";
             $data['linkUrl'] = "";
             $data['mnth'] = "";
             $data['year'] ="";
             $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
-            $data['CargoDespatchform_data'] = $this->jsw_model->select_data_info('dbo.tbl_cargo_despatch_road_MF_DPR');  
-            $this->load->view('jsw/CargoDespatchform',$data);            
+            $data['EquipmentDelay_data'] = $this->jsw_model->select_data_info('dbo.tbl_Equipment_Delay_MF');  
+            $this->load->view('jsw/EquipmentDelay',$data);            
 	} 
                 
-        public function searchCargoDespatch(){            
+        public function searchEquipmentDelay(){            
             $this->form_validation->set_rules('month', 'Month', 'required');
             $this->form_validation->set_rules('year', 'Year', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                       $this->session->set_flashdata('err_msg',validation_errors());
-                      redirect(base_url() . 'CargoDespatch');
+                      redirect(base_url() . 'EquipmentDelay');
                     }
                     else
                      { 
                         $month = $this->input->post('month');
                         $year = $this->input->post('year');
                         $cond = array('month' => $month,'year' => $year);
-                        $CargoDespatch_data= $this->jsw_model->check_data_info('dbo.tbl_cargo_despatch_road_MF_DPR',$cond);                         
-                        $this->CargoDespatch($CargoDespatch_data,$month,$year);
+                        $EquipmentDelay_data= $this->jsw_model->check_data_info('dbo.tbl_rate_MF',$cond);                         
+                        $this->EquipmentDelay($EquipmentDelay_data,$month,$year);
                      }                   
             
         }
         
-        public function CargoDespatch($CargoDespatch_data,$month,$year){
+        public function EquipmentDelay($EquipmentDelay_data,$month,$year){
             $data['mydiv'] = "Forms";
-            $data['mydiv2'] = "Cargo Despatch";
+            $data['mydiv2'] = "REquipment Delay";
             $data['mydiv3'] = "";
-            $data['title'] = "Cargo Despatch";
+            $data['title'] = "Equipment Delay";
             $data['linkUrl'] = "";
             $data['mnth'] = $month;
             $data['year'] =$year;
             $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
-            $data['CargoDespatchform_data'] = $CargoDespatch_data;
-            $this->load->view('jsw/CargoDespatchform',$data);              
+            $data['EquipmentDelay_data'] = $RateForm_data;
+            $this->load->view('jsw/EquipmentDelay',$data);              
         }
         
       public function save(){
@@ -78,14 +78,16 @@ class CargoDespatch extends CI_Controller {
                             $year=date("Y",$time);
                             $data= array(
                                     'date'=> $trans_date,
-                                    'Mother_vessel'=> $this->input->post('Mother_vessel'),
-                                    'cargo'=> $this->input->post('cargo'),
-                                    'cargo_qty_for_day'=> $this->input->post('cargo_qty_for_day'),
-                                    'TripsForDay_FromBerthNo'=> $this->input->post('TripsForDay_FromBerthNo'),
+                                    'Delay_start_Time'=> $this->input->post('Delay_start_Time'),
+                                    'Delay_end_time'=> $this->input->post('Delay_end_time'),
+                                    'Delay_Time'=> $this->input->post('Delay_Time'),
+                                    'Equipment_Name'=> $this->input->post('Equipment_Name'),
+                                    'Operator_Name'=> $this->input->post('Operator_Name'),
+                                    'Remarks'=> $this->input->post('Remarks'),
                                     'month'=> $month,
                                     'year'=> $year
                                );
-                            $this->jsw_model->save_data_info('dbo.tbl_cargo_despatch_road_MF_DPR',$data);
+                            $this->jsw_model->save_data_info('dbo.tbl_Equipment_Delay_MF',$data);
                             echo 1;
                       }
                           
@@ -104,16 +106,18 @@ class CargoDespatch extends CI_Controller {
                             $month=date("F",$time);
                             $year=date("Y",$time);
                             $data= array(
-                                    'date'=> $trans_date,
-                                    'Mother_vessel'=> $this->input->post('Mother_vessel'),
-                                    'cargo'=> $this->input->post('cargo'),
-                                    'cargo_qty_for_day'=> $this->input->post('cargo_qty_for_day'),
-                                    'TripsForDay_FromBerthNo'=> $this->input->post('TripsForDay_FromBerthNo'),
+                                   'date'=> $trans_date,
+                                    'Delay_start_Time'=> $this->input->post('Delay_start_Time'),
+                                    'Delay_end_time'=> $this->input->post('Delay_end_time'),
+                                    'Delay_Time'=> $this->input->post('Delay_Time'),
+                                    'Equipment_Name'=> $this->input->post('Equipment_Name'),
+                                    'Operator_Name'=> $this->input->post('Operator_Name'),
+                                    'Remarks'=> $this->input->post('Remarks'),
                                     'month'=> $month,
                                     'year'=> $year
                                );
                             $where =array('Id'=>$id);
-                            $this->jsw_model->update_data_info('dbo.tbl_cargo_despatch_road_MF_DPR',$data,$where);
+                            $this->jsw_model->update_data_info('dbo.tbl_Equipment_Delay_MF',$data,$where);
                       echo 1;
                      }
                          
@@ -121,8 +125,8 @@ class CargoDespatch extends CI_Controller {
         
         public function delete($id){
                 $where =array('Id'=>$id);
-                $this->jsw_model->delete_data_info('dbo.tbl_cargo_despatch_road_MF_DPR',$where);
-                $this->session->set_flashdata('msg', ('<i class="material-icons">check_circle_outline</i> Cargo Dispatch Details Deleted Successfully'));
+                $this->jsw_model->delete_data_info('dbo.tbl_Equipment_Delay_MF',$where);
+                $this->session->set_flashdata('msg', ('<i class="material-icons">check_circle_outline</i> Rate Form Details Deleted Successfully'));
                 //redirect(base_url() . 'MBC');    
                 redirect($this->agent->referrer());
         }

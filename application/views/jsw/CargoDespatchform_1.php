@@ -22,7 +22,7 @@
                 <div class="col-md-12"> 
                             <div class="form-div card">
                                     <div class="col-md-9">
-<!--                                    <form action="<?php echo base_url();?>CargoDespatch/searchCargoDespatch" method="POST" enctype="multipart/form-data">
+                                    <form action="<?php echo base_url();?>CargoDespatch/searchCargoDespatch" method="POST" enctype="multipart/form-data">
                                         <table class="table form">                                                
                                             <thead class="">
 
@@ -51,14 +51,14 @@
                                                     <th colspan="4" style="text-align:center">
                                                         <button type="submit" name="save" data-id="hello" id="Search" class="btn btn-success" value="save"> 
                                                             <i class="material-icons">search</i> Search</button>
-                                                         <button type="reset" name="Reset" class="btn btn-info" value="reset"><i class="material-icons">replay</i> Reset</button>
+                                                         <!--<button type="reset" name="Reset" class="btn btn-info" value="reset"><i class="material-icons">replay</i> Reset</button>-->
                                                     </th>
                                                 </tr>
 
                                             </thead>
 
                                         </table>
-                                    </form>-->
+                                    </form>
                                      </div>
                                 <div class="col-md-3">
                                     <div class="addbtn" style="margin-top: 15px;">
