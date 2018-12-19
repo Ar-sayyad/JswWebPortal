@@ -2,27 +2,13 @@
     <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
         <div class="container-fluid">
             <div class="navbar-wrapper">
-                <div class="navbar-minimize">
-                    <button id="minimizeSidebar" class="btn btn-just-icon btn-white btn-fab btn-round">
-                        <i class="material-icons text_align-center visible-on-sidebar-regular">more_vert</i>
-                        <i class="material-icons design_bullet-list-67 visible-on-sidebar-mini">view_list</i>
-                    </button>
-                </div>
-
-                <a class="navbar-brand" href="#"><?php echo $title;?></a>
+                <a class="navbar-brand" href="<?php echo base_url();?>">Port Information Management System</a>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="navbar-toggler-icon icon-bar"></span>
-                <span class="navbar-toggler-icon icon-bar"></span>
-                <span class="navbar-toggler-icon icon-bar"></span>
-            </button>
             <div class="collapse navbar-collapse justify-content-end">
          
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        Welcome, <?php echo $this->session->userdata('log_name');?>
-                     
+                        Welcome, <?php echo $this->session->userdata('log_name');?>                     
                     </li>
 
                      <li class="nav-item dropdown">
@@ -43,3 +29,39 @@
         </div>
     </nav>
     <!-- End Navbar -->
+   <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">   
+            <nav class="navbar navbar-expand-lg " id="navigation-example" style="margin-top: 45px;margin-bottom: 10px;">
+                <div class="container-fluid">
+                    <div class="navbar-header col-sm-2" style="">
+                      <a class="" href="<?php echo base_url();?>Home/home">
+                          <img src="<?php echo base_url();?>Theme/assets/img/JSW.png" style="height: 45px;float: left;" alt="JSW Dharamtar"/>
+                      </a>
+                    </div>
+                    <ul class="nav navbar-nav col-sm-10" style="background-color: #000 !important;">
+<!--                      <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Jaigarh </a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Equipment</a></li>
+                          <li><a href="#">Report</a></li>
+                        </ul>
+                      </li>
+                       <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">GOA </a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Equipment</a></li>
+                          <li><a href="#">Report</a></li>
+                        </ul>
+                      </li>-->
+                        <li class="dropdown active" style="padding-left: 15px;">
+                        <a  href="<?php echo base_url();?>Home/home">Dharamtar </a>
+<!--                        <ul class="dropdown-menu">
+                          <li><a href="#">Equipment</a></li>
+                          <li><a href="#">Report</a></li>
+                        </ul>-->
+                      </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>

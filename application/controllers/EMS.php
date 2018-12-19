@@ -44,7 +44,7 @@ class EMS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "EMS - 2";
             $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20019";
-            $this->load->view('jsw/emsTwo',$data);             
+            $this->load->view('jsw/emsOne',$data);             
 	}          
         
             

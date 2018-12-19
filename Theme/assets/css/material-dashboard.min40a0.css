@@ -10493,10 +10493,10 @@ textarea {
     position: relative;
     color: inherit;
     height: 45px;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 40px;
-    padding: .625rem 0;
-    font-weight: 500;
+    padding: 0px;
+    font-weight: 100;
     margin-left: 1rem;
 }
 
@@ -10645,14 +10645,14 @@ textarea {
 
 .navbar .collapse .navbar-nav .nav-item .nav-link {
     position: relative;
-    padding: 10px 15px;
-    font-weight: 400;
-    font-size: 12px;
+    padding: 5px 10px;
+    font-weight: 100;
+    font-size: 10px;
     text-transform: uppercase;
     border-radius: 3px;
     line-height: 20px;
     margin-left: 5px;
-    color: inherit
+    color: inherit;
 }
 
 .navbar .collapse .navbar-nav .nav-item .nav-link:not(.btn-just-icon) .fa {
@@ -11142,8 +11142,8 @@ h2.title {
 
 .modal-dialog .modal-header .close {
     position: absolute;
-    top: 15px;
-    right: 20px
+    top: 0px;
+    right: 20px;
 }
 
 .modal-dialog .modal-body {
@@ -11256,7 +11256,7 @@ h2.title {
 }
 
 .modal .modal-header .close i {
-    font-size: 16px
+    /* font-size: 16px */
 }
 
 .modal-notice .instruction {
@@ -11768,7 +11768,9 @@ legend {
 }
 
 .footer .copyright {
-    padding: 15px 0
+    padding: 15px 0;
+    font-size: 17px;
+    font-weight: 400;
 }
 
 .footer .copyright .material-icons {
@@ -11873,9 +11875,9 @@ legend {
     flex-flow: nowrap;
     align-items: center;
     color: #333;
-    font-weight: 400;
+    font-weight: 100;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 15px;
     border-radius: .125rem;
     margin: 0px .3125rem;
     -webkit-transition: all 150ms linear;
@@ -12683,7 +12685,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .card .card-header.card-header-icon h4,.card .card-header.card-header-text h4 {
-    font-weight: 300
+    font-weight: 500;
+    color: #005da7;
 }
 
 .card .card-header.card-header-tabs .nav-tabs {
@@ -12766,7 +12769,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .card [class*=card-header-] {
-    margin: 0 15px;
+    margin: 5px 5px;
     padding: 0;
     position: relative;
 }
@@ -12787,11 +12790,9 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 
 .card [class*=card-header-] .card-icon,.card [class*=card-header-] .card-text {
     border-radius: 3px;
-    background-color: #999;
+    background-color: #eee;
     padding: 15px;
-    margin-top: -20px;
-    margin-right: 15px;
-    float: left
+    border: 1px solid #ccc;
 }
 
 .card [class*=card-header-] .card-text {
@@ -12998,7 +12999,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .card-stats .card-header.card-header-icon,.card-stats .card-header.card-header-text {
-    text-align: right
+    text-align: center;
 }
 
 .card-stats .card-header .card-icon+.card-category,.card-stats .card-header .card-icon+.card-title {
@@ -13025,11 +13026,12 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .card-stats .card-header.card-header-icon i {
-    font-size: 36px;
-    line-height: 56px;
-    width: 56px;
-    height: 56px;
-    text-align: center
+    font-size: 80px;
+    line-height: 80px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    color: #0063ad;
 }
 
 .card-stats .card-body {
@@ -22307,7 +22309,7 @@ select.bs-select-hidden,select.selectpicker {
     .navbar .navbar-nav {
         align-items:center;
         float: right;
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .navbar .navbar-nav .button-container {

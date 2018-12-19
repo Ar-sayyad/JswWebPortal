@@ -24,7 +24,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Equipment Utilization Summary";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/JettyDischargeGAPAnalysis?rs:Embed=true";
-            $this->load->view('jsw/newmhsPathOne',$data);            
+            $this->load->view('jsw/Reports',$data);            
 	}  
         
         public function EquipmentUtilizationSummary()//optional
@@ -34,7 +34,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Equipment Utilization Summary";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/JettyDischargeGAPAnalysis?rs:Embed=true";
-            $this->load->view('jsw/EquipmentUtilizationSummary',$data);             
+            $this->load->view('jsw/Reports',$data);             
 	}   
         
         
@@ -45,7 +45,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Day wise Equipment Utilization";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/JettyDischargeGAPAnalysis?rs:Embed=true";
-            $this->load->view('jsw/DaywiseEquipmentUtilization',$data);             
+            $this->load->view('jsw/Reports',$data);             
 	}  
         
          public function DPR()
@@ -55,7 +55,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "DPR";
             $data['linkUrl'] = "";
-            $this->load->view('jsw/DPR',$data);             
+            $this->load->view('jsw/Reports',$data);             
 	}   
         public function JettyRMHSDelaysReport()
 	{
@@ -64,7 +64,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Jetty & RMHS Delays Report";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/Jetty_RMHS_Delay?rs:Embed=true";
-            $this->load->view('jsw/JettyRMHSDelaysReport',$data);       
+            $this->load->view('jsw/Reports',$data);       
 	}   
         
          public function EquipmentWiseDischarge()
@@ -74,7 +74,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Equipment Wise Discharge";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/EquipmentWise_Discharge?rs:Embed=true";
-            $this->load->view('jsw/EquipmentWiseDischarge',$data);       
+            $this->load->view('jsw/Reports',$data);       
 	}   
         
         
@@ -89,7 +89,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Daily Power Consumption New Jetty";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/DPPL_Elect_Energy_Consumption_New_Jetty?rs:Embed=true";
-            $this->load->view('jsw/DailyPowerConsumptionNewJetty',$data);       
+            $this->load->view('jsw/Reports',$data);       
 	}
          public function DailyPowerConsumptionOldJetty()
 	{
@@ -98,7 +98,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Daily Power Consumption Old Jetty";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/DPPL_Elect_Energy_Consumption_Old_Jetty?rs:Embed=true";
-            $this->load->view('jsw/DailyPowerConsumptionOldJetty',$data);       
+            $this->load->view('jsw/Reports',$data);       
 	} 
          public function CargoCommodityWisePowerConsumptionnewjetty ()
 	{
@@ -107,7 +107,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Cargo Commodity Wise Power Consumption New Jetty";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/Equipment_cargo_power_discharge_new_jetty?rs:Embed=true";
-            $this->load->view('jsw/CargoCommodityWisePowerConsumptionnewjetty',$data);       
+            $this->load->view('jsw/Reports',$data);       
 	}
       public function CargoCommodityWisePowerConsumptionOldjetty()
         {
@@ -116,7 +116,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Cargo Commodity Wise Power Consumption Old Jetty";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/Equipment_cargo_wise_PoweConsumption_OldJetty?rs:Embed=true";
-            $this->load->view('jsw/CargoCommodityWisePowerConsumptionOldjetty',$data);       
+            $this->load->view('jsw/Reports',$data);       
         }
       public function DPPLElectricalNewJettySystemEQDelays()
            {
@@ -125,7 +125,7 @@ class REPORTS extends CI_Controller {
                 $data['mydiv3'] = "";
                 $data['title'] = "DPPL Electrical New Jetty System EQ Delays";
                 $data['linkUrl'] = "";
-                $this->load->view('jsw/DPPLElectricalNewJettySystemEQDelays',$data);  
+                $this->load->view('jsw/Reports',$data);  
            }
            
       public function DPPLElectricalOldJettySystemEQDelays()
@@ -135,7 +135,7 @@ class REPORTS extends CI_Controller {
                 $data['mydiv3'] = "";
                 $data['title'] = "DPPL Electrical Old Jetty System EQ Delays";
                 $data['linkUrl'] = "";
-                $this->load->view('jsw/DPPLElectricalOldJettySystemEQDelays',$data);  
+                $this->load->view('jsw/Reports',$data);  
            }
            
       public function DailyEquipmentWisePowerConsumptionNew()
@@ -145,7 +145,7 @@ class REPORTS extends CI_Controller {
                 $data['mydiv3'] = "";
                 $data['title'] = "Daily Equipment Wise Power Consumption New";
                 $data['linkUrl'] = "";
-                $this->load->view('jsw/DailyEquipmentWisePowerConsumptionNew',$data);  
+                $this->load->view('jsw/Reports',$data);  
            }
       public function DailyEquipmentWisePowerConsumptionOld()
            {
@@ -154,7 +154,7 @@ class REPORTS extends CI_Controller {
                 $data['mydiv3'] = "";
                 $data['title'] = "Daily Equipment Wise Power Consumption Old";
                 $data['linkUrl'] = "";
-                $this->load->view('jsw/DailyEquipmentWisePowerConsumptionOld',$data);  
+                $this->load->view('jsw/Reports',$data);  
            }
       public function DPPLElectricalNewJettySystemMTTRvMTBF()
            {
@@ -163,7 +163,7 @@ class REPORTS extends CI_Controller {
                 $data['mydiv3'] = "";
                 $data['title'] = "DPPL Electrical New Jetty System (MTTR,MTBF)";
                 $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/DPPL%20Electrical%20New%20System?rs:Embed=true";
-                $this->load->view('jsw/DPPLElectricalNewJettySystemMTTRvMTBF',$data);  
+                $this->load->view('jsw/Reports',$data);  
            }     
       public function DPPLElectricalOldJettySystemMTTRvMTBF()
            {
@@ -172,7 +172,7 @@ class REPORTS extends CI_Controller {
                 $data['mydiv3'] = "";
                 $data['title'] = "DPPL Electrical Old Jetty System (MTTR,MTBF)";
                 $data['linkUrl'] = "";
-                $this->load->view('jsw/DPPLElectricalOldJettySystemMTTRvMTBF',$data);  
+                $this->load->view('jsw/Reports',$data);  
            }   
 
 
@@ -186,7 +186,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Conveyor Lubrication Pump";//Discarded
             $data['linkUrl'] = "";
-            $this->load->view('jsw/ConveyorLubricationPump',$data);       
+            $this->load->view('jsw/Reports',$data);       
 	}   
         
          public function ConveyorTempLoad()//Discarded
@@ -196,7 +196,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Conveyor Temp & Load";
             $data['linkUrl'] = "";
-            $this->load->view('jsw/ConveyorTempLoad',$data);       
+            $this->load->view('jsw/Reports',$data);       
 	}   
         
          public function CycleTimeReportBUL()
@@ -206,7 +206,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Cycle Time Report BUL";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/CycleTime_DPPL?rs:Embed=true";
-            $this->load->view('jsw/CycleTimeReportBUL',$data);       
+            $this->load->view('jsw/Reports',$data);       
 	}   
         
          public function EquipmentCompressor()
@@ -216,7 +216,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Equipment Compressor";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/Equipment%20Compressor?rs:Embed=true";
-            $this->load->view('jsw/EquipmentCompressor',$data);       
+            $this->load->view('jsw/Reports',$data);       
 	}   
         
          public function EquipmentTempLoad()//Discarded
@@ -226,7 +226,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Equipment Temp & Load";
             $data['linkUrl'] = "";
-            $this->load->view('jsw/EquipmentTempLoad',$data);       
+            $this->load->view('jsw/Reports',$data);       
 	}   
         
          public function RunningHoursConveyors()
@@ -236,7 +236,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Running Hours Conveyors";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/Running_Hour_Conveyor?rs:Embed=true";
-            $this->load->view('jsw/RunningHoursConveyors',$data);       
+            $this->load->view('jsw/Reports',$data);       
 	}   
         
           public function RunningHoursEquipment()
@@ -246,7 +246,7 @@ class REPORTS extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Running Hours Equipment";
             $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/Running_Hour_Equipment?rs:Embed=true";
-            $this->load->view('jsw/RunningHoursEquipment',$data);       
+            $this->load->view('jsw/Reports',$data);       
 	}   
              
      

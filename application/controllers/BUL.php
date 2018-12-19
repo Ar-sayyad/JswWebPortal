@@ -44,7 +44,7 @@ class BUL extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "BUL - 2";
             $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20077";
-            $this->load->view('jsw/bulTwo',$data);             
+            $this->load->view('jsw/bulOne',$data);             
 	}   
         public function bulThree()
 	{
@@ -53,7 +53,7 @@ class BUL extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "BUL - 3";
             $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20078";
-            $this->load->view('jsw/bulThree',$data);             
+            $this->load->view('jsw/bulOne',$data);             
 	} 
         
             

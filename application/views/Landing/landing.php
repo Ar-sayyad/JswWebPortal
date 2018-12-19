@@ -51,14 +51,16 @@
     <div class="container">
 	<div class="news_tricker">
             	<ul id="ticker">
-                    <li><a href="#">Jaigarh MTD Handled &gt;&gt; Vessel Count :25&gt;&gt;  Quantity Handled (in MT):912650.7</a></li>
-                    <li><a href="#">Jaigarh YTD Handled &gt;&gt; Vessel Count :352&gt;&gt;  Quantity Handled (in MT):12229234</a></li>
-                    <li><a href="#">Jaigarh FTD Handled &gt;&gt; Vessel Count :2&gt;&gt;  Quantity Handled (in MT):33722</a></li>                	
+                    <li><a href="#">Dharamtar MTD Handled &gt;&gt; Vessel Count :25&gt;&gt;  Quantity Handled (in MT):912650.7</a></li>
+                    <li><a href="#">Dharamtar YTD Handled &gt;&gt; Vessel Count :352&gt;&gt;  Quantity Handled (in MT):12229234</a></li>
+                    <li><a href="#">Dharamtar FTD Handled &gt;&gt; Vessel Count :2&gt;&gt;  Quantity Handled (in MT):33722</a></li>                	
                 </ul>
 	</div>
     </div>
 </div>
-    <div class="landing-footer">Copyright &copy; JSW 2016 All rights reserved</div>
+    <div class="landing-footer">Copyright &copy; JSW  <script>
+                    document.write(new Date().getFullYear())
+            </script>. All rights reserved</div>
 
 <script src="<?php echo base_url();?>Tendance/NewPage/js/jquery-3.1.0.min.js"></script> 
 <script src="<?php echo base_url();?>Tendance/NewPage/js/jquery-ui.js"></script>

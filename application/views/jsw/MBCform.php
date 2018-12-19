@@ -5,7 +5,7 @@
     <body class="">
         <div class="wrapper ">
       <!-- Sidebar -->
-      <?php include 'includes/sidebar.php';?>       
+      <?php //include 'includes/sidebar.php';?>       
 
     <!-- End Sidebar -->  
 
@@ -19,55 +19,17 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12"> 
-                            <div class="form-div card">
-                                    <div class="col-md-9">
-<!--                                    <form action="<?php echo base_url();?>MBC/searchMBC" method="POST" enctype="multipart/form-data">
-                                        <table class="table form">                                                
-                                            <thead class="">
-
-                                                <tr>
-                                                     <th> Month :<span class="required">*</span></th>
-                                                    <th>
-                                                        <select id="month" name="month" placeholder="month" required="" class="clsmon form-control">
-                                                            <option value="">---Select Month---</option>
-                                                             <?php $sr=1; foreach($month_info as $mon){?>                                       
-                                                            <option data-id="<?php echo $mon['MonID'];?>" value="<?php echo $mon['MonthFullName'];?>" <?php if($mnth==$mon['MonthFullName']){ echo 'selected'; }else{  } ?>><?php echo trim($mon['MonthFullName']);?></option>                                      
-                                                             <?php $sr++;}?>  
-                                                        </select>
-                                                    </th>
-
-                                                    <th> Year :<span class="required">*</span></th>
-                                                    <th>
-                                                        <select id="year" name="year" placeholder="year" required="" class="form-control">
-                                                            <option value="">---Select Year---</option>
-                                                             <option value="<?php echo $prev = (date('Y')-1);?>" <?php if($year== $prev){ echo 'selected'; }else{ } ?>><?php echo date('Y')-1;?></option>
-                                        <option value="<?php echo $curr = date('Y');?>" <?php if($year== $curr){ echo 'selected'; }else{ } ?>><?php echo date('Y');?></option>
-                                        <option value="<?php echo $post = date('Y')+1;?>" <?php if($year== $post){ echo 'selected'; }else{ } ?>><?php echo date('Y')+1;?></option>
-                                                        </select>
-                                                    </th>
-
-
-                                                    <th colspan="4" style="text-align:center">
-                                                        <button type="submit" name="save" data-id="hello" id="Search" class="btn btn-success" value="save"> 
-                                                            <i class="material-icons">search</i> Search</button>
-                                                         <button type="reset" name="Reset" class="btn btn-info" value="reset"><i class="material-icons">replay</i> Reset</button>
-                                                    </th>
-                                                </tr>
-
-                                            </thead>
-
-                                        </table>
-                                    </form>-->
-                                     </div>
-                                <div class="col-md-3">
-                                    <div class="addbtn" style="margin-top: 15px;">
-                                         <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addMBCData');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add MBC Data</button>
-                                    </div>
-                                </div>
-                            </div>
-                       
-                        <div class="bootstrap-data-table-panel card">
+                <div class="col-lg-2 col-md-2 col-sm-2 sideTwo">       
+                    <div class="sidebar-wrapper ps-scrollbar-y-rail sideMn" style="">
+                        
+                        <?php include 'includes/newSidebar.php';?>
+                    </div>
+                </div>                      
+                <div class="col-lg-10 col-md-10 col-sm-10" id="MainView">
+                          <div class="addbtn" style="margin-top: 0px;">
+                                <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addMBCData');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add MBC Data</button>
+                           </div> 
+                    <div class="bootstrap-data-table-panel card" style="margin: 5px 0;">
                             <div class="table-responsive">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered table-hover">   
                                     <thead>

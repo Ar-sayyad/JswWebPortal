@@ -5,124 +5,114 @@
     <body class="">
         <div class="wrapper ">
       <!-- Sidebar -->
-      <?php include 'includes/sidebar.php';?>       
+      <?php //include 'includes/sidebar.php';?>       
 
     <!-- End Sidebar -->  
 
 <div class="main-panel">
     <!-- Navbar -->
+  
       <?php include 'includes/navbar.php';?>       
-
+     
     <!-- End Navbar -->
 
 
-    <div class="content">
-        <div class="container-fluid" style="background: #9a32b1; height: 850px; background: url('<?php echo base_url();?>Theme/assets/img/landing-bg.jpg'); background-size: cover;background-position: top center;">
+    <div class="content">       
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <!--<h1 style="color:white;text-align:center;margin-top:10%;font-size:72px;font-weight:bold"><br /><br />  Temporary Image...!!</h1>-->
+                <div class="col-lg-2 col-md-2 col-sm-2 sideTwo" >       
+                    <div class="sidebar-wrapper ps-scrollbar-y-rail sideMn">
+                        
+                         <?php include 'includes/newSidebar.php';?>       
+                        
                     </div>
                 </div>
-<!--                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats" style="background: #9a32b1;">
-                                <div class="card-header card-header-primary card-header-icon">
+                
+                  <div class="col-lg-10 col-md-10 col-sm-10" id="MainView">
+                      
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats" id="dvmsDiv" style="cursor: pointer;">
+                                <div class="card-header card-header-icon">
                                     <div class="card-icon">
-                                        <i class="material-icons">visibility</i>
+                                        <i class="material-icons">airplay</i>
                                     </div>
-                                    <p class="card-category">&nbsp;</p>
-                                    <h3 class="card-title"><br />Equipments</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">visibility</i> Equipments
+                                    <h4>DVMS DASHBOARD</h4>
+                                </div>                              
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats"  id="mhsDiv" style="cursor: pointer;">
+                                <div class="card-header card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">ondemand_video</i>
                                     </div>
+                                    <h4>MHS DASHBOARD</h4>
+                                </div>                               
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats"   id="bulDiv" style="cursor: pointer;">
+                                <div class="card-header card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">desktop_mac</i>
+                                    </div>
+                                    <h4>BUL DASHBOARD</h4>
+                                </div>                               
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats" id="emsDiv" style="cursor: pointer;">
+                                <div class="card-header card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">laptop_mac</i>
+                                    </div>
+                                    <h4>EMS DASHBOARD</h4>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats" style="background: #fd960e;">
-                                <div class="card-header card-header-warning card-header-icon">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats" id="operationalDiv" style="cursor: pointer;">
+                                <div class="card-header card-header-icon">
                                     <div class="card-icon">
-                                        <i class="material-icons">settings_input_component</i>
+                                        <i class="material-icons">build</i>
                                     </div>
-                                    <p class="card-category">&nbsp;</p>
-                                    <h3 class="card-title"><br />Energy Meter</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">settings_input_component</i> Energy Meter
-                                    </div>
+                                    <h4>OPERATIONAL REPORTS</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats" style="background: #e73774;">
-                                <div class="card-header card-header-rose card-header-icon">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats" id="electricalDiv" style="cursor: pointer;">
+                                <div class="card-header card-header-icon">
                                     <div class="card-icon">
-                                        <i class="material-icons">directions_boat</i>
+                                        <i class="material-icons">settings_input_hdmi</i>
                                     </div>
-                                    <p class="card-category">&nbsp;</p>
-                                    <h3 class="card-title">MHC (Libherr Crane)</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">directions_boat</i> MHC (Libherr Crane)
-                                    </div>
+                                    <h4>ELECTRICAL REPORTS</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats" style="background: #1abed2;">
-                                <div class="card-header card-header-info card-header-icon">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                              <div class="card card-stats" id="mechanicalDiv" style="cursor: pointer;">
+                                  <div class="card-header card-header-icon">
+                                      <div class="card-icon">
+                                          <i class="material-icons">settings</i>
+                                      </div>
+                                      <h4>MECHANICAL REPORTS</h4>
+                                  </div>
+                              </div>
+                          </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats" id="manualformsDiv" style="cursor: pointer;">
+                                <div class="card-header card-header-icon">
                                     <div class="card-icon">
-                                        <i class="material-icons">tram</i>
+                                        <i class="material-icons">note_add</i>
                                     </div>
-                                    <p class="card-category">&nbsp;</p>
-                                    <h3 class="card-title"><br />ZPMC</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">tram</i> ZPMC
-                                    </div>
+                                    <h4>MANUAL FORMS</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats" style="background: #343a40;">
-                                <div class="card-header card-header-gray card-header-icon">
-                                    <div class="card-icon">
-                                        <i class="material-icons">vertical_align_center</i>
-                                    </div>
-                                    <p class="card-category">&nbsp;</p>
-                                    <h3 class="card-title"><br />Stacker</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">vertical_align_center</i> Stacker
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats" style="background: #50aa54;">
-                                <div class="card-header card-header-success card-header-icon">
-                                    <div class="card-icon">
-                                        <i class="material-icons">memory</i>
-                                    </div>
-                                    <p class="card-category">&nbsp;</p>
-                                    <h3 class="card-title"><br />MHC</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">memory</i> MHC
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>-->
-
+                      
+                    </div>
+            </div>
                 </div>
 
             </div>
@@ -137,6 +127,51 @@
 
 <!--   Core JS Files   -->
  <?php include 'includes/footer-min.php';?>
-
+<script>
+    $(document).ready(function(){            
+        $("#dvmsDiv").click(function(){
+            $(".Menus").hide();
+            $("#dvmsMenu").show();
+             sessionStorage.setItem("divShow", "dvmsMenu");           
+        });
+         $("#mhsDiv").click(function(){
+            $(".Menus").hide();
+            $("#mhsMenu").show();
+            sessionStorage.setItem("divShow", "mhsMenu");   
+        });
+         $("#bulDiv").click(function(){
+            $(".Menus").hide();
+            $("#bulMenu").show();
+             sessionStorage.setItem("divShow", "bulMenu");   
+        });
+         $("#emsDiv").click(function(){
+            $(".Menus").hide();
+            $("#emsMenu").show();
+            sessionStorage.setItem("divShow", "emsMenu");    
+        });
+         $("#operationalDiv").click(function(){
+            $(".Menus").hide();
+            $("#operationalMenu").show();
+            sessionStorage.setItem("divShow", "operationalMenu");   
+        });
+        $("#electricalDiv").click(function(){
+            $(".Menus").hide();
+            $("#electricalMenu").show();
+            sessionStorage.setItem("divShow", "electricalMenu");    
+        });
+        $("#mechanicalDiv").click(function(){
+            $(".Menus").hide();
+            $("#mechanicalMenu").show();
+            sessionStorage.setItem("divShow", "mechanicalMenu");    
+        });
+        $("#manualformsDiv").click(function(){
+            $(".Menus").hide();
+            $("#manualformsMenu").show();
+            sessionStorage.setItem("divShow", "manualformsMenu");   
+        });
+         var sess = sessionStorage.getItem("divShow");
+          $("#"+sess).show();
+    });
+    </script>
 </body>
 </html>

@@ -26,7 +26,7 @@
                     </h4>                   
                 </div>
                 
-                <div class="modal-body" style="min-height:650px; overflow:auto;margin-top: -20px;">                
+                <div class="modal-body" style="min-height:600px; overflow:auto;margin-top: -40px;">                
                     
                     
                 </div>

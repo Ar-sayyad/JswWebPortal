@@ -35,7 +35,7 @@ class Home extends CI_Controller {
                 $data['mydiv3'] = "";
                 $data['title'] = "HOME";
                 $data['linkUrl'] = "";
-                 $this->load->view('jsw/index',$data);	
+                 $this->load->view('jsw/index',$data);
 	} 
         
                 
