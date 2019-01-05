@@ -76,7 +76,7 @@ class Jetty extends CI_Controller {
                             $month=date("F",$time);
                             $year=date("Y",$time);
                             $data= array(
-                                    'trans_date'=> $trans_date,
+                                    'date'=> $trans_date,
                                     'At_Jetty_under_discharge'=> $this->input->post('At_Jetty_under_discharge'),
                                     'At_Jetty_waiting_for_discharge'=> $this->input->post('At_Jetty_waiting_for_discharge'),
                                     'At_R_19_waiting_loaded'=> $this->input->post('At_R_19_waiting_loaded'),
@@ -111,7 +111,7 @@ class Jetty extends CI_Controller {
                             $month=date("F",$time);
                             $year=date("Y",$time);
                             $data= array(
-                                    'trans_date'=> $trans_date,
+                                    'date'=> $trans_date,
                                     'At_Jetty_under_discharge'=> $this->input->post('At_Jetty_under_discharge'),
                                     'At_Jetty_waiting_for_discharge'=> $this->input->post('At_Jetty_waiting_for_discharge'),
                                     'At_R_19_waiting_loaded'=> $this->input->post('At_R_19_waiting_loaded'),

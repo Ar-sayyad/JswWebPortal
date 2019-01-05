@@ -55,7 +55,7 @@
                                       <?php  if(!empty($JettyForm_data)){  $sr=1; foreach($JettyForm_data as $jetty){?>
                                         <tr>
                                         <td><?php echo $sr;?></td>   
-                                        <td><?php echo $jetty['trans_date'];?></td>
+                                        <td><?php echo $jetty['date'];?></td>
                                         <td><?php echo $jetty['At_Jetty_under_discharge'];?></td>
                                         <td><?php echo $jetty['At_Jetty_waiting_for_discharge'];?></td>
                                         <td><?php echo $jetty['At_R_19_waiting_loaded'];?></td>
