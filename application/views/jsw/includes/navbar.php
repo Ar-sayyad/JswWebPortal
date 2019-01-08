@@ -8,7 +8,7 @@
          
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        Welcome, <?php echo $this->session->userdata('log_name');?>                     
+                        Hi, <?php echo $this->session->userdata('log_name');?>                     
                     </li>
 
                      <li class="nav-item dropdown">
@@ -19,6 +19,9 @@
                           </p>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <?php if($this->session->userdata('userType')==1){ ?>
+                                <a class="dropdown-item" href="<?php echo base_url();?>Settings"><i class="material-icons">settings</i> Settings</a>
+                            <?php } ?>
                           <a class="dropdown-item" href="<?php echo base_url();?>Home/Logout"><i class="material-icons">power_settings_new</i> Logout</a>
                         </div>
                   </li>
@@ -39,27 +42,13 @@
                       </a>
                     </div>
                     <ul class="nav navbar-nav col-sm-10" style="background-color: #000 !important;">
-<!--                      <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Jaigarh </a>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Equipment</a></li>
-                          <li><a href="#">Report</a></li>
-                        </ul>
-                      </li>
-                       <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">GOA </a>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Equipment</a></li>
-                          <li><a href="#">Report</a></li>
-                        </ul>
-                      </li>-->
                         <li class="dropdown active" style="padding-left: 15px;">
                         <a  href="<?php echo base_url();?>Home/home">Dharamtar </a>
-<!--                        <ul class="dropdown-menu">
-                          <li><a href="#">Equipment</a></li>
-                          <li><a href="#">Report</a></li>
-                        </ul>-->
                       </li>
+                       <?php if($this->session->userdata('userType')==1){ ?><li class="dropdown" style="padding-left: 15px;">
+                        <a  href="<?php echo base_url();?>Settings"> Settings </a>
+                      </li>
+                      <?php } ?>
                     </ul>
                 </div>
             </nav>

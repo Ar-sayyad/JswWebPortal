@@ -23,8 +23,8 @@
 			<div class="main-nav pull-left">
 				<ul>
 					<li class="active-nav"><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-					<li><a href="#">JPL</a></li>
-					<li><a href="#">SWPL</a></li>
+<!--					<li><a href="#">JPL</a></li>
+					<li><a href="#">SWPL</a></li>-->
 					<li><a href="<?php echo base_url().'Home/home';?>">DPPL</a></li>
 				</ul>
 			</div>

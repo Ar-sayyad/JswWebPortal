@@ -86,6 +86,15 @@ class Jsw_model extends CI_Model {
                 }
             }
             
+              function is_admin_logged_in()
+            {
+                 if ($this->session->userdata('admin_login') == 1 && $this->session->userdata('userType') == 1 ) {                
+                   $this->session->set_userdata('last_page', current_url());  		
+                }
+                else{                 
+                    redirect(base_url().'Home');                     
+                }
+            }
      /*****login funtionality start********/
     
 	function validate_login_info($email,$password){
@@ -98,19 +107,23 @@ class Jsw_model extends CI_Model {
                         if($row->userType==1){
                         $this->session->set_userdata('admin_login', '1');
                         $this->session->set_userdata('log_id', $row->user_id);
+                        $this->session->set_userdata('AD_User_id', $row->AD_user_id);
                         $this->session->set_userdata('log_email', $row->email);
-                        $this->session->set_userdata('log_name', $row->firstname);
+                        $this->session->set_userdata('log_name', $row->emp_name);
+                        $this->session->set_userdata('userType', $row->userType);
                         $this->session->set_userdata('log_type', 'admin');
                         echo '1';
                     }                      
-                     elseif ($row->userType==2) {
+                     else{
                         $this->session->set_userdata('user_login', '1');
                         $this->session->set_userdata('log_id', $row->user_id);
+                        $this->session->set_userdata('AD_User_id', $row->AD_user_id);
                         $this->session->set_userdata('log_email', $row->email);
-                        $this->session->set_userdata('log_name', $row->firstname);
-                        $this->session->set_userdata('log_type', 'user');
+                        $this->session->set_userdata('log_name', $row->emp_name);
+                        $this->session->set_userdata('userType', $row->userType);
+                        $this->session->set_userdata('log_type', $row->Dept);
                         echo '1';
-                    }
+                    }                   
                 }
                 else{
 			echo 'Invalid Login Details.';

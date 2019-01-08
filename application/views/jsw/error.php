@@ -6,7 +6,7 @@
           
                 
       <!-- Sidebar -->
-      <?php include 'includes/sidebar.php';?>       
+      <?php //include 'includes/newSidebar.php';?>       
 
     <!-- End Sidebar -->  
        
