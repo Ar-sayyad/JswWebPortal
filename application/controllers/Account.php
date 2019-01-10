@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Settings extends CI_Controller {
+class Account extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
         $this->load->database();        	
         $this->load->library('session');
-	$this->load->library('form_validation');
+        $this->load->library('form_validation');
         $this->load->library('user_agent');
         $this->load->model('jsw_model');
         $this->jsw_model->is_admin_logged_in();
@@ -20,57 +20,28 @@ class Settings extends CI_Controller {
         
        public function index()
 	{
-            $data['mydiv'] = "Settings";
+            $data['mydiv'] = "Account";
             $data['mydiv2'] = "Users";
             $data['mydiv3'] = "";
-            $data['title'] = "Users";
+            $data['title'] = "My Profile";
             $data['linkUrl'] = "";
-            $cond = array('userType !=' => $this->session->userdata('userType'));
+            $cond = array('user_id' => $this->session->userdata('log_id'));
             $data['user_data'] = $this->jsw_model->check_data_info('dbo.tblusers',$cond);  
-            $this->load->view('jsw/users',$data);            
-	} 
-         public function users()
-	{
-            $data['mydiv'] = "Settings";
-            $data['mydiv2'] = "Users";
-            $data['mydiv3'] = "";
-            $data['title'] = "Users";
-            $data['linkUrl'] = "";
-            $cond = array('userType !=' => $this->session->userdata('userType'));
-            $data['user_data'] = $this->jsw_model->check_data_info('dbo.tblusers',$cond);  
-            $this->load->view('jsw/users',$data);            
-	} 
-                
-         public function pages()
-	{
-            $data['mydiv'] = "Settings";
-            $data['mydiv2'] = "Pages";
-            $data['mydiv3'] = "";
-            $data['title'] = "Pages";
-            $data['linkUrl'] = "";
-            $data['page_data'] = $this->jsw_model->select_data_info('dbo.pages');  
-            $this->load->view('jsw/pages',$data);            
+            $this->load->view('jsw/Accounts',$data);            
 	} 
         
-        public function department()
+         public function password()
 	{
-            $data['mydiv'] = "Settings";
-            $data['mydiv2'] = "Department";
+            $data['mydiv'] = "Account";
+            $data['mydiv2'] = "Password";
             $data['mydiv3'] = "";
-            $data['title'] = "Department";
+            $data['title'] = "Password";
             $data['linkUrl'] = "";
-            $data['dept_data'] = $this->jsw_model->select_data_info('dbo.userTypes');  
-            $this->load->view('jsw/department',$data);            
+            $cond = array('user_id' => $this->session->userdata('log_id'));
+            $data['user_data'] = $this->jsw_model->check_data_info('dbo.tblusers',$cond);  
+            $this->load->view('jsw/password',$data);            
 	} 
-              
-      public function saveAccess(){              
-                 $userType_id= $this->input->post('userType_id');
-                 $data= array('Access_pages'=> implode(',', $this->input->post('page_id')));
-                 $where =array('userType'=>$userType_id);
-                 $this->jsw_model->update_data_info('dbo.UserTypes',$data,$where);
-                echo 1;                          
-      }
-        
+     
            
        public function saveUser(){
            $this->form_validation->set_rules('emp_name', 'Employee Name', 'required');
@@ -111,9 +82,7 @@ class Settings extends CI_Controller {
         
         public function update($id){
              $this->form_validation->set_rules('emp_name', 'Employee Name', 'required');
-           //$this->form_validation->set_rules('email', 'Email', 'required');
-          // $this->form_validation->set_rules('password', 'Password', 'required');
-           $this->form_validation->set_rules('dept', 'Department', 'required');
+//           $this->form_validation->set_rules('dept', 'Department', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();
@@ -121,15 +90,12 @@ class Settings extends CI_Controller {
                     else
                      {   
                            $emp_name= $this->input->post('emp_name');
-//                           $email = $this->input->post('email');
-//                           $password= $this->input->post('password');
-                           $dept= $this->input->post('dept');
-                           $userType= $this->input->post('userType');
+//                           $dept= $this->input->post('dept');
+//                           $userType= $this->input->post('userType');
                                                    
                                 $data= array(
-                                    'emp_name'=> $emp_name,
-                                    'userType'=>$userType,
-                                    'Dept'=> $dept
+                                    'emp_name'=> $emp_name
+                                   // 'Dept'=> $dept
                                         );
                             $where =array('user_id'=>$id);
                             $this->jsw_model->update_data_info('dbo.tblusers',$data,$where);
@@ -149,7 +115,7 @@ class Settings extends CI_Controller {
                     else
                      {   
                            $curr_password= strrev(sha1(md5($this->input->post('curr_password'))));
-                            $cond = array('user_id' => $this->session->userdata('log_id'),'password' => $curr_password);
+                            $cond = array('user_id' => $id,'password' => $curr_password);
                             $exist = $this->jsw_model->check_data_info('dbo.tblusers',$cond);
                          if($exist){
                                   $password= strrev(sha1(md5($this->input->post('password'))));
@@ -158,14 +124,13 @@ class Settings extends CI_Controller {
                                    $where =array('user_id'=>$id);
                                    $this->jsw_model->update_data_info('dbo.tblusers',$data,$where);
                              echo 1;  
-                             //$this->session->sess_destroy();	
+                             $this->session->sess_destroy();	
                          }else{  
-                              echo '<i class="material-icons">close</i> Current Password of admin is Invalid..!';     
+                              echo '<i class="material-icons">close</i> Current Password is Invalid..!';     
                          }
                      }
                          
         }
-        
         
         public function delete($id){
                 $where =array('user_id'=>$id);

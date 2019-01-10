@@ -39,7 +39,8 @@
                                         <th>Email</th>
                                         <th>Department</th>
                                         <th>Edit Info.</th>
-                                        <th>Access Control</th>
+                                        <th>Edit Password</th>
+                                        <!--<th>Access Control</th>-->
                                         <!--<th>Remove</th>-->
                                       </tr>
                                     </thead>
@@ -55,10 +56,14 @@
                                             <i class="material-icons">edit</i>
                                             </a>
                                         </td>
-                                        <td><a rel="tooltip" title="Access Setting" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_ajax"  href="#" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/access/<?php echo  $row['userType'];?>');">
-                                            <i class="material-icons">settings</i>
+                                         <td><a rel="tooltip" title="Password Setting" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_ajax"  href="#" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/editPassword/<?php echo  $row['user_id'];?>');">
+                                            <i class="material-icons">vpn_key</i>
                                             </a>
                                         </td>
+<!--                                        <td><a rel="tooltip" title="Access Setting" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_ajax"  href="#" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/access/<?php echo  $row['userType'];?>');">
+                                            <i class="material-icons">settings</i>
+                                            </a>
+                                        </td>-->
 <!--                                        <td>
                                             <a rel="tooltip" title="Remove" class="btn btn-danger btn-sm" onclick="return checkDelete();" href="<?php echo base_url(); ?>Settings/delete/<?php echo $row['user_id'];?>">
                                                           <i class="material-icons">close</i>

@@ -131,6 +131,21 @@ class Jsw_model extends CI_Model {
 		
 		
 	}
+        
+      function is_access_in($value){
+        $cond = array('userType' => $this->session->userdata('userType'));
+        $dept_info= $this->check_data_info('dbo.UserTypes',$cond);    
+        foreach($dept_info as $dpt){
+            $array =  explode(',', $dpt['Access_pages']);        
+                foreach ($array as $item) {
+                 if($item==$value){
+                     return 1;
+                       }else{
+                    
+                 }
+               }
+           }
+      }
 	
 	
 	

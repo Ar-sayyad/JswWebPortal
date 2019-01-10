@@ -26,9 +26,17 @@ class Jetty extends CI_Controller {
             $data['linkUrl'] = "";
             $data['mnth'] = "";
             $data['year'] ="";
-            $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
-            $data['JettyForm_data'] = $this->jsw_model->select_data_info('dbo.tbl_JettyForm_MF_DPR');  
-            $this->load->view('jsw/Jettyforms',$data);            
+             $t= $this->jsw_model->is_access_in(53);
+                if($t==1){
+                    $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
+                    $data['JettyForm_data'] = $this->jsw_model->select_data_info('dbo.tbl_JettyForm_MF_DPR');  
+                    $this->load->view('jsw/Jettyforms',$data);   
+                }else{
+                       $data['title'] = "Access Denied..!";
+                        $data['icons'] = "error";
+                        $this->load->view('jsw/denied',$data);
+                }
+                     
 	} 
                 
         public function searchJetty(){            

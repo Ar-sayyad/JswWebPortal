@@ -22,6 +22,7 @@
                             <?php if($this->session->userdata('userType')==1){ ?>
                                 <a class="dropdown-item" href="<?php echo base_url();?>Settings"><i class="material-icons">settings</i> Settings</a>
                             <?php } ?>
+                          <a class="dropdown-item" href="<?php echo base_url();?>Account"><i class="material-icons">person</i> Account</a>
                           <a class="dropdown-item" href="<?php echo base_url();?>Home/Logout"><i class="material-icons">power_settings_new</i> Logout</a>
                         </div>
                   </li>

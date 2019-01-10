@@ -23,8 +23,16 @@ class BUL extends CI_Controller {
             $data['mydiv2'] = "BUL";
             $data['mydiv3'] = "";
             $data['title'] = "BUL - 1";
+            $data['page'] = "30";
+             $t= $this->jsw_model->is_access_in(30);
+            if($t==1){              
             $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20076";
             $this->load->view('jsw/bulOne',$data);            
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }             
 	}  
         
         public function bulOne()
@@ -33,8 +41,16 @@ class BUL extends CI_Controller {
             $data['mydiv2'] = "BUL";
             $data['mydiv3'] = "";
             $data['title'] = "BUL - 1";
+            $data['page'] = "30";
+             $t= $this->jsw_model->is_access_in(30);
+            if($t==1){              
             $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20076";
             $this->load->view('jsw/bulOne',$data);             
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }             
 	}   
         
         public function bulTwo()
@@ -43,8 +59,16 @@ class BUL extends CI_Controller {
             $data['mydiv2'] = "BUL";
             $data['mydiv3'] = "";
             $data['title'] = "BUL - 2";
+            $data['page'] = "31";
+             $t= $this->jsw_model->is_access_in(31);
+            if($t==1){              
             $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20077";
             $this->load->view('jsw/bulOne',$data);             
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }             
 	}   
         public function bulThree()
 	{
@@ -52,8 +76,16 @@ class BUL extends CI_Controller {
             $data['mydiv2'] = "BUL";
             $data['mydiv3'] = "";
             $data['title'] = "BUL - 3";
+            $data['page'] = "32";
+             $t= $this->jsw_model->is_access_in(32);
+            if($t==1){              
             $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20078";
-            $this->load->view('jsw/bulOne',$data);             
+            $this->load->view('jsw/bulOne',$data);            
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }             
 	} 
         
             

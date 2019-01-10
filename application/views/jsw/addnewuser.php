@@ -39,9 +39,9 @@
                                 <select id="dept" name="dept" placeholder="dept" required="" class="clsmon form-control">
                                     <option value="" selected="" disabled="">---Select Department---</option>
                                         <?php $sr=1; foreach($dept_info as $dept){?>       
-                                         <?php if($dept['userType'] > 1){?>
+                                        
                                        <option data-id="<?php echo $dept['userType'];?>" value="<?php echo $dept['Department'];?>" <?php if($dept['userType']==1){ echo "disabled"; } ?>><?php echo $dept['Department'];?></option>                                      
-                                        <?php } $sr++;}?>
+                                        <?php  $sr++;}?>
                                     </select>
                             </th>
                         </tr>

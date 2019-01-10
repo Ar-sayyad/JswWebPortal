@@ -27,9 +27,16 @@ class MBC extends CI_Controller {
             $data['linkUrl'] = "";
             $data['mnth'] = "";
             $data['year'] ="";
-            $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
-            $data['MBCForm_data'] = $this->jsw_model->select_data_info('dbo.tbl_MBC_MF_DPR');  
-            $this->load->view('jsw/MBCform',$data);            
+            $t= $this->jsw_model->is_access_in(54);
+            if($t==1){
+                $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
+                $data['MBCForm_data'] = $this->jsw_model->select_data_info('dbo.tbl_MBC_MF_DPR');  
+                $this->load->view('jsw/MBCform',$data);                
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }
 	} 
                 
         public function searchMBC(){            

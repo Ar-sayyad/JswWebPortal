@@ -23,8 +23,16 @@ class EMS extends CI_Controller {
             $data['mydiv2'] = "EMS";
             $data['mydiv3'] = "";
             $data['title'] = "EMS - 1";
+            $data['page'] = "33";
+            $t= $this->jsw_model->is_access_in(33);
+            if($t==1){              
             $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20018";
-            $this->load->view('jsw/emsOne',$data);            
+            $this->load->view('jsw/emsOne',$data);          
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }               
 	}  
         
         public function emsOne()
@@ -33,8 +41,16 @@ class EMS extends CI_Controller {
             $data['mydiv2'] = "EMS";
             $data['mydiv3'] = "";
             $data['title'] = "EMS - 1";
+            $data['page'] = "33";
+             $t= $this->jsw_model->is_access_in(33);
+            if($t==1){              
             $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20018";
-            $this->load->view('jsw/emsOne',$data);             
+            $this->load->view('jsw/emsOne',$data);            
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }                 
 	}   
         
         public function emsTwo()
@@ -43,8 +59,16 @@ class EMS extends CI_Controller {
             $data['mydiv2'] = "EMS";
             $data['mydiv3'] = "";
             $data['title'] = "EMS - 2";
+            $data['page'] = "34";
+             $t= $this->jsw_model->is_access_in(34);
+            if($t==1){              
             $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20019";
             $this->load->view('jsw/emsOne',$data);             
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }               
 	}          
         
             

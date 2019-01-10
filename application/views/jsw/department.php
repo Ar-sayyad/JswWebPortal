@@ -45,7 +45,7 @@
                                         <tr>
                                         <td><?php echo $sr;?></td>   
                                         <td><?php echo $row['Department'];?></td>
-                                        <td><a rel="tooltip" title="Access Setting" href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/access/<?php echo  $row['userType'];?>');">
+                                        <td><a rel="tooltip" title="Access Setting" href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_ajax"  onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/access/<?php echo  $row['userType'];?>');">
                                             <i class="material-icons">settings</i>
                                             </a>
                                         </td>

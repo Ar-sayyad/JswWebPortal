@@ -16,7 +16,10 @@
      $page_data = $this->jsw_model->select_data_info('dbo.pages');  
  
      ?>
-<style>   
+<style> 
+    .modal-dialog {
+    width: 800px !important;
+}
     .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
         padding: 0px 10px;
         vertical-align: middle;
@@ -40,7 +43,7 @@
                         <thead class="">        
                             <tr>
                                 <th>
-                                    #All<br><input type="checkbox" onclick="toggle(this);" style="width: 23px;height: 24px;" />  
+                                    <input type="checkbox" onclick="toggle(this);" style="width: 23px;height: 24px;" />  
                                 </th>
                                 <th>
                                     Page Name
@@ -52,7 +55,7 @@
                             <?php  foreach($page_data as $row){?>
                                 <tr>
                                     <td><input type="checkbox" name="pagechk" value="<?php echo $row['page_id'];?>" <?php echo Search($row['page_id'], $array);?> class="page_id"></td>   
-                                    <td><?php echo $row['page_name'];?></td>
+                                    <td style="text-align:left;"><?php echo $row['page_name'];?></td>
                                     <td><?php echo $row['Dept'];?></td>
                               </tr>
                             <?php } ?>                        

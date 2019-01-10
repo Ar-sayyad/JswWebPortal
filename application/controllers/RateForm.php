@@ -27,9 +27,16 @@ class RateForm extends CI_Controller {
             $data['linkUrl'] = "";
             $data['mnth'] = "";
             $data['year'] ="";
+            $t= $this->jsw_model->is_access_in(56);
+            if($t==1){
             $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
             $data['RateForm_data'] = $this->jsw_model->select_data_info('dbo.tbl_rate_MF');  
-            $this->load->view('jsw/RateForm',$data);            
+            $this->load->view('jsw/RateForm',$data);                
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }            
 	} 
                 
         public function searchRateForm(){            
