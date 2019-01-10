@@ -10,7 +10,7 @@ class Account extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->library('user_agent');
         $this->load->model('jsw_model');
-        $this->jsw_model->is_admin_logged_in();
+        $this->jsw_model->is_logged_in();
         $this->load->helper('file');        
         $this->load->helper(array('form', 'url'));
          /* cache control */
