@@ -71,40 +71,79 @@ class Settings extends CI_Controller {
                 echo 1;                          
       }
         
-        public function update($id){
-            $this->form_validation->set_rules('ETA_Dharamtar', 'Date-Time', 'required');
+           
+       public function saveUser(){
+           $this->form_validation->set_rules('emp_name', 'Employee Name', 'required');
+           $this->form_validation->set_rules('email', 'Email', 'required');
+           $this->form_validation->set_rules('password', 'Password', 'required');
+           $this->form_validation->set_rules('dept', 'Department', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();
                     }
                     else
                      {   
-                            $trans_date = $this->input->post('ETA_Dharamtar');
-                            $time=strtotime($trans_date);
-                            $month=date("F",$time);
-                            $year=date("Y",$time);
-                            $data= array(
-                                    'ETA_Dharamtar'=> $trans_date,
-                                    'MBC_name'=> $this->input->post('MBC_name'),
-                                    'Cargo'=> $this->input->post('Cargo'),
-                                    'bl_qty'=> $this->input->post('bl_qty'),
-                                    'Load_Port'=> $this->input->post('Load_Port'),
-                                    'month'=> $month,
-                                    'year'=> $year
-                               );
-                            $where =array('Id'=>$id);
-                            $this->jsw_model->update_data_info('dbo.tbl_MBC_MF_DPR',$data,$where);
+                           $emp_name= $this->input->post('emp_name');
+                           $email = $this->input->post('email');
+                           $password= strrev(sha1(md5($this->input->post('password'))));
+                           $dept= $this->input->post('dept');
+                           $userType= $this->input->post('userType');
+                                                      
+                            $cond = array('email' => $email);
+                         $exist = $this->jsw_model->check_data_info('dbo.tblusers',$cond);
+                         if($exist){
+                                echo '<i class="material-icons">close</i> User Data Already Exist..!';
+                         }else{                           
+                                $data= array(
+                                    'emp_name'=> $emp_name,
+                                    'email'=> $email,
+                                    'password'=> $password,
+                                    'userType'=>$userType,
+                                    'Dept'=> $dept
+                                        );
+                                $this->jsw_model->save_data_info('dbo.tblusers',$data);
+                            
+                            echo 1;
+                         }
+                    } 
+            
+        }
+        
+        public function update($id){
+             $this->form_validation->set_rules('emp_name', 'Employee Name', 'required');
+           //$this->form_validation->set_rules('email', 'Email', 'required');
+          // $this->form_validation->set_rules('password', 'Password', 'required');
+           $this->form_validation->set_rules('dept', 'Department', 'required');
+            if ($this->form_validation->run() == FALSE)
+                     {
+                            echo validation_errors();
+                    }
+                    else
+                     {   
+                           $emp_name= $this->input->post('emp_name');
+//                           $email = $this->input->post('email');
+//                           $password= $this->input->post('password');
+                           $dept= $this->input->post('dept');
+                           $userType= $this->input->post('userType');
+                                                   
+                                $data= array(
+                                    'emp_name'=> $emp_name,
+                                    'userType'=>$userType,
+                                    'Dept'=> $dept
+                                        );
+                            $where =array('user_id'=>$id);
+                            $this->jsw_model->update_data_info('dbo.tblusers',$data,$where);
                       echo 1;
                      }
                          
         }
         
         public function delete($id){
-                $where =array('Id'=>$id);
-                $this->jsw_model->delete_data_info('dbo.tbl_MBC_MF_DPR',$where);
-                $this->session->set_flashdata('msg', ('<i class="material-icons">check_circle_outline</i> MBC Details Deleted Successfully'));
-                //redirect(base_url() . 'MBC');    
-                redirect($this->agent->referrer());
+                $where =array('user_id'=>$id);
+                $this->jsw_model->delete_data_info('dbo.tblusers',$where);
+                $this->session->set_flashdata('msg', ('<i class="material-icons">check_circle_outline</i> User Details Deleted Successfully'));
+                redirect(base_url() . 'Settings/users');    
+                //redirect($this->agent->referrer());
         }
        
         

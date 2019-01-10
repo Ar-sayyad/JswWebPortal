@@ -27,7 +27,7 @@
                 </div>                      
                 <div class="col-lg-10 col-md-10 col-sm-10" id="MainView">
                           <div class="addbtn" style="margin-top: 0px;">
-                                <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addnewUser');" class="btn btn-primary" style="float: right" > <i class="material-icons">person_add</i> Add New User</button>
+                                <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addnewuser');" class="btn btn-primary" style="float: right" > <i class="material-icons">person_add</i> Add New User</button>
                            </div> 
                     <div class="bootstrap-data-table-panel card" style="margin: 5px 0;">
                             <div class="table-responsive">
@@ -59,6 +59,11 @@
                                             <i class="material-icons">settings</i>
                                             </a>
                                         </td>
+<!--                                        <td>
+                                            <a rel="tooltip" title="Remove" class="btn btn-danger btn-sm" onclick="return checkDelete();" href="<?php echo base_url(); ?>Settings/delete/<?php echo $row['user_id'];?>">
+                                                          <i class="material-icons">close</i>
+                                            </a>
+                                        </td>-->
                                       </tr>
                                       <?php $sr++; } }?>                                     
                                      

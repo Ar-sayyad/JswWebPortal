@@ -7,7 +7,7 @@ class Home extends CI_Controller {
         parent::__construct();
         $this->load->database();        	
         $this->load->library('session');
-	$this->load->library('form_validation');
+        $this->load->library('form_validation');
         $this->load->model('jsw_model');
         $this->load->helper('file');
         $this->load->helper(array('form', 'url'));
@@ -53,9 +53,9 @@ class Home extends CI_Controller {
         
         function error(){
              $data['mydiv'] = "";
-                $data['mydiv2'] = "";
-                $data['mydiv3'] = "";
-                $data['linkUrl'] = "";
+            $data['mydiv2'] = "";
+            $data['mydiv3'] = "";
+            $data['linkUrl'] = "";
              $data['title'] = "Page Not Found";
              $data['icons'] = "error";
              $this->load->view('jsw/error',$data);
