@@ -16,7 +16,7 @@
                                Delay Start Time
                             </th>
                             <th>
-                                <input type="time" class="form-control"  required="" placeholder="Delay start Time"  id="Delay_start_Time">
+                                <input type="time" class="form-control"  required="" value="00:00:00" onkeyup="getTime();" placeholder="Delay start Time"  id="Delay_start_Time">
                             </th>
                         </tr>
                         <tr>
@@ -24,13 +24,13 @@
                                 Delay End Time
                             </th>
                             <th>
-                                <input type="time" class="form-control" placeholder="Delay End Time" id="Delay_end_time">
+                                <input type="time" class="form-control" value="00:00:00" onkeyup="getTime();" placeholder="Delay End Time" id="Delay_end_time">
                             </th>                           
                             <th>
                                 Delay Time
                             </th>
                             <th>
-                                <input type="time" class="form-control" placeholder="Delay Time" id="Delay_Time">
+                                <input type="text" class="form-control" readonly=""  placeholder="Delay Time" id="Delay_Time">
                             </th> 
                         </tr>
                        <tr>
@@ -38,7 +38,16 @@
                                 Equipment Name
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Equipment Name" id="Equipment_Name">
+                                <select class="form-control"  id="Equipment_Name">
+                                    <option value="" selected="" disabled="">--Select Name--</option>
+                                    <option value="BUL1">BUL1</option>
+                                    <option value="BUL2">BUL2</option>
+                                    <option value="BUL3">BUL3</option>
+                                    <option value="BU1">BU1</option>
+                                    <option value="BU2">BU2</option>
+                                    <option value="Sennebogen J1">Sennebogen J1</option>
+                                    <option value="Sennebogen J5">Sennebogen J5</option>
+                                </select>
                             </th>                           
                             <th>
                                 Operator Name
@@ -72,12 +81,22 @@
             </div>
         </div>	
 </div>
+<script src="<?php echo base_url();?>Theme/assets/js/moment.js" type="text/javascript"></script>
 <script>
+    function getTime(){
+           $Delay_start_Time = $("#Delay_start_Time").val();
+           $Delay_end_time = $("#Delay_end_time").val();
+            var startTime = moment($Delay_start_Time, 'hh:mm');
+            var endTime = moment($Delay_end_time, 'hh:mm');
+            var totalHours = (endTime.diff(startTime, 'hours'));
+            var totalMinutes = endTime.diff(startTime, 'minutes');
+            var clearMinutes = totalMinutes % 60;
+            var time = (totalHours + ":" + clearMinutes);
+             $("#Delay_Time").val(time);
+       }   
    $(document).ready(function(){ 
     $("#saveEquipment").click(function(){
       $("#saveEquipment").html('<img src="<?php echo base_url();?>Theme/assets/img/loading.gif" style="width:25px;height:20px;" />');
-//      $Month= $("#Month").val();
-//      $year= $("#year").val();      
          $date = $("#date").val(); 
         $Delay_start_Time = $("#Delay_start_Time").val();
         $Delay_end_time = $("#Delay_end_time").val();

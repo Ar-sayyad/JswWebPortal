@@ -74,6 +74,7 @@ class Settings extends CI_Controller {
            
        public function saveUser(){
            $this->form_validation->set_rules('emp_name', 'Employee Name', 'required');
+           $this->form_validation->set_rules('emp_code', 'Employee Code', 'required');
            $this->form_validation->set_rules('email', 'Email', 'required');
            $this->form_validation->set_rules('password', 'Password', 'required');
            $this->form_validation->set_rules('dept', 'Department', 'required');
@@ -84,6 +85,7 @@ class Settings extends CI_Controller {
                     else
                      {   
                            $emp_name= $this->input->post('emp_name');
+                           $emp_code= $this->input->post('emp_code');
                            $email = $this->input->post('email');
                            $password= strrev(sha1(md5($this->input->post('password'))));
                            $dept= $this->input->post('dept');
@@ -96,6 +98,7 @@ class Settings extends CI_Controller {
                          }else{                           
                                 $data= array(
                                     'emp_name'=> $emp_name,
+                                    'AD_user_id'=> $emp_code,
                                     'email'=> $email,
                                     'password'=> $password,
                                     'userType'=>$userType,
@@ -111,6 +114,7 @@ class Settings extends CI_Controller {
         
         public function update($id){
              $this->form_validation->set_rules('emp_name', 'Employee Name', 'required');
+             $this->form_validation->set_rules('emp_code', 'Employee Code', 'required');
            //$this->form_validation->set_rules('email', 'Email', 'required');
           // $this->form_validation->set_rules('password', 'Password', 'required');
            $this->form_validation->set_rules('dept', 'Department', 'required');
@@ -121,6 +125,7 @@ class Settings extends CI_Controller {
                     else
                      {   
                            $emp_name= $this->input->post('emp_name');
+                           $emp_code= $this->input->post('emp_code');
 //                           $email = $this->input->post('email');
 //                           $password= $this->input->post('password');
                            $dept= $this->input->post('dept');
@@ -128,6 +133,7 @@ class Settings extends CI_Controller {
                                                    
                                 $data= array(
                                     'emp_name'=> $emp_name,
+                                    'AD_user_id'=> $emp_code,
                                     'userType'=>$userType,
                                     'Dept'=> $dept
                                         );
@@ -139,7 +145,7 @@ class Settings extends CI_Controller {
         }
         
          public function updatePassword($id){
-             $this->form_validation->set_rules('curr_password', 'Current Password', 'required');
+//             $this->form_validation->set_rules('curr_password', 'Current Password', 'required');
            $this->form_validation->set_rules('password', 'Password', 'required');
            $this->form_validation->set_rules('confirm', 'confirm', 'required|matches[password]');
             if ($this->form_validation->run() == FALSE)
@@ -148,10 +154,10 @@ class Settings extends CI_Controller {
                     }
                     else
                      {   
-                           $curr_password= strrev(sha1(md5($this->input->post('curr_password'))));
-                            $cond = array('user_id' => $this->session->userdata('log_id'),'password' => $curr_password);
-                            $exist = $this->jsw_model->check_data_info('dbo.tblusers',$cond);
-                         if($exist){
+//                           $curr_password= strrev(sha1(md5($this->input->post('curr_password'))));
+//                            $cond = array('user_id' => $this->session->userdata('log_id'),'password' => $curr_password);
+//                            $exist = $this->jsw_model->check_data_info('dbo.tblusers',$cond);
+//                         if($exist){
                                   $password= strrev(sha1(md5($this->input->post('password'))));
 
                                    $data= array('password'=> $password);
@@ -159,9 +165,9 @@ class Settings extends CI_Controller {
                                    $this->jsw_model->update_data_info('dbo.tblusers',$data,$where);
                              echo 1;  
                              //$this->session->sess_destroy();	
-                         }else{  
-                              echo '<i class="material-icons">close</i> Current Password of admin is Invalid..!';     
-                         }
+//                         }else{  
+//                              echo '<i class="material-icons">close</i> Current Password of admin is Invalid..!';     
+//                         }
                      }
                          
         }
@@ -175,5 +181,52 @@ class Settings extends CI_Controller {
                 //redirect($this->agent->referrer());
         }
        
+        public function saveDept(){
+           $this->form_validation->set_rules('dept_name', 'Department Name', 'required');
+            if ($this->form_validation->run() == FALSE)
+                     {
+                            echo validation_errors();
+                    }
+                    else
+                     {   
+                           $dept_name= $this->input->post('dept_name');                                                      
+                            $cond = array('Department' => $dept_name);
+                         $exist = $this->jsw_model->check_data_info('dbo.UserTypes',$cond);
+                         if($exist){
+                                echo '<i class="material-icons">close</i> Name Already Exist..!';
+                         }else{                           
+                                $data= array('Department'=> $dept_name);
+                                $this->jsw_model->save_data_info('dbo.UserTypes',$data);
+                            
+                            echo 1;
+                         }
+                    } 
+            
+        }
+        
+         public function updateDept($id){
+            $this->form_validation->set_rules('dept_name', 'Department Name', 'required');
+            if ($this->form_validation->run() == FALSE)
+                     {
+                            echo validation_errors();
+                    }
+                    else
+                     {   
+                            $dept_name= $this->input->post('dept_name'); 
+                            $cond = array('Department' => $dept_name, 'userType!=' => $id);
+                            $exist = $this->jsw_model->check_data_info('dbo.UserTypes',$cond);
+                         
+                         if($exist){
+                                echo '<i class="material-icons">close</i> Department Name Already Exist..!';
+                         }else{                           
+                                $data= array('Department'=> $dept_name);
+                                $where =array('userType'=>$id);
+                                $this->jsw_model->update_data_info('dbo.UserTypes',$data,$where);
+                                echo 1;
+                         }
+                               
+                     }
+                         
+        }
         
 }

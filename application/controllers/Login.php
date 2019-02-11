@@ -23,5 +23,14 @@ class Login extends CI_Controller {
             $this->load->view('jsw/login',$data);
 	}     
         
-      
+         public function verifyCode(){
+              $data['title'] = "Verify Employee Code";
+            $data['titlebar'] = "Verify Employee Code";
+            $this->load->view('jsw/verifyCode',$data);
+        }
+        public function ForgotPassword(){
+              $data['title'] = "Forgot Password";
+            $data['titlebar'] = "Forgot Password";
+            $this->load->view('jsw/Forgot_Password',$data);
+        }
 }

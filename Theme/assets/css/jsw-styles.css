@@ -13,7 +13,7 @@
                 }
 
                 .dataTable > tbody > tr > td, .dataTable > tbody > tr > th, .dataTable > tfoot > tr > td, .dataTable > tfoot > tr > th, .dataTable > thead > tr > td, .dataTable > thead > tr > th {
-                    padding: 8px !important;
+                    padding: 5px !important;
                 }
 
                 .table .td-actions .btn {
@@ -103,8 +103,8 @@
     color:black;
     text-align: center;
     }
-    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {   
-    line-height: 2.428571 !important;
+    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    line-height: 1.9 !important;
 }
 #MainView{
     background-color:#eee;

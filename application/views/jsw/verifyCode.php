@@ -37,18 +37,8 @@
               <h4 class="card-title"> <img class="main_logo" style="width:150px;" src="<?php echo base_url();?>Theme/assets/img/logo.png" /></h4>
                 <small id="res" class="display-block"></small>
           </div>
-          <div class="card-body ">          
+            <div class="card-body" style="height:100px;">          
            
-            <span class="bmd-form-group">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="material-icons">email</i>
-                  </span>
-                </div>
-                <input type="email" id="email" name="email" autocomplete="off" class="form-control" placeholder="Email...">
-              </div>
-            </span>
             <span class="bmd-form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -56,15 +46,15 @@
                     <i class="material-icons">lock_outline</i>
                   </span>
                 </div>
-                  <input type="password" id="password" name="password" class="form-control" placeholder="Password...">
+                <input type="text" id="emp_code" name="emp_code" autocomplete="off" class="form-control" placeholder="Employee Code">
               </div>
-            </span>
+            </span>            
           </div>
           <div class="card-footer justify-content-center">
-              <button  type="button" name="save" id="loginbtn" class="btn btn-info btn-lg"><i class="material-icons">send</i> Login</button>
+              <button  type="button" name="save" id="verifybtn" class="btn btn-info btn-lg"><i class="material-icons">lock_outline</i> Verify</button>
           </div>
             <div class="card-footer justify-content-center">
-                <a href="<?php echo base_url();?>Login/verifyCode" style="float: right;">Forgot Password</a>
+                <!--<a href="<?php echo base_url();?>Login" style="float: right;">Login</a>-->
             </div>
         </div>
       </form>
@@ -83,28 +73,27 @@
             $(document).ready(function() {
                  $('#password').keydown(function(event){    
             if(event.keyCode==13){
-               $('#loginbtn').trigger('click');
+               $('#verifybtn').trigger('click');
             }
         });
-                $('#loginbtn').click(function(){
+                $('#verifybtn').click(function(){
                    // alert("hello");
                  $('#res').html("<img style='width:25px;height:25px;'  src='<?php echo base_url();?>Theme/assets/img/loading.gif'>");
-                $email = $('#email').val();
-                $password = $('#password').val();
-               if($email == '' || $password == '')
+                $emp_code = $('#emp_code').val();
+               if($emp_code == '' || isNaN($emp_code))
                {
                    //alert('Please enter all login details.');
-                    $('#res').html("<span style='color:red;text-transform:capitalize;font-size:13px'>Enter login details..!</span>");
+                    $('#res').html("<span style='color:red;text-transform:capitalize;font-size:13px'>Enter Valid Code..!</span>");
                    return false;
                }
 //               $(this).attr('disabled','disabled');
-               $.post('<?php echo base_url();?>Home/validateLogin',{ email:$email,password:$password},function(data){
+               $.post('<?php echo base_url();?>Home/validateCode',{ emp_code:$emp_code },function(data){
                    //alert(data);
                   if(data==1) 
                   {	
-                  	  $('#res').html("<span style='color:green;text-transform:capitalize;font-size:13px'>Login Success..!</span><br><img style='width:25px;height:25px;' src='<?php echo base_url();?>Theme/assets/img/loading.gif'><br><span style='font-size:12px'>Redirecting.....</span>");
+                  	  $('#res').html("<span style='color:green;text-transform:capitalize;font-size:13px'>Veirfied..!</span><br><img style='width:25px;height:25px;' src='<?php echo base_url();?>Theme/assets/img/loading.gif'><br><span style='font-size:12px'>Redirecting.....</span>");
                    
-                          window.location="<?php echo base_url();?>";
+                          window.location="<?php echo base_url();?>Login/ForgotPassword";
                   }else{
 //                    
                       $('#res').html("<span style='color:red;text-transform:capitalize;font-size:14px'>"+data+"</span>");

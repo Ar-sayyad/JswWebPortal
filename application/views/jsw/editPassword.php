@@ -6,14 +6,14 @@
                                         <table class="table form">                                                
                                             <thead class="">
 
-                                            <tr>
+<!--                                            <tr>
                                                 <th>
                                                     Current Admin Password:<span style="color:red;">*</span>
                                                 </th>
                                                 <th>
                                                     <input type="password" class="form-control" required="" autocomplete="off"  placeholder="Current admin Password" id="curr_password">
                                                 </th>
-                                            </tr>
+                                            </tr>-->
                                             <tr>
                                                 <th>
                                                     New Password:<span style="color:red;">*</span>
@@ -51,11 +51,11 @@
    $(document).ready(function(){ 
     $("#updateUser").click(function(){
       $("#updateUser").html('<img src="<?php echo base_url();?>Theme/assets/img/loading.gif" style="width:25px;height:20px;" />');
-         $curr_password = $("#curr_password").val(); 
+       //  $curr_password = $("#curr_password").val(); 
         $password = $("#password").val();
         $confirm = $("#confirm").val();
                    
-      $.post('<?php echo base_url();?>Settings/updatePassword/<?php echo $param2;?>', {curr_password:$curr_password,password:$password,confirm:$confirm}, function(data){
+      $.post('<?php echo base_url();?>Settings/updatePassword/<?php echo $param2;?>', {password:$password,confirm:$confirm}, function(data){
           //alert(data);
                     if(data==1)
                           {                                  

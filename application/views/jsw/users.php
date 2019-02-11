@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php include 'includes/header.php';?> 
     
     <body class="">
@@ -29,13 +27,14 @@
                           <div class="addbtn" style="margin-top: 0px;">
                                 <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addnewuser');" class="btn btn-primary" style="float: right" > <i class="material-icons">person_add</i> Add New User</button>
                            </div> 
-                    <div class="bootstrap-data-table-panel card" style="margin: 5px 0;">
+                    <div class="card" style="margin: 5px 0;">
                             <div class="table-responsive">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered table-hover">   
                                     <thead>
                                       <tr>
                                         <th>SR</th>
-                                        <th>Employee Name</th>
+                                        <th>Name</th>
+                                        <th>Code</th>
                                         <th>Email</th>
                                         <th>Department</th>
                                         <th>Edit Info.</th>
@@ -50,6 +49,7 @@
                                         <tr>
                                         <td><?php echo $sr;?></td>   
                                         <td><?php echo $row['emp_name'];?></td>
+                                        <td><?php echo $row['AD_user_id'];?></td>
                                         <td><?php echo $row['email'];?></td>
                                         <td><?php echo $row['Dept'];?></td>
                                         <td><a rel="tooltip" title="Edit" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_ajax"  href="#" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/editUser/<?php echo  $row['user_id'];?>');">
@@ -94,31 +94,6 @@
 
 <!--   Core JS Files   -->
  <?php include 'includes/footer-min.php';?>
- <script>
-   $(document).ready(function(){
-    $( "form" ).on( "submit", function() {    
-      $("#Search").html('<img src="<?php echo base_url();?>Theme/assets/img/loading.gif" style="width:25px;height:20px;" />');
-      $Month= $("#month").val();
-      $year= $("#year").val();
-          //alert($Month);
-            if($Month =='' || $year ==''){
-                          $(".error_msgg").html('All Fields are Required..!');
-                          $(".error_msgg").show();
-                          setTimeout(hidetab,4000);
-                          $("#Search").html('<i class="material-icons">search</i> Search');
-                           return false;
-                  }
-                  else{
-                      return true;
-                  }
-            
-	function hidetab(){    
-            $('#mssg').hide();
-            $('.error_msgg').hide();
-          }	
-      
-    });
-});
-</script>    
+  
 </body>
 </html>

@@ -43,10 +43,10 @@
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
-                    <i class="material-icons">email</i>
+                    <i class="material-icons">lock_outline</i>
                   </span>
                 </div>
-                <input type="email" id="email" name="email" autocomplete="off" class="form-control" placeholder="Email...">
+               <input type="password" id="new_password" name="new_password" autocomplete="off" class="form-control" placeholder="New Password...">
               </div>
             </span>
             <span class="bmd-form-group">
@@ -56,15 +56,15 @@
                     <i class="material-icons">lock_outline</i>
                   </span>
                 </div>
-                  <input type="password" id="password" name="password" class="form-control" placeholder="Password...">
+                  <input type="password" id="confirm_password" name="confirm_password" autocomplete="off" class="form-control" placeholder="Confirm Password...">
               </div>
             </span>
           </div>
           <div class="card-footer justify-content-center">
-              <button  type="button" name="save" id="loginbtn" class="btn btn-info btn-lg"><i class="material-icons">send</i> Login</button>
+              <button  type="button" name="save" id="changePasswordbtn" class="btn btn-info btn-lg"><i class="material-icons">lock_outline</i> Change Password</button>
           </div>
             <div class="card-footer justify-content-center">
-                <a href="<?php echo base_url();?>Login/verifyCode" style="float: right;">Forgot Password</a>
+                <a href="<?php echo base_url();?>Login" style="float: right;">Login</a>
             </div>
         </div>
       </form>
@@ -81,28 +81,28 @@
 <script src="<?php echo base_url();?>Theme/assets/js/core/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
             $(document).ready(function() {
-                 $('#password').keydown(function(event){    
+                 $('#confirm_password').keydown(function(event){    
             if(event.keyCode==13){
-               $('#loginbtn').trigger('click');
+               $('#changePasswordbtn').trigger('click');
             }
         });
-                $('#loginbtn').click(function(){
+                $('#changePasswordbtn').click(function(){
                    // alert("hello");
                  $('#res').html("<img style='width:25px;height:25px;'  src='<?php echo base_url();?>Theme/assets/img/loading.gif'>");
-                $email = $('#email').val();
-                $password = $('#password').val();
-               if($email == '' || $password == '')
+                $new_password = $('#new_password').val();
+                $confirm_password = $('#confirm_password').val();
+               if($new_password == '' || $confirm_password == '')
                {
                    //alert('Please enter all login details.');
-                    $('#res').html("<span style='color:red;text-transform:capitalize;font-size:13px'>Enter login details..!</span>");
+                    $('#res').html("<span style='color:red;text-transform:capitalize;font-size:13px'>Enter All details..!</span>");
                    return false;
                }
 //               $(this).attr('disabled','disabled');
-               $.post('<?php echo base_url();?>Home/validateLogin',{ email:$email,password:$password},function(data){
+               $.post('<?php echo base_url();?>Home/changePassword',{ new_password:$new_password,confirm_password:$confirm_password},function(data){
                    //alert(data);
                   if(data==1) 
                   {	
-                  	  $('#res').html("<span style='color:green;text-transform:capitalize;font-size:13px'>Login Success..!</span><br><img style='width:25px;height:25px;' src='<?php echo base_url();?>Theme/assets/img/loading.gif'><br><span style='font-size:12px'>Redirecting.....</span>");
+                  	  $('#res').html("<span style='color:green;text-transform:capitalize;font-size:13px'>Password Changed Successfully..!</span><br><img style='width:25px;height:25px;' src='<?php echo base_url();?>Theme/assets/img/loading.gif'><br><span style='font-size:12px'>Redirecting.....</span>");
                    
                           window.location="<?php echo base_url();?>";
                   }else{

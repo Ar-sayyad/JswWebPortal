@@ -15,6 +15,14 @@
                                 <input type="text" class="form-control" required="" placeholder="Employee Name" id="emp_name">
                             </th>
                         </tr>
+                         <tr>
+                            <th>
+                                Employee Code:<span style="color:red;">*</span>
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" required="" placeholder="Employee Code" id="emp_code">
+                            </th>
+                        </tr>
                         <tr>
                             <th>
                                 Email:<span style="color:red;">*</span>
@@ -65,12 +73,13 @@
     $("#saveUser").click(function(){
       $("#saveUser").html('<img src="<?php echo base_url();?>Theme/assets/img/loading.gif" style="width:25px;height:20px;" />');
         $emp_name = $("#emp_name").val(); 
+        $emp_code = $("#emp_code").val(); 
         $email = $("#email").val();
         $password = $("#password").val();
         $dept = $("#dept").val();
         $userType = $("#dept").find('option:selected').attr('data-id');
                    
-      $.post('<?php echo base_url();?>Settings/saveUser', {emp_name:$emp_name,email:$email,password:$password,
+      $.post('<?php echo base_url();?>Settings/saveUser', {emp_name:$emp_name,emp_code:$emp_code,email:$email,password:$password,
       dept:$dept,userType:$userType}, function(data){
           //alert(data);
                     if(data==1)

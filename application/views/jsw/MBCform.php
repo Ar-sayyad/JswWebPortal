@@ -27,7 +27,7 @@
                 </div>                      
                 <div class="col-lg-10 col-md-10 col-sm-10" id="MainView">
                           <div class="addbtn" style="margin-top: 0px;">
-                                <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addMBCData');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add MBC Data</button>
+                                <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addMBCData');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add MBC ETA Data</button>
                            </div> 
                     <div class="bootstrap-data-table-panel card" style="margin: 5px 0;">
                             <div class="table-responsive">

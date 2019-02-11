@@ -378,12 +378,12 @@ $cond = array('userType' => $this->session->userdata('userType'));
             <h4 style="">MANUAL FORMS</h4>
             <?php if($title=='Jetty'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(53, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(53, $array);?>" ><?php }?>
                      <a class="nav-link"  href="<?php echo base_url();?>Jetty">
-                        <i class="material-icons">filter_1</i>Jetty Form
+                        <i class="material-icons">filter_1</i> Barge Status
                     </a>
                 </li>
            <?php if($title=='MBC'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(54, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(54, $array);?>" ><?php }?>
                      <a class="nav-link"  href="<?php echo base_url();?>MBC">
-                        <i class="material-icons">filter_2</i> MBC
+                        <i class="material-icons">filter_2</i> MBC ETA
                     </a>
                 </li>
             <?php if($title=='Cargo Despatch'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(55, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(55, $array);?>" ><?php }?>

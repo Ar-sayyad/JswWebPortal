@@ -132,6 +132,17 @@ class Jsw_model extends CI_Model {
 		
 	}
         
+        function validate_code_info($emp_code){
+            $users = $this->db->get_where('tblusers', array('AD_user_id' => $emp_code));	
+		if($users->num_rows() > 0) {
+                        $row = $users->row();
+                        $this->session->set_userdata('forgot_pass_log_id', $row->user_id);
+                        echo '1';
+                        }else{
+                             echo 'Invalid Employee Code';
+                        }
+        }
+        
       function is_access_in($value){
         $cond = array('userType' => $this->session->userdata('userType'));
         $dept_info= $this->check_data_info('dbo.UserTypes',$cond);    

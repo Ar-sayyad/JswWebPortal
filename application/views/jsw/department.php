@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php include 'includes/header.php';?> 
     
     <body class="">
@@ -26,9 +24,9 @@
                     </div>
                 </div>                      
                 <div class="col-lg-10 col-md-10 col-sm-10" id="MainView">
-<!--                          <div class="addbtn" style="margin-top: 0px;">
-                                <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addnewUser');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add New User</button>
-                           </div> -->
+                          <div class="addbtn" style="margin-top: 0px;">
+                                <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addnewDept');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add New Department</button>
+                           </div> 
                     <div class="bootstrap-data-table-panel card" style="margin: 5px 0;">
                             <div class="table-responsive">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered table-hover">   
@@ -36,6 +34,7 @@
                                       <tr>
                                         <th>SR</th>
                                         <th>Department</th>
+                                        <th>Edit</th>
                                         <th>Access Control</th>
                                       </tr>
                                     </thead>
@@ -45,6 +44,10 @@
                                         <tr>
                                         <td><?php echo $sr;?></td>   
                                         <td><?php echo $row['Department'];?></td>
+                                         <td><a rel="tooltip" title="Edit" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_ajax"  href="#" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/editDept/<?php echo  $row['userType'];?>');">
+                                            <i class="material-icons">edit</i>
+                                            </a>
+                                        </td>                                        
                                         <td><a rel="tooltip" title="Access Setting" href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_ajax"  onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/access/<?php echo  $row['userType'];?>');">
                                             <i class="material-icons">settings</i>
                                             </a>

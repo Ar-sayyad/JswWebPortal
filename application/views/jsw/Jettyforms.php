@@ -28,26 +28,26 @@
                 
                  <div class="col-lg-10 col-md-10 col-sm-10" id="MainView">
                           <div class="addbtn" style="margin-top: 0px;">
-                                <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addJettyData');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add Jetty Data</button>
+                                <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addJettyData');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add Barge Status</button>
                            </div> 
                     <div class="bootstrap-data-table-panel card" style="margin: 5px 0;">
                             <div class="table-responsive">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered table-hover">   
                                     <thead>
                                       <tr>
-                                        <th>SR</th>
-                                        <th>Date</th>
-                                        <th>At Jetty <br>Under Discharge</th>
-                                        <th>At Jetty <br>Waiting for Discharge</th>
-                                        <th>At R-19 Waiting (Loaded)</th>
-                                        <th>At Gulf - Waiting (Loaded)</th>
-                                        <th>In transit from <br>MV/GULL to Jetty(Loaded)</th>
-                                        <th>Under <br>Loading at MV</th>
-                                        <th>Waiting for Loading</th>
-                                        <th>Waiting at Jetty</th>
-                                        <th>Empty at Gull R-19</th>
-                                        <th>In Transit - <br>from Jetty to MV</th>
-                                        <th>Breakdown/off hired</th>
+                                        <th style="width: 2%;">SR</th>
+                                        <th style="width: 8%;">Date</th>
+                                        <th style="width: 7%;">Un. Discharge</th>
+                                        <th style="width: 7%;">Wait Discharge</th>
+                                        <th style="width: 8%;">R-19 Waiting<BR>(Loaded)</th>
+                                        <th style="width: 8%;">Gulf-Waiting<BR>(Loaded)</th>
+                                        <th style="width: 8%;">MV/GULL to Jetty</th>
+                                        <th style="width: 8%;">Under <br>Loading at MV</th>
+                                        <th style="width: 8%;">Waiting for Loading</th>
+                                        <th style="width: 8%;">Waiting at Jetty</th>
+                                        <th style="width: 10%;">Empty at Gull R-19</th>
+                                        <th style="width: 10%;">In Transit-<br>from Jetty to MV</th>
+                                        <th style="width: 8%;">Breakdown/off hired</th>
                                       </tr>
                                     </thead>
                                    

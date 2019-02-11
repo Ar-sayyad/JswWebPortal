@@ -80,6 +80,36 @@ class Home extends CI_Controller {
                             
         }
         
+        function validateCode() {
+             $this->form_validation->set_rules('emp_code', 'Employee Code', 'required');
+            if ($this->form_validation->run() == FALSE)
+                     {
+                            echo validation_errors();
+                    }
+                    else
+                     {
+                            $emp_code= $this->input->post('emp_code');
+                            echo $this->jsw_model->validate_code_info($emp_code);
+                    } 
+        }
+       function changePassword(){
+            $this->form_validation->set_rules('new_password', 'New Password', 'required');
+             $this->form_validation->set_rules('confirm_password', 'Confirm Password','required|matches[new_password]');
+            if ($this->form_validation->run() == FALSE)
+                     {
+                            echo validation_errors();
+                    }
+                    else
+                     {
+                           $password= strrev(sha1(md5($this->input->post('new_password'))));
+                            $data= array('password'=> $password);
+                            $where =array('user_id'=>$this->session->userdata('forgot_pass_log_id'));
+                            $this->jsw_model->update_data_info('dbo.tblusers',$data,$where);
+                             echo 1;  
+                             $this->session->set_userdata('forgot_pass_log_id','');
+                    } 
+       }
+        
           public function logout()
 	{
 		$this->session->sess_destroy();	

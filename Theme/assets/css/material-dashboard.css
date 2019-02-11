@@ -3428,7 +3428,7 @@ select.form-control[multiple],
 
 .table>thead>tr>th {
     border-bottom-width: 1px;
-    font-size: 14PX;
+    font-size: 12PX;
     font-weight: 500;
 }
 
@@ -3454,6 +3454,7 @@ select.form-control[multiple],
 .table>tfoot>tr>td {
     padding: 15px 15px;
     vertical-align: middle;
+    font-size: 12px;
 }
 
 .table>thead>tr>th {
