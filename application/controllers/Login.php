@@ -29,8 +29,14 @@ class Login extends CI_Controller {
             $this->load->view('jsw/verifyCode',$data);
         }
         public function ForgotPassword(){
-              $data['title'] = "Forgot Password";
-            $data['titlebar'] = "Forgot Password";
-            $this->load->view('jsw/Forgot_Password',$data);
+           if ($this->session->userdata('forgot_pass') == 1) {                
+                 $data['title'] = "Forgot Password";
+                 $data['titlebar'] = "Forgot Password";
+                  $this->load->view('jsw/Forgot_Password',$data);	
+                }
+                else{                 
+                    redirect(base_url().'Login');                     
+                }
+             
         }
 }

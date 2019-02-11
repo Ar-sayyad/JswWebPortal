@@ -136,6 +136,7 @@ class Jsw_model extends CI_Model {
             $users = $this->db->get_where('tblusers', array('AD_user_id' => $emp_code));	
 		if($users->num_rows() > 0) {
                         $row = $users->row();
+                        $this->session->set_userdata('forgot_pass', '1');
                         $this->session->set_userdata('forgot_pass_log_id', $row->user_id);
                         echo '1';
                         }else{

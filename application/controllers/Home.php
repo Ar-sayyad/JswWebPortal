@@ -106,6 +106,7 @@ class Home extends CI_Controller {
                             $where =array('user_id'=>$this->session->userdata('forgot_pass_log_id'));
                             $this->jsw_model->update_data_info('dbo.tblusers',$data,$where);
                              echo 1;  
+                             $this->session->set_userdata('forgot_pass','');
                              $this->session->set_userdata('forgot_pass_log_id','');
                     } 
        }
