@@ -86,6 +86,7 @@ class Jetty extends CI_Controller {
                             $data= array(
                                     'date'=> $trans_date,
                                     'At_Jetty_under_discharge'=> $this->input->post('At_Jetty_under_discharge'),
+                                    'Mother_Vessel_Name' => $this->input->post('Mother_Vessel_Name'),
                                     'At_Jetty_waiting_for_discharge'=> $this->input->post('At_Jetty_waiting_for_discharge'),
                                     'At_R_19_waiting_loaded'=> $this->input->post('At_R_19_waiting_loaded'),
                                     'At_gulf_waiting_loaded'=> $this->input->post('At_gulf_waiting_loaded'),
@@ -121,6 +122,7 @@ class Jetty extends CI_Controller {
                             $data= array(
                                     'date'=> $trans_date,
                                     'At_Jetty_under_discharge'=> $this->input->post('At_Jetty_under_discharge'),
+                                    'Mother_Vessel_Name' => $this->input->post('Mother_Vessel_Name'),
                                     'At_Jetty_waiting_for_discharge'=> $this->input->post('At_Jetty_waiting_for_discharge'),
                                     'At_R_19_waiting_loaded'=> $this->input->post('At_R_19_waiting_loaded'),
                                     'At_gulf_waiting_loaded'=> $this->input->post('At_gulf_waiting_loaded'),

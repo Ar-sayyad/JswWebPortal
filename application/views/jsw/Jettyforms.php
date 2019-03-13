@@ -37,16 +37,17 @@
                                       <tr>
                                         <th style="width: 2%;">SR</th>
                                         <th style="width: 8%;">Date</th>
+                                        <th style="width: 7%;">Mother <br>Vessel</th>
                                         <th style="width: 7%;">Un. Discharge</th>
                                         <th style="width: 7%;">Wait Discharge</th>
-                                        <th style="width: 8%;">R-19 Waiting<BR>(Loaded)</th>
-                                        <th style="width: 8%;">Gulf-Waiting<BR>(Loaded)</th>
+                                        <th style="width: 7%;">R-19 Waiting<BR>(Loaded)</th>
+                                        <th style="width: 7%;">Gulf-Waiting<BR>(Loaded)</th>
                                         <th style="width: 8%;">MV/GULL to Jetty</th>
                                         <th style="width: 8%;">Under <br>Loading at MV</th>
                                         <th style="width: 8%;">Waiting for Loading</th>
-                                        <th style="width: 8%;">Waiting at Jetty</th>
+                                        <th style="width: 5%;">Waiting <br>at Jetty</th>
                                         <th style="width: 10%;">Empty at Gull R-19</th>
-                                        <th style="width: 10%;">In Transit-<br>from Jetty to MV</th>
+                                        <th style="width: 8%;">In Transit-<br>from Jetty to MV</th>
                                         <th style="width: 8%;">Breakdown/off hired</th>
                                       </tr>
                                     </thead>
@@ -56,6 +57,7 @@
                                         <tr>
                                         <td><?php echo $sr;?></td>   
                                         <td><?php echo $jetty['date'];?></td>
+                                        <td><?php echo $jetty['Mother_Vessel_Name'];?></td>
                                         <td><?php echo $jetty['At_Jetty_under_discharge'];?></td>
                                         <td><?php echo $jetty['At_Jetty_waiting_for_discharge'];?></td>
                                         <td><?php echo $jetty['At_R_19_waiting_loaded'];?></td>

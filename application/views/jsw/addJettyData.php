@@ -41,10 +41,10 @@
                                 <input type="date" class="form-control" required="" placeholder="Date" max="<?php echo date('Y-m-d');?>" id="trans_date">
                             </th>
                             <th>
-                                Jetty Under Discharge
+                                Mother Vessel Name
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Jetty Under Discharge" id="At_Jetty_under_discharge">
+                                <input type="text" class="form-control" placeholder="Mother Vessel Name" id="Mother_Vessel_Name">
                             </th>
                         </tr>
                         <tr>
@@ -54,7 +54,7 @@
                             <th>
                                 <input type="text" class="form-control" placeholder="Jetty Waiting for Discharge" id="At_Jetty_waiting_for_discharge">
                             </th>
-                            <th>
+                             <th>
                                 R-19 Waiting (Loaded)
                             </th>
                             <th>
@@ -63,59 +63,69 @@
                         </tr>
                         <tr>
                             <th>
+                                R-19 Waiting (Loaded)
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" placeholder="R-19 Waiting (Loaded)" id="At_R_19_waiting_loaded">
+                            </th>
+                        
+                            <th>
                                 Gulf - Waiting (Loaded)
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="Gulf - Waiting (Loaded)" id="At_gulf_waiting_loaded">
                             </th>
+                        </tr>
+                        <tr>
                             <th>
                                 In transit from MV/GULL to Jetty(Loaded
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="In transit from MV/GULL to Jetty(Loaded" id="In_transit_from_MV_GULL_toJetty_Loaded">
-                            </th>
-                        </tr>
-                         <tr>
+                            </th>                        
                             <th>
                                Under Loading at MV
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="Under Loading at MV" id="Under_loading_at_MV">
                             </th>
+                        </tr>
+                         <tr>
                             <th>
                                 Waiting for Loading
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="Waiting for Loading" id="Waiting_for_Loading">
-                            </th>
-                        </tr>
-                         <tr>
+                            </th>                        
                             <th>
                                Waiting at Jetty
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="Waiting at Jetty" id="Waiting_at_jetty">
                             </th>
+                        </tr>
+                         <tr>
                             <th>
                                 Empty at Gull R-19
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="Empty at Gull R-19" id="Empty_at_gull_R_19">
-                            </th>
-                        </tr>
-                         <tr>
+                            </th>                        
                             <th>
                                In Transit - from Jetty to MV
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="In Transit-from Jetty to MV" id="In_transit_from_jetty_to_MV">
                             </th>
+                        </tr>
+                         <tr>
                             <th>
                                 Breakdown/off hired
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="Breakdown/off hired" id="Breakdown_offHired">
                             </th>
+                            <th colspan="2"></th>
                         </tr>
                             <tr>
                                 <th colspan="4" style="text-align:center">
@@ -139,6 +149,7 @@
 //      $Month= $("#Month").val();
 //      $year= $("#year").val();      
         $trans_date = $("#trans_date").val(); 
+        $Mother_Vessel_Name = $("#Mother_Vessel_Name").val();
         $At_Jetty_under_discharge = $("#At_Jetty_under_discharge").val();
         $At_Jetty_waiting_for_discharge = $("#At_Jetty_waiting_for_discharge").val();
         $At_R_19_waiting_loaded = $("#At_R_19_waiting_loaded").val();
@@ -151,7 +162,7 @@
         $In_transit_from_jetty_to_MV = $("#In_transit_from_jetty_to_MV").val();
         $Breakdown_offHired = $("#Breakdown_offHired").val();
            
-      $.post('<?php echo base_url();?>Jetty/save', {trans_date:$trans_date,At_Jetty_under_discharge:$At_Jetty_under_discharge,At_Jetty_waiting_for_discharge:$At_Jetty_waiting_for_discharge,
+      $.post('<?php echo base_url();?>Jetty/save', {trans_date:$trans_date,Mother_Vessel_Name:$Mother_Vessel_Name,At_Jetty_under_discharge:$At_Jetty_under_discharge,At_Jetty_waiting_for_discharge:$At_Jetty_waiting_for_discharge,
       At_R_19_waiting_loaded:$At_R_19_waiting_loaded,At_gulf_waiting_loaded:$At_gulf_waiting_loaded,In_transit_from_MV_GULL_toJetty_Loaded:$In_transit_from_MV_GULL_toJetty_Loaded,
       Under_loading_at_MV:$Under_loading_at_MV,Waiting_for_Loading:$Waiting_for_Loading,Waiting_at_jetty:$Waiting_at_jetty,Empty_at_gull_R_19:$Empty_at_gull_R_19,
       In_transit_from_jetty_to_MV:$In_transit_from_jetty_to_MV,Breakdown_offHired:$Breakdown_offHired}, function(data){

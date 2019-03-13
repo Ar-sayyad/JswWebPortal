@@ -42,6 +42,7 @@
                                         <th>Equipment Name</th>
                                         <th>Operator Name</th>
                                         <th>Remarks</th>
+                                        <th>Edit</th>
                                         <!--<th>Remove</th>-->
                                       </tr>
                                     </thead>
@@ -57,6 +58,10 @@
                                         <td><?php echo $equip['Equipment_Name'];?></td>
                                         <td><?php echo $equip['Operator_Name'];?></td>
                                         <td><?php echo $equip['Remarks'];?></td>
+                                        <td><a rel="tooltip" title="Edit" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_ajax"  href="#" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/editEquipmentDelay/<?php echo  $equip['Id'];?>');">
+                                            <i class="material-icons">edit</i>
+                                            </a>
+                                        </td>
 <!--                                        <td><a rel="tooltip" title="Remove" class="btn btn-danger btn-sm" onclick="return checkDelete();" href="<?php echo base_url(); ?>MBC/delete/<?php echo  $mbc['Id'];?>">
                                             <i class="material-icons">close</i>
                                             </a>

@@ -101,33 +101,13 @@ class EquipmentDelay extends CI_Controller {
       }
         
         public function update($id){
-            $this->form_validation->set_rules('date', 'Date', 'required');
-            if ($this->form_validation->run() == FALSE)
-                     {
-                            echo validation_errors();
-                    }
-                    else
-                     {   
-                           $trans_date = $this->input->post('date');
-                            $time=strtotime($trans_date);
-                            $month=date("F",$time);
-                            $year=date("Y",$time);
-                            $data= array(
-                                   'date'=> $trans_date,
-                                    'Delay_start_Time'=> $this->input->post('Delay_start_Time'),
-                                    'Delay_end_time'=> $this->input->post('Delay_end_time'),
-                                    'Delay_Time'=> $this->input->post('Delay_Time'),
-                                    'Equipment_Name'=> $this->input->post('Equipment_Name'),
-                                    'Operator_Name'=> $this->input->post('Operator_Name'),
-                                    'Remarks'=> $this->input->post('Remarks'),
-                                    'month'=> $month,
-                                    'year'=> $year
-                               );
-                            $where =array('Id'=>$id);
-                            $this->jsw_model->update_data_info('dbo.tbl_Equipment_Delay_MF',$data,$where);
-                      echo 1;
-                     }
-                         
+                $data= array(
+                        'Operator_Name'=> $this->input->post('Operator_Name'),
+                        'Remarks'=> $this->input->post('Remarks')
+                   );
+                $where =array('Id'=>$id);
+                $this->jsw_model->update_data_info('dbo.tbl_Equipment_Delay_MF',$data,$where);
+                echo 1;                         
         }
         
         public function delete($id){
