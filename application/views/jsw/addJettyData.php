@@ -5,33 +5,6 @@
                 <form action="" method="POST" enctype="multipart/form-data">
                     <table class="table form">                                                
                         <thead class="">
-<!--
-                            <tr class="sect2">
-                                <th> Select Month :<span class="required">*</span></th>
-                                <th>
-                                    <select id="Month" name="Month" placeholder="Month" required="" class="clsmon form-control">
-                                       <option value="">---Select Month---</option>
-                                        <?php $sr=1; foreach($month_info as $mon){?>                                       
-                                       <option data-id="<?php echo trim($mon['MonID']);?>" value="<?php echo trim($mon['MonName']);?>"><?php echo trim($mon['MonthFullName']);?></option>                                      
-                                        <?php $sr++;}?>
-                                    </select>
-                                </th>
-
-                                <th> Select Year :<span class="required">*</span></th>
-                                <th>
-                                    <select id="year" name="year" placeholder="year" required="" class="form-control">
-                                        <option value="">---Select Year---</option>
-                                        <option value="<?php echo date('Y')-1;?>"><?php echo date('Y')-1;?></option>
-                                        <option value="<?php echo date('Y');?>"><?php echo date('Y');?></option>
-                                        <option value="<?php echo date('Y')+1;?>"><?php echo date('Y')+1;?></option>
-                                    </select>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th colspan="4" >
-                                     <hr class="hr2">
-                                </th>
-                            </tr>-->
                         
                         <tr>
                             <th>
