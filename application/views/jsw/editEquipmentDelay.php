@@ -57,8 +57,16 @@
                             <th>
                                 <input type="text" class="form-control" placeholder="Remarks" value="<?php echo $row['Remarks'];?>"  id="Remarks">
                             </th>                           
-                            <th colspan="2"> &nbsp;
+                            <th>
+                                    Delay Filter <span style="color:red;">*</span>
                             </th> 
+                            <th>
+                                    <select class="form-control" id="Delay_FIlter" name="delay_filter" required="">
+                                            <option value="">---Select Delay---</option>
+                                            <option value="Delay" <?php if($row['Delay_FIlter']=='Delay'){ echo "Selected"; }else{}?>>Delay</option>
+                                            <option value="No Cargo Available" <?php if($row['Delay_FIlter']=='No Cargo Available'){ echo "Selected"; }else{}?>>No Cargo Available</option>
+                                    </select>
+                            </th>
                         </tr>
                             <tr>
                                 <th colspan="4" style="text-align:center">
@@ -81,8 +89,9 @@
     $("#saveEquipment").click(function(){
       $("#saveEquipment").html('<img src="<?php echo base_url();?>Theme/assets/img/loading.gif" style="width:25px;height:20px;" />');
        $Operator_Name = $("#Operator_Name").val();
+        $Delay_FIlter = $("#Delay_FIlter").val();
         $Remarks = $("#Remarks").val();   
-      $.post('<?php echo base_url();?>EquipmentDelay/update/<?php echo $param2;?>', {Operator_Name:$Operator_Name,Remarks:$Remarks}, function(data){
+      $.post('<?php echo base_url();?>EquipmentDelay/update/<?php echo $param2;?>', {Operator_Name:$Operator_Name,Remarks:$Remarks,Delay_FIlter:$Delay_FIlter}, function(data){
           //alert(data);
                     if(data==1)
                           {                                  

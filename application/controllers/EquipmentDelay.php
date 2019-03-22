@@ -73,6 +73,7 @@ class EquipmentDelay extends CI_Controller {
         
       public function save(){
             $this->form_validation->set_rules('date', 'Date', 'required');
+            $this->form_validation->set_rules('Delay_FIlter', 'Delay Filter', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();
@@ -91,6 +92,7 @@ class EquipmentDelay extends CI_Controller {
                                     'Equipment_Name'=> $this->input->post('Equipment_Name'),
                                     'Operator_Name'=> $this->input->post('Operator_Name'),
                                     'Remarks'=> $this->input->post('Remarks'),
+                                    'Delay_FIlter'=>$this->input->post('Delay_FIlter'),
                                     'month'=> $month,
                                     'year'=> $year
                                );
@@ -101,13 +103,22 @@ class EquipmentDelay extends CI_Controller {
       }
         
         public function update($id){
-                $data= array(
-                        'Operator_Name'=> $this->input->post('Operator_Name'),
-                        'Remarks'=> $this->input->post('Remarks')
-                   );
-                $where =array('Id'=>$id);
-                $this->jsw_model->update_data_info('dbo.tbl_Equipment_Delay_MF',$data,$where);
-                echo 1;                         
+            $this->form_validation->set_rules('Delay_FIlter', 'Delay Filter', 'required');
+            if ($this->form_validation->run() == FALSE)
+                     {
+                            echo validation_errors();
+                    }
+                    else
+                     { 
+                                $data= array(
+                                        'Operator_Name'=> $this->input->post('Operator_Name'),
+                                        'Remarks'=> $this->input->post('Remarks'),
+                                        'Delay_FIlter'=>$this->input->post('Delay_FIlter')
+                                   );
+                                $where =array('Id'=>$id);
+                                $this->jsw_model->update_data_info('dbo.tbl_Equipment_Delay_MF',$data,$where);
+                                echo 1;  
+                     }
         }
         
         public function delete($id){
