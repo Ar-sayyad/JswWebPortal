@@ -347,6 +347,26 @@ $cond = array('userType' => $this->session->userdata('userType'));
                     <span class="sidebar-normal"> DPPL Electrical Old Jetty System (MTTR,MTBF)  </span>
             </a>
         </li>
+         <?php if($title=='Equipment Delay New System'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(58, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(58, $array);?>" ><?php }?>
+            <a class="nav-link"  title="Equipment Delay New System" href="<?php echo base_url();?>REPORTS/EquipmentDelayNewSystem">
+                    <span class="sidebar-normal"> Equipment Delay New System  </span>
+            </a>
+        </li>
+         <?php if($title=='Equipment Delay Old System'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(59, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(59, $array);?>" ><?php }?>
+            <a class="nav-link"  title="Equipment Delay Old System" href="<?php echo base_url();?>REPORTS/EquipmentDelayOldSystem">
+                    <span class="sidebar-normal"> Equipment Delay Old System  </span>
+            </a>
+        </li>
+         <?php if($title=='Cargo Consumption New System'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(60, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(60, $array);?>" ><?php }?>
+            <a class="nav-link"  title="Cargo Consumption New System" href="<?php echo base_url();?>REPORTS/CargoConsumptionNewSystem">
+                    <span class="sidebar-normal"> Cargo Consumption New System  </span>
+            </a>
+        </li>
+         <?php if($title=='Cargo Consumption Old System'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(61, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(61, $array);?>" ><?php }?>
+            <a class="nav-link"  title="Cargo Consumption Old System" href="<?php echo base_url();?>REPORTS/CargoConsumptionOldSystem">
+                    <span class="sidebar-normal"> Cargo Consumption Old System  </span>
+            </a>
+        </li>
 
 </ul>
 <!---electrical Reports--->

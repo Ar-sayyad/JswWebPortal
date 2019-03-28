@@ -297,6 +297,77 @@ class REPORTS extends CI_Controller {
            }   
 
 
+            public function EquipmentDelayNewSystem()
+           {
+                $data['mydiv'] = "REPORTS";
+                $data['mydiv2'] = "Electrical";
+                $data['mydiv3'] = "";
+                $data['title'] = "Equipment Delay New System";
+                $data['page'] = "58";
+                $t= $this->jsw_model->is_access_in(58);
+            if($t==1){              
+                $data['linkUrl'] = "http://172.21.25.29:8081/ReportServer/Pages/ReportViewer.aspx?%2fDPPL_PIMS_PRODUCTION%2fEquipment_Delay_New_System&rs:Command=Render?rs:Embed=true";
+                $this->load->view('jsw/Reports',$data);          
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }  
+           }   
+           
+            public function EquipmentDelayOldSystem()
+           {
+                $data['mydiv'] = "REPORTS";
+                $data['mydiv2'] = "Electrical";
+                $data['mydiv3'] = "";
+                $data['title'] = "Equipment Delay Old System";
+                $data['page'] = "59";
+                $t= $this->jsw_model->is_access_in(59);
+            if($t==1){              
+                $data['linkUrl'] = "http://172.21.25.29:8081/ReportServer/Pages/ReportViewer.aspx?%2fDPPL_PIMS_PRODUCTION%2fEquipment_Delay_Old_System&rs:Command=Render?rs:Embed=true";
+                $this->load->view('jsw/Reports',$data);          
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }  
+           }   
+           
+            public function CargoConsumptionNewSystem()
+           {
+                $data['mydiv'] = "REPORTS";
+                $data['mydiv2'] = "Electrical";
+                $data['mydiv3'] = "";
+                $data['title'] = "Cargo Consumption New System";
+                $data['page'] = "60";
+                $t= $this->jsw_model->is_access_in(60);
+            if($t==1){              
+                $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/CargoConsumption_NewSystem?rs:Embed=true";
+                $this->load->view('jsw/Reports',$data);          
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }  
+           }   
+           
+            public function CargoConsumptionOldSystem()
+           {
+                $data['mydiv'] = "REPORTS";
+                $data['mydiv2'] = "Electrical";
+                $data['mydiv3'] = "";
+                $data['title'] = "Cargo Consumption New System";
+                $data['page'] = "61";
+                $t= $this->jsw_model->is_access_in(61);
+            if($t==1){              
+                $data['linkUrl'] = "http://172.21.25.29:8081/Reports_DPPL/report/DPPL_PIMS_PRODUCTION/CargoConsumption_OldSystem?rs:Embed=true";
+                $this->load->view('jsw/Reports',$data);          
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }  
+           }   
 
        /*********MECHANICAL********/        
         
