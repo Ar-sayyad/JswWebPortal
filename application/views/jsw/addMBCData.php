@@ -102,9 +102,32 @@
 		});
       
     });
-    $('.Budget').keypress(function (event) {
+    $('#bl_qty').keypress(function (event) {
             return isNumber(event, this);
         });        
+        $('#MBC_name').keypress(function (event) {
+            return isChar(event, this);
+        }); 
+        
+        $('#Cargo').keypress(function (event) {
+            return isChar(event, this);
+        }); 
+      
+  // THE SCRIPT THAT CHECKS IF THE KEY PRESSED IS A NUMERIC OR DECIMAL VALUE.
+    function isChar(evt, element) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+
+        if ((charCode < 48 || charCode > 57)){                
+                        return true;
+                }else{
+                        $(".error_msg").html('Number Not Allowed..!');
+                        $(".error_msg").show();
+                        //$(element).val('');
+                        setTimeout(hidetab,2000);
+                    return false;
+            }
+    }
+        
     // THE SCRIPT THAT CHECKS IF THE KEY PRESSED IS A NUMERIC OR DECIMAL VALUE.
     function isNumber(evt, element) {
 

@@ -41,32 +41,32 @@
                                 <input type="date" class="form-control" required="" placeholder="Date" max="<?php echo date('Y-m-d');?>" id="date">
                             </th>
                             <th>
-                                Mother Vessel
+                                    Mother Vessel<span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Mother Vessel" id="Mother_vessel">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                Cargo
-                            </th>
-                            <th>
-                                <input type="text" class="form-control" placeholder="Cargo" id="cargo">
-                            </th>
-                            <th>
-                                Cargo Qty For Day
-                            </th>
-                            <th>
-                                <input type="text" class="form-control" placeholder="Cargo Qty For Day" id="cargo_qty_for_day">
+                                    <input type="text" class="form-control" required="" placeholder="Mother Vessel" id="Mother_vessel">
                             </th>
                         </tr>
                         <tr>
                             <th>
-                                Trips For Day From Berth No
+                                Cargo<span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Trips For Day From Berth No" id="TripsForDay_FromBerthNo">
+                                <input type="text" class="form-control" required="" placeholder="Cargo" id="cargo">
+                            </th>
+                            <th>
+                                Cargo Qty For Day<span style="color:red;">*</span>
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" required="" placeholder="Cargo Qty For Day" id="cargo_qty_for_day">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                Trips For Day From Berth No<span style="color:red;">*</span>
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" required="" placeholder="Trips For Day From Berth No" id="TripsForDay_FromBerthNo">
                             </th>
                             <th colspan="2">&nbsp;</th>
                         </tr>
@@ -118,7 +118,13 @@
     });
     $('#cargo_qty_for_day').keypress(function (event) {
             return isNumber(event, this);
-        });        
+        });  
+        $('#Mother_vessel').keypress(function (event) {
+            return isChar(event, this);
+        });  
+         $('#cargo').keypress(function (event) {
+            return isChar(event, this);
+        });  
     // THE SCRIPT THAT CHECKS IF THE KEY PRESSED IS A NUMERIC OR DECIMAL VALUE.
     function isNumber(evt, element) {
 
@@ -136,6 +142,19 @@
         }
 
         return true;
+    }
+     function isChar(evt, element) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+
+        if ((charCode < 48 || charCode > 57)){                
+                        return true;
+                }else{
+                        $(".error_msg").html('Number Not Allowed..!');
+                        $(".error_msg").show();
+                        //$(element).val('');
+                        setTimeout(hidetab,2000);
+                    return false;
+            }
     }
 });
 </script>

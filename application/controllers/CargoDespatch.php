@@ -73,6 +73,10 @@ class CargoDespatch extends CI_Controller {
         
       public function save(){
             $this->form_validation->set_rules('date', 'Date', 'required');
+             $this->form_validation->set_rules('Mother_vessel', 'Mother Vessel', 'required');
+              $this->form_validation->set_rules('cargo', 'Cargo', 'required');
+               $this->form_validation->set_rules('cargo_qty_for_day', 'Cargo Qty', 'required');
+                $this->form_validation->set_rules('TripsForDay_FromBerthNo', 'Trips', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();

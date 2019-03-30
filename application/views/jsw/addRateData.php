@@ -75,7 +75,7 @@
 		});
       
     });
-    $('.Budget').keypress(function (event) {
+    $('#Rate').keypress(function (event) {
             return isNumber(event, this);
         });        
     // THE SCRIPT THAT CHECKS IF THE KEY PRESSED IS A NUMERIC OR DECIMAL VALUE.

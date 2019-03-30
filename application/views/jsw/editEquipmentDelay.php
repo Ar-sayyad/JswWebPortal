@@ -19,7 +19,7 @@
                                Delay Start Time
                             </th>
                             <th>
-                                    <input type="time" class="form-control" readonly=""  required="" value="<?php echo $row['Delay_start_Time'];?>" onkeyup="getTime();" placeholder="Delay start Time"  id="Delay_start_Time">
+                                    <input type="text" class="form-control" readonly=""  required="" value="<?php echo $row['Delay_start_Time'];?>" onkeyup="getTime();" placeholder="Delay start Time"  id="Delay_start_Time">
                             </th>
                         </tr>
                         <tr>
@@ -27,7 +27,7 @@
                                 Delay End Time
                             </th>
                             <th>
-                                    <input type="time" class="form-control" readonly="" value="<?php echo $row['Delay_end_time'];?>" onkeyup="getTime();" placeholder="Delay End Time" id="Delay_end_time">
+                                    <input type="text" class="form-control" readonly="" value="<?php echo $row['Delay_end_time'];?>" onkeyup="getTime();" placeholder="Delay End Time" id="Delay_end_time">
                             </th>                           
                             <th>
                                 Delay Time
@@ -44,7 +44,7 @@
                                     <input type="text" class="form-control" readonly value="<?php echo $row['Equipment_Name'];?>"  placeholder="Equipment Name" id="Equipment_Name">
                             </th>                           
                             <th>
-                                Operator Name
+                                    Operator Name 
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="Operator Name" value="<?php echo $row['Operator_Name'];?>" id="Operator_Name">

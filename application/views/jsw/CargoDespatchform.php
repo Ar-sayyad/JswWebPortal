@@ -31,8 +31,8 @@
                            </div> 
                     <div class="bootstrap-data-table-panel card" style="margin: 5px 0;">
                             <div class="table-responsive">
-                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered table-hover">   
-                                    <thead>
+                                <table id="bootstrap-data-table-export" class="table  table-bordered table-hover">   
+                                    <thead  style="background-color: rgba(0,0,0,.2);">
                                       <tr>
                                         <th>SR</th>
                                         <th>Date</th>

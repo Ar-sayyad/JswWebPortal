@@ -132,26 +132,22 @@
 		});
       
     });
-    $('.Budget').keypress(function (event) {
-            return isNumber(event, this);
+    $('#Operator_Name').keypress(function (event) {
+            return isChar(event, this);
         });        
     // THE SCRIPT THAT CHECKS IF THE KEY PRESSED IS A NUMERIC OR DECIMAL VALUE.
-    function isNumber(evt, element) {
-
+    function isChar(evt, element) {
         var charCode = (evt.which) ? evt.which : event.keyCode;
 
-        if (
-            (charCode !== 45 || $(element).val().indexOf('-') !== -1) &&      // “-” CHECK MINUS, AND ONLY ONE.
-            (charCode !== 46 || $(element).val().indexOf('.') !== -1) &&      // “.” CHECK DOT, AND ONLY ONE.
-            (charCode < 48 || charCode > 57)){
-                $(".error_msg").html('Characters Not Allowed..!');
-                $(".error_msg").show();
-                //$(element).val('');
-                setTimeout(hidetab,2000);
-            return false;
-        }
-
-        return true;
+        if ((charCode < 48 || charCode > 57)){                
+                        return true;
+                }else{
+                        $(".error_msg").html('Number Not Allowed..!');
+                        $(".error_msg").show();
+                        //$(element).val('');
+                        setTimeout(hidetab,2000);
+                    return false;
+            }
     }
 });
 </script>
