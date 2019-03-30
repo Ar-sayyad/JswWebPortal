@@ -30,7 +30,7 @@
                     <div class="card" style="margin: 5px 0;">
                             <div class="table-responsive">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered table-hover">   
-                                    <thead>
+                                    <thead style="background-color: rgba(0,0,0,.2);">
                                       <tr>
                                         <th>SR</th>
                                         <th>Name</th>
