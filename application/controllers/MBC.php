@@ -73,6 +73,10 @@ class MBC extends CI_Controller {
         
       public function save(){
             $this->form_validation->set_rules('ETA_Dharamtar', 'Date-Time', 'required');
+             $this->form_validation->set_rules('MBC_name', 'MBC Name', 'required');
+             $this->form_validation->set_rules('Cargo', 'Cargo', 'required');
+             $this->form_validation->set_rules('bl_qty', 'Balance Qty', 'required');
+             $this->form_validation->set_rules('Load_Port', 'Load Port', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();

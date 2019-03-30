@@ -7,13 +7,13 @@
                         <thead class="">        
                         <tr>
                             <th>
-                                ETA Dharamtar Date
+                                ETA Dharamtar Date <span style="color:red;">*</span>
                             </th>
                             <th>
                                 <input type="date" class="form-control"   required="" placeholder="Date"  id="ETA_Dharamtar_date">
                             </th>
                             <th>
-                                ETA Dharamtar Time
+                                ETA Dharamtar Time 
                             </th>
                             <th>
                                 <input type="time" class="form-control"  value="00:00:00"  required="" placeholder="Time"  id="ETA_Dharamtar_time">
@@ -21,13 +21,13 @@
                              </tr>
                         <tr>
                             <th>
-                                MBC Name
+                                MBC Name <span style="color:red;">*</span>
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="MBC Name" id="MBC_name">
                             </th>                           
                             <th>
-                               Cargo
+                               Cargo <span style="color:red;">*</span>
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="Cargo" id="Cargo">
@@ -35,13 +35,13 @@
                             </tr>
                         <tr>
                             <th>
-                               Balance Qty
+                               Balance Qty <span style="color:red;">*</span>
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="Balance Qty" id="bl_qty">
                             </th>                        
                             <th>
-                                Load Port
+                                Load Port <span style="color:red;">*</span>
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="Load Port" id="Load_Port">

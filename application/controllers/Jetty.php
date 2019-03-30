@@ -73,6 +73,7 @@ class Jetty extends CI_Controller {
         
       public function save(){
             $this->form_validation->set_rules('trans_date', 'Date', 'required');
+            $this->form_validation->set_rules('Mother_Vessel_Name', 'Mother Vessel Name', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();

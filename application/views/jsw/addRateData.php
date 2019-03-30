@@ -13,7 +13,7 @@
                                 <input type="date" class="form-control" max="<?php echo date('Y-m-d');?>"  required="" placeholder="Date"  id="date">
                             </th>
                             <th>
-                               Rate
+                               Rate <span style="color:red;">*</span>
                             </th>
                             <th>
                                 <input type="text" class="form-control"  required="" placeholder="Rate"  id="Rate">

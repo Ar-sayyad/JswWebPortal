@@ -104,6 +104,7 @@ class EquipmentDelay extends CI_Controller {
         
         public function update($id){
             $this->form_validation->set_rules('Delay_FIlter', 'Delay Filter', 'required');
+            $this->form_validation->set_rules('Operator_Name', 'Operator Name', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();

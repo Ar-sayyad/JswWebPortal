@@ -73,6 +73,7 @@ class RateForm extends CI_Controller {
         
       public function save(){
             $this->form_validation->set_rules('date', 'Date', 'required');
+            $this->form_validation->set_rules('Rate', 'Rate', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();

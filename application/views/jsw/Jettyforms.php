@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 
-                 <div class="col-lg-10 col-md-10 col-sm-10" id="MainView" style="overflow: scroll;">
+                 <div class="col-lg-10 col-md-10 col-sm-10" id="MainView" style="overflow-x: scroll;">
                           <div class="addbtn" style="margin-top: 0px;">
                                 <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addJettyData');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add Barge Status</button>
                            </div> 

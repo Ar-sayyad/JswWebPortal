@@ -44,7 +44,7 @@
                                     <input type="text" class="form-control" readonly value="<?php echo $row['Equipment_Name'];?>"  placeholder="Equipment Name" id="Equipment_Name">
                             </th>                           
                             <th>
-                                    Operator Name 
+                                    Operator Name <span style="color:red;">*</span>
                             </th>
                             <th>
                                 <input type="text" class="form-control" placeholder="Operator Name" value="<?php echo $row['Operator_Name'];?>" id="Operator_Name">

@@ -8,16 +8,16 @@
                         
                         <tr>
                             <th>
-                                Date
+                                Date <span style="color:red;">*</span>
                             </th>
                             <th>
                                 <input type="date" class="form-control" required="" placeholder="Date" max="<?php echo date('Y-m-d');?>" id="trans_date">
                             </th>
                             <th>
-                                Mother Vessel Name
+                                Mother Vessel Name <span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Mother Vessel Name" id="Mother_Vessel_Name">
+                                    <input type="text" class="form-control" required="" placeholder="Mother Vessel Name" id="Mother_Vessel_Name">
                             </th>
                         </tr>
                         <tr>
