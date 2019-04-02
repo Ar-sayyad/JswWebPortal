@@ -18,9 +18,13 @@ class Login extends CI_Controller {
         
        public function index()
 	{
-            $data['title'] = "Login";
-            $data['titlebar'] = "Login";
-            $this->load->view('jsw/login',$data);
+               if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){
+                        redirect(base_url().'Home');  
+               }else{
+                $data['title'] = "Login";
+                $data['titlebar'] = "Login";
+                $this->load->view('jsw/login',$data);
+               }
 	}     
         
          public function verifyCode(){

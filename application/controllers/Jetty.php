@@ -9,7 +9,7 @@ class Jetty extends CI_Controller {
         $this->load->library('session');
 	$this->load->library('form_validation');
         $this->load->model('jsw_model');
-        $this->jsw_model->is_logged_in();
+        //$this->jsw_model->is_logged_in();
         $this->load->helper('file');
         $this->load->helper(array('form', 'url'));
          /* cache control */
@@ -19,6 +19,7 @@ class Jetty extends CI_Controller {
         
        public function index()
 	{
+               if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "Forms";
             $data['mydiv2'] = "Jetty";
             $data['mydiv3'] = "";
@@ -36,6 +37,9 @@ class Jetty extends CI_Controller {
                         $data['icons'] = "error";
                         $this->load->view('jsw/denied',$data);
                 }
+                 }else{
+                       redirect(base_url().'Login');        
+               }
                      
 	} 
                 

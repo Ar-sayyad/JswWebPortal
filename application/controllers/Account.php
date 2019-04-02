@@ -10,7 +10,7 @@ class Account extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->library('user_agent');
         $this->load->model('jsw_model');
-        $this->jsw_model->is_logged_in();
+       //$this->jsw_model->is_logged_in();
         $this->load->helper('file');        
         $this->load->helper(array('form', 'url'));
          /* cache control */
@@ -20,6 +20,7 @@ class Account extends CI_Controller {
         
        public function index()
 	{
+              if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "Account";
             $data['mydiv2'] = "Users";
             $data['mydiv3'] = "";
@@ -27,19 +28,26 @@ class Account extends CI_Controller {
             $data['linkUrl'] = "";
             $cond = array('user_id' => $this->session->userdata('log_id'));
             $data['user_data'] = $this->jsw_model->check_data_info('dbo.tblusers',$cond);  
-            $this->load->view('jsw/Accounts',$data);            
+            $this->load->view('jsw/Accounts',$data);  
+            }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
         
          public function password()
 	{
-            $data['mydiv'] = "Account";
-            $data['mydiv2'] = "Password";
-            $data['mydiv3'] = "";
-            $data['title'] = "Password";
-            $data['linkUrl'] = "";
-            $cond = array('user_id' => $this->session->userdata('log_id'));
-            $data['user_data'] = $this->jsw_model->check_data_info('dbo.tblusers',$cond);  
-            $this->load->view('jsw/password',$data);            
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+                $data['mydiv'] = "Account";
+                $data['mydiv2'] = "Password";
+                $data['mydiv3'] = "";
+                $data['title'] = "Password";
+                $data['linkUrl'] = "";
+                $cond = array('user_id' => $this->session->userdata('log_id'));
+                $data['user_data'] = $this->jsw_model->check_data_info('dbo.tblusers',$cond);  
+                $this->load->view('jsw/password',$data);         
+                }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
      
            

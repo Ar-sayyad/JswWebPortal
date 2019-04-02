@@ -9,7 +9,7 @@ class MHS extends CI_Controller {
         $this->load->library('session');
 	$this->load->library('form_validation');
         $this->load->model('jsw_model');
-        $this->jsw_model->is_logged_in();
+       // $this->jsw_model->is_logged_in();
         $this->load->helper('file');
         $this->load->helper(array('form', 'url'));
          /* cache control */
@@ -19,6 +19,7 @@ class MHS extends CI_Controller {
         
        public function index()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
@@ -32,11 +33,15 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }               
+                }       
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}  
         
         public function newmhsPathOne()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
@@ -50,11 +55,15 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }             
+                }  
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         
          public function newmhsPathTwo()
 	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
@@ -68,11 +77,15 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }             
+                }      
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         
         public function newmhsPathThree()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
@@ -86,10 +99,14 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }              
+                }       
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         public function newmhsPathFour()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
@@ -103,10 +120,14 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }             
+                }          
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         public function newmhsPathFive()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
@@ -120,10 +141,14 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }             
+                }    
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
           public function newmhsPathSix()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
@@ -137,10 +162,14 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }           
+                }       
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         public function newmhsPathSeven()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "New MHS Overview";
@@ -154,7 +183,10 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }             
+                }        
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
 //        public function newmhsPathEight()
 //	{
@@ -170,6 +202,7 @@ class MHS extends CI_Controller {
                 
         public function oldmhsOverview()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
@@ -183,11 +216,15 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }             
+                }       
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
         
          public function oldmhsPathA()
 	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
@@ -201,11 +238,15 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }            
+                }       
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}  
         
         public function oldmhsPathB()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
@@ -220,9 +261,13 @@ class MHS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }            
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         public function oldmhsPathC()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
@@ -237,9 +282,13 @@ class MHS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }             
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         public function oldmhsPathD()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
@@ -253,11 +302,15 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }            
+                }         
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         
         public function oldmhsPathE()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
@@ -271,10 +324,14 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }              
+                }       
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         public function oldmhsPathF()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
@@ -288,10 +345,14 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }            
+                }     
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         public function oldmhsPathG()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
@@ -306,9 +367,13 @@ class MHS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }           
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         public function oldmhsPathH()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
@@ -322,10 +387,14 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }              
+                }    
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
          public function oldmhsPathI()
 	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Old MHS Overview";
@@ -339,11 +408,15 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }            
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         
          public function MotorTemperature()
 	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Motor Temperature";
@@ -357,11 +430,15 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }            
+                }      
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         
          public function MotorCurrent()
 	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "MHS";
             $data['mydiv3'] = "Motor Current";
@@ -375,7 +452,10 @@ class MHS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }             
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
        
        

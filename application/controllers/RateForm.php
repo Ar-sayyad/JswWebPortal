@@ -10,7 +10,7 @@ class RateForm extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->library('user_agent');
         $this->load->model('jsw_model');
-        $this->jsw_model->is_logged_in();
+        //$this->jsw_model->is_logged_in();
         $this->load->helper('file');        
         $this->load->helper(array('form', 'url'));
          /* cache control */
@@ -20,6 +20,7 @@ class RateForm extends CI_Controller {
         
        public function index()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "Forms";
             $data['mydiv2'] = "Rate Form";
             $data['mydiv3'] = "";
@@ -36,7 +37,10 @@ class RateForm extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }            
+                }      
+                }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
                 
         public function searchRateForm(){            

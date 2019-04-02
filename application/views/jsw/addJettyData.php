@@ -156,9 +156,22 @@
 		});
       
     });
-    $('.Budget').keypress(function (event) {
-            return isNumber(event, this);
-        });        
+    $('#Mother_Vessel_Name').keypress(function (event) {
+            return isChar(event, this);
+        });
+        function isChar(evt, element) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+
+        if ((charCode < 48 || charCode > 57)){                
+                        return true;
+                }else{
+                        $(".error_msg").html('Number Not Allowed..!');
+                        $(".error_msg").show();
+                        //$(element).val('');
+                        setTimeout(hidetab,2000);
+                    return false;
+            }
+    }
     // THE SCRIPT THAT CHECKS IF THE KEY PRESSED IS A NUMERIC OR DECIMAL VALUE.
     function isNumber(evt, element) {
 

@@ -10,7 +10,7 @@ class Settings extends CI_Controller {
 	$this->load->library('form_validation');
         $this->load->library('user_agent');
         $this->load->model('jsw_model');
-        $this->jsw_model->is_admin_logged_in();
+       // $this->jsw_model->is_admin_logged_in();
         $this->load->helper('file');        
         $this->load->helper(array('form', 'url'));
          /* cache control */
@@ -20,6 +20,7 @@ class Settings extends CI_Controller {
         
        public function index()
 	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "Settings";
             $data['mydiv2'] = "Users";
             $data['mydiv3'] = "";
@@ -27,10 +28,14 @@ class Settings extends CI_Controller {
             $data['linkUrl'] = "";
             $cond = array('userType !=' => $this->session->userdata('userType'));
             $data['user_data'] = $this->jsw_model->check_data_info('dbo.tblusers',$cond);  
-            $this->load->view('jsw/users',$data);            
+            $this->load->view('jsw/users',$data); 
+            }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
          public function users()
 	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "Settings";
             $data['mydiv2'] = "Users";
             $data['mydiv3'] = "";
@@ -38,29 +43,40 @@ class Settings extends CI_Controller {
             $data['linkUrl'] = "";
             $cond = array('userType !=' => $this->session->userdata('userType'));
             $data['user_data'] = $this->jsw_model->check_data_info('dbo.tblusers',$cond);  
-            $this->load->view('jsw/users',$data);            
+            $this->load->view('jsw/users',$data);    
+             }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
                 
          public function pages()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){ 
             $data['mydiv'] = "Settings";
             $data['mydiv2'] = "Pages";
             $data['mydiv3'] = "";
             $data['title'] = "Pages";
             $data['linkUrl'] = "";
             $data['page_data'] = $this->jsw_model->select_data_info('dbo.pages');  
-            $this->load->view('jsw/pages',$data);            
+            $this->load->view('jsw/pages',$data);  
+             }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
         
         public function department()
 	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){ 
             $data['mydiv'] = "Settings";
             $data['mydiv2'] = "Department";
             $data['mydiv3'] = "";
             $data['title'] = "Department";
             $data['linkUrl'] = "";
             $data['dept_data'] = $this->jsw_model->select_data_info('dbo.userTypes');  
-            $this->load->view('jsw/department',$data);            
+            $this->load->view('jsw/department',$data); 
+             }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
               
       public function saveAccess(){              

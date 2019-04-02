@@ -18,24 +18,30 @@ class Home extends CI_Controller {
     
     public function index()
 	{
-                $this->jsw_model->is_logged_in();                 
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){               
                 $data['mydiv'] = "HOME";
                 $data['mydiv2'] = "";
                 $data['mydiv3'] = "";
                 $data['title'] = "HOME";
                 $data['linkUrl'] = "";
                  $this->load->view('Landing/landing',$data);	
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
         
 	public function home()
 	{
-                $this->jsw_model->is_logged_in();                 
+              if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){              
                 $data['mydiv'] = "HOME";
                 $data['mydiv2'] = "";
                 $data['mydiv3'] = "";
                 $data['title'] = "HOME";
                 $data['linkUrl'] = "";
                  $this->load->view('jsw/index',$data);
+               }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
         
                 

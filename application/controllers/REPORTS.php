@@ -9,7 +9,7 @@ class REPORTS extends CI_Controller {
         $this->load->library('session');
         $this->load->library('form_validation');
         $this->load->model('jsw_model');
-        $this->jsw_model->is_logged_in();
+        //$this->jsw_model->is_logged_in();
         $this->load->helper('file');
         $this->load->helper(array('form', 'url'));
          /* cache control */
@@ -19,6 +19,7 @@ class REPORTS extends CI_Controller {
         
        public function index()
 	{
+               if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Operation";
             $data['mydiv3'] = "";
@@ -32,7 +33,10 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }            
+                }  
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	}  
         
 //        public function EquipmentUtilizationSummary()//optional
@@ -49,6 +53,7 @@ class REPORTS extends CI_Controller {
         
          public function DaywiseEquipmentUtilization()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Operation";
             $data['mydiv3'] = "";
@@ -62,11 +67,15 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }              
+                }         
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	}  
         
          public function DPR()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Operation";
             $data['mydiv3'] = "";
@@ -80,10 +89,14 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }             
+                }    
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         public function JettyRMHSDelaysReport()
 	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Operation";
             $data['mydiv3'] = "";
@@ -97,11 +110,15 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }        
+                }    
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         
          public function EquipmentWiseDischarge()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Operation";
             $data['mydiv3'] = "";
@@ -115,7 +132,10 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }         
+                }    
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         
         
@@ -125,6 +145,7 @@ class REPORTS extends CI_Controller {
         
          public function DailyPowerConsumptionNewJetty()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Electrical";
             $data['mydiv3'] = "";
@@ -138,10 +159,14 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }        
+                }    
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	}
          public function DailyPowerConsumptionOldJetty()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Electrical";
             $data['mydiv3'] = "";
@@ -155,10 +180,14 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }        
+                }  
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
          public function CargoCommodityWisePowerConsumptionnewjetty ()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Electrical";
             $data['mydiv3'] = "";
@@ -172,10 +201,14 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }         
+                }      
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	}
       public function CargoCommodityWisePowerConsumptionOldjetty()
         {
+               if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Electrical";
             $data['mydiv3'] = "";
@@ -189,10 +222,14 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }        
+                }     
+                  }else{
+                       redirect(base_url().'Login');        
+               }
         }
       public function DPPLElectricalNewJettySystemEQDelays()
            {
+               if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
                 $data['mydiv'] = "REPORTS";
                 $data['mydiv2'] = "Electrical";
                 $data['mydiv3'] = "";
@@ -207,10 +244,14 @@ class REPORTS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }    
+                  }else{
+                       redirect(base_url().'Login');        
+               }
            }
            
       public function DPPLElectricalOldJettySystemEQDelays()
            {
+               if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
                 $data['mydiv'] = "REPORTS";
                 $data['mydiv2'] = "Electrical";
                 $data['mydiv3'] = "";
@@ -225,10 +266,14 @@ class REPORTS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }    
+                  }else{
+                       redirect(base_url().'Login');        
+               }
            }
            
       public function DailyEquipmentWisePowerConsumptionNew()
            {
+               if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
                 $data['mydiv'] = "REPORTS";
                 $data['mydiv2'] = "Electrical";
                 $data['mydiv3'] = "";
@@ -243,9 +288,13 @@ class REPORTS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }  
+                  }else{
+                       redirect(base_url().'Login');        
+               }
            }
       public function DailyEquipmentWisePowerConsumptionOld()
            {
+               if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
                 $data['mydiv'] = "REPORTS";
                 $data['mydiv2'] = "Electrical";
                 $data['mydiv3'] = "";
@@ -260,9 +309,13 @@ class REPORTS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }  
+                  }else{
+                       redirect(base_url().'Login');        
+               }
            }
       public function DPPLElectricalNewJettySystemMTTRvMTBF()
            {
+               if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
                 $data['mydiv'] = "REPORTS";
                 $data['mydiv2'] = "Electrical";
                 $data['mydiv3'] = "";
@@ -276,10 +329,14 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }    
+                }   
+                  }else{
+                       redirect(base_url().'Login');        
+               }
            }     
       public function DPPLElectricalOldJettySystemMTTRvMTBF()
            {
+               if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
                 $data['mydiv'] = "REPORTS";
                 $data['mydiv2'] = "Electrical";
                 $data['mydiv3'] = "";
@@ -294,11 +351,15 @@ class REPORTS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }  
+                  }else{
+                       redirect(base_url().'Login');        
+               }
            }   
 
 
             public function EquipmentDelayNewSystem()
            {
+                     if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
                 $data['mydiv'] = "REPORTS";
                 $data['mydiv2'] = "Electrical";
                 $data['mydiv3'] = "";
@@ -313,10 +374,14 @@ class REPORTS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }  
+                  }else{
+                       redirect(base_url().'Login');        
+               }
            }   
            
             public function EquipmentDelayOldSystem()
            {
+                     if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
                 $data['mydiv'] = "REPORTS";
                 $data['mydiv2'] = "Electrical";
                 $data['mydiv3'] = "";
@@ -331,10 +396,14 @@ class REPORTS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }  
+                  }else{
+                       redirect(base_url().'Login');        
+               }
            }   
            
             public function CargoConsumptionNewSystem()
            {
+                     if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
                 $data['mydiv'] = "REPORTS";
                 $data['mydiv2'] = "Electrical";
                 $data['mydiv3'] = "";
@@ -349,10 +418,14 @@ class REPORTS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }  
+                  }else{
+                       redirect(base_url().'Login');        
+               }
            }   
            
             public function CargoConsumptionOldSystem()
            {
+                     if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
                 $data['mydiv'] = "REPORTS";
                 $data['mydiv2'] = "Electrical";
                 $data['mydiv3'] = "";
@@ -367,6 +440,9 @@ class REPORTS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }  
+                  }else{
+                       redirect(base_url().'Login');        
+               }
            }   
 
        /*********MECHANICAL********/        
@@ -393,6 +469,7 @@ class REPORTS extends CI_Controller {
         
          public function CycleTimeReportBUL()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Mechanical";
             $data['mydiv3'] = "";
@@ -407,10 +484,14 @@ class REPORTS extends CI_Controller {
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
                 }       
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         
          public function EquipmentCompressor()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Mechanical";
             $data['mydiv3'] = "";
@@ -424,7 +505,10 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }         
+                }    
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         
 //         public function EquipmentTempLoad()//Discarded
@@ -439,6 +523,7 @@ class REPORTS extends CI_Controller {
         
          public function RunningHoursConveyors()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Mechanical";
             $data['mydiv3'] = "";
@@ -452,11 +537,15 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }        
+                }      
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         
           public function RunningHoursEquipment()
 	{
+                   if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "REPORTS";
             $data['mydiv2'] = "Mechanical";
             $data['mydiv3'] = "";
@@ -470,7 +559,10 @@ class REPORTS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }         
+                }    
+                  }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
              
      

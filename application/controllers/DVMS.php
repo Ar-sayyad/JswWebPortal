@@ -9,7 +9,7 @@ class DVMS extends CI_Controller {
         $this->load->library('session');
         $this->load->library('form_validation');
         $this->load->model('jsw_model');
-        $this->jsw_model->is_logged_in();
+       // $this->jsw_model->is_logged_in();
         $this->load->helper('file');
         $this->load->helper(array('form', 'url'));
          /* cache control */
@@ -19,6 +19,7 @@ class DVMS extends CI_Controller {
         
        public function index()
 	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
             $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "DVMS";
             $data['mydiv3'] = "";
@@ -32,11 +33,15 @@ class DVMS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }           
+                }  
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}  
          
         public function berthOne()
 	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "DVMS";
             $data['mydiv3'] = "";
@@ -50,11 +55,15 @@ class DVMS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }                  
+                }    
+                }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         
         public function berthTwo()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "DVMS";
             $data['mydiv3'] = "";
@@ -68,10 +77,14 @@ class DVMS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }               
+                } 
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	}   
         public function berthThree()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "DVMS";
             $data['mydiv3'] = "";
@@ -85,10 +98,14 @@ class DVMS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }               
+                }    
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
          public function berthFour()
 	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "DVMS";
             $data['mydiv3'] = "";
@@ -102,10 +119,14 @@ class DVMS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }            
+                }       
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
          public function berthFive()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "DVMS";
             $data['mydiv3'] = "";
@@ -119,10 +140,14 @@ class DVMS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }               
+                }     
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
          public function berthSix()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "DVMS";
             $data['mydiv3'] = "";
@@ -136,10 +161,14 @@ class DVMS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }                
+                } 
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
          public function berthSeven()
 	{
+                   if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "DVMS";
             $data['mydiv3'] = "";
@@ -153,10 +182,14 @@ class DVMS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }                
+                } 
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
          public function berthEight()
 	{
+                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
            $data['mydiv'] = "DASHBOARD";
             $data['mydiv2'] = "DVMS";
             $data['mydiv3'] = "";
@@ -170,7 +203,10 @@ class DVMS extends CI_Controller {
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";
                 $this->load->view('jsw/denied',$data);
-                }              
+                }  
+                 }else{
+                       redirect(base_url().'Login');        
+               }
 	} 
         
             

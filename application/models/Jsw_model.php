@@ -79,10 +79,10 @@ class Jsw_model extends CI_Model {
      function is_logged_in()
             {
                  if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ) {                
-                   $this->session->set_userdata('last_page', current_url());  		
+                  echo 1;// $this->session->set_userdata('last_page', current_url());  		
                 }
                 else{                 
-                    redirect(base_url().'Login');                     
+                    echo 0;//redirect(base_url().'Login');                     
                 }
             }
             
