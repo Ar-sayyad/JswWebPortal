@@ -27,7 +27,7 @@ class DVMS extends CI_Controller {
             $data['page'] = "1";
             $t= $this->jsw_model->is_access_in(1);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20081";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30128";
             $this->load->view('jsw/DVMS',$data);           
             }else{
                 $data['title'] = "Access Denied..!";
@@ -49,7 +49,7 @@ class DVMS extends CI_Controller {
             $data['page'] = "2";
              $t= $this->jsw_model->is_access_in(2);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20049";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30129";
             $this->load->view('jsw/DVMS',$data);         
             }else{
                 $data['title'] = "Access Denied..!";
@@ -92,7 +92,7 @@ class DVMS extends CI_Controller {
             $data['page'] = "4";
             $t= $this->jsw_model->is_access_in(4);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20051";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30130";
             $this->load->view('jsw/DVMS',$data);         
             }else{
                 $data['title'] = "Access Denied..!";
@@ -134,7 +134,7 @@ class DVMS extends CI_Controller {
             $data['page'] = "6";
             $t= $this->jsw_model->is_access_in(6);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20053";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30131";
             $this->load->view('jsw/DVMS',$data);             
             }else{
                 $data['title'] = "Access Denied..!";
@@ -176,7 +176,7 @@ class DVMS extends CI_Controller {
             $data['page'] = "8";
             $t= $this->jsw_model->is_access_in(8);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20055";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30132";
             $this->load->view('jsw/DVMS',$data);           
             }else{
                 $data['title'] = "Access Denied..!";

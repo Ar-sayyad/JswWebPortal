@@ -209,7 +209,13 @@ $cond = array('userType' => $this->session->userdata('userType'));
                                 <i class="fa">I</i>
                                 <span class="sidebar-normal"> MHS PATH - I </span>
                             </a>
-                        </li>            
+                        </li>
+                        <?php if($title=='MHS PATH - J'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1058, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1058, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/oldmhsPathJ">
+                                <i class="fa">J</i>
+                                <span class="sidebar-normal"> MHS PATH - J </span>
+                            </a>
+                        </li>     
 
                 </ul>
             </div>

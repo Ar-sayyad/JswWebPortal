@@ -27,7 +27,7 @@ class BUL extends CI_Controller {
             $data['page'] = "30";
              $t= $this->jsw_model->is_access_in(30);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20076";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30133";
             $this->load->view('jsw/bulOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -49,7 +49,7 @@ class BUL extends CI_Controller {
             $data['page'] = "30";
              $t= $this->jsw_model->is_access_in(30);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20076";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30133";
             $this->load->view('jsw/bulOne',$data);             
             }else{
                 $data['title'] = "Access Denied..!";
@@ -71,7 +71,7 @@ class BUL extends CI_Controller {
             $data['page'] = "31";
              $t= $this->jsw_model->is_access_in(31);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20077";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30134";
             $this->load->view('jsw/bulOne',$data);             
             }else{
                 $data['title'] = "Access Denied..!";
@@ -92,7 +92,7 @@ class BUL extends CI_Controller {
             $data['page'] = "32";
              $t= $this->jsw_model->is_access_in(32);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20078";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30135";
             $this->load->view('jsw/bulOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";

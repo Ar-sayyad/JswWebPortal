@@ -27,7 +27,7 @@ class MHS extends CI_Controller {
             $data['page'] = "10";
             $t= $this->jsw_model->is_access_in(10);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20072";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30136";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -49,7 +49,7 @@ class MHS extends CI_Controller {
             $data['page'] = "11";
             $t= $this->jsw_model->is_access_in(11);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20037";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30146";
             $this->load->view('jsw/newmhsPathOne',$data);             
             }else{
                 $data['title'] = "Access Denied..!";
@@ -71,7 +71,7 @@ class MHS extends CI_Controller {
             $data['page'] = "12";
             $t= $this->jsw_model->is_access_in(12);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20070";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30147";
             $this->load->view('jsw/newmhsPathOne',$data);             
             }else{
                 $data['title'] = "Access Denied..!";
@@ -93,7 +93,7 @@ class MHS extends CI_Controller {
             $data['page'] = "13";
             $t= $this->jsw_model->is_access_in(13);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20039";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30148";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -114,7 +114,7 @@ class MHS extends CI_Controller {
             $data['page'] = "14";
             $t= $this->jsw_model->is_access_in(14);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20040";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30149";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -135,7 +135,7 @@ class MHS extends CI_Controller {
             $data['page'] = "15";
             $t= $this->jsw_model->is_access_in(15);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20041";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30150";
             $this->load->view('jsw/newmhsPathOne',$data);             
             }else{
                 $data['title'] = "Access Denied..!";
@@ -156,7 +156,7 @@ class MHS extends CI_Controller {
             $data['page'] = "16";
             $t= $this->jsw_model->is_access_in(16);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20083";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30151";
             $this->load->view('jsw/newmhsPathOne',$data);              
             }else{
                 $data['title'] = "Access Denied..!";
@@ -177,7 +177,7 @@ class MHS extends CI_Controller {
             $data['page'] = "17";
             $t= $this->jsw_model->is_access_in(17);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20044";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30152";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -210,7 +210,7 @@ class MHS extends CI_Controller {
             $data['page'] = "18";
             $t= $this->jsw_model->is_access_in(18);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20048";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30137";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -232,7 +232,7 @@ class MHS extends CI_Controller {
             $data['page'] = "19";
             $t= $this->jsw_model->is_access_in(19);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20059";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30138";
             $this->load->view('jsw/newmhsPathOne',$data);             
             }else{
                 $data['title'] = "Access Denied..!";
@@ -254,7 +254,7 @@ class MHS extends CI_Controller {
             $data['page'] = "20";
             $t= $this->jsw_model->is_access_in(20);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20060";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30139";
             $this->load->view('jsw/newmhsPathOne',$data);             
             }else{
                 $data['title'] = "Access Denied..!";
@@ -275,7 +275,7 @@ class MHS extends CI_Controller {
             $data['page'] = "21";
             $t= $this->jsw_model->is_access_in(21);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20061";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30140";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -296,7 +296,7 @@ class MHS extends CI_Controller {
             $data['page'] = "22";
             $t= $this->jsw_model->is_access_in(22);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20062";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30141";
             $this->load->view('jsw/newmhsPathOne',$data);              
             }else{
                 $data['title'] = "Access Denied..!";
@@ -318,7 +318,7 @@ class MHS extends CI_Controller {
             $data['page'] = "23";
             $t= $this->jsw_model->is_access_in(23);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20063";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30142";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -339,7 +339,7 @@ class MHS extends CI_Controller {
             $data['page'] = "24";
             $t= $this->jsw_model->is_access_in(24);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20064";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30143";
             $this->load->view('jsw/newmhsPathOne',$data);           
             }else{
                 $data['title'] = "Access Denied..!";
@@ -360,7 +360,7 @@ class MHS extends CI_Controller {
             $data['page'] = "25";
             $t= $this->jsw_model->is_access_in(25);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20065";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30144";
             $this->load->view('jsw/newmhsPathOne',$data);              
             }else{
                 $data['title'] = "Access Denied..!";
@@ -381,7 +381,7 @@ class MHS extends CI_Controller {
             $data['page'] = "26";
             $t= $this->jsw_model->is_access_in(26);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20066";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30145";
             $this->load->view('jsw/newmhsPathOne',$data);           
             }else{
                 $data['title'] = "Access Denied..!";
@@ -402,7 +402,29 @@ class MHS extends CI_Controller {
             $data['page'] = "27";
             $t= $this->jsw_model->is_access_in(27);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20082";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30153";
+            $this->load->view('jsw/newmhsPathOne',$data);           
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}   
+        
+        public function oldmhsPathJ()
+	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "Old MHS Overview";
+            $data['title'] = "MHS PATH - J";
+            $data['page'] = "27";
+            $t= $this->jsw_model->is_access_in(27);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30154";
             $this->load->view('jsw/newmhsPathOne',$data);           
             }else{
                 $data['title'] = "Access Denied..!";
