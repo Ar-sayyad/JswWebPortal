@@ -38,13 +38,13 @@
                                 Date
                             </th>
                             <th>
-                                <input type="date" class="form-control" required="" placeholder="Date" max="<?php echo date('Y-m-d');?>" id="date">
+                                <input type="date" class="form-control" required="" value="<?php echo date('Y-m-d');?>" placeholder="Date" max="<?php echo date('Y-m-d');?>" id="date">
                             </th>
                             <th>
                                     Mother Vessel<span style="color:red;">*</span>
                             </th>
                             <th>
-                                    <input type="text" class="form-control" required="" placeholder="Mother Vessel" id="Mother_vessel">
+                                    <input type="text" class="form-control" autocomplete="off" required="" placeholder="Mother Vessel" id="Mother_vessel">
                             </th>
                         </tr>
                         <tr>
@@ -52,13 +52,13 @@
                                 Cargo<span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" required="" placeholder="Cargo" id="cargo">
+                                <input type="text" class="form-control" autocomplete="off" required="" placeholder="Cargo" id="cargo">
                             </th>
                             <th>
                                 Cargo Qty For Day<span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" required="" placeholder="Cargo Qty For Day" id="cargo_qty_for_day">
+                                <input type="text" class="form-control" autocomplete="off" required="" placeholder="Cargo Qty For Day" id="cargo_qty_for_day">
                             </th>
                         </tr>
                         <tr>
@@ -66,7 +66,7 @@
                                 Trips For Day From Berth No<span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" required="" placeholder="Trips For Day From Berth No" id="TripsForDay_FromBerthNo">
+                                <input type="text" class="form-control" autocomplete="off" required="" placeholder="Trips For Day From Berth No" id="TripsForDay_FromBerthNo">
                             </th>
                             <th colspan="2">&nbsp;</th>
                         </tr>
@@ -117,6 +117,9 @@
       
     });
     $('#cargo_qty_for_day').keypress(function (event) {
+            return isNumber(event, this);
+        });  
+         $('#TripsForDay_FromBerthNo').keypress(function (event) {
             return isNumber(event, this);
         });  
         $('#Mother_vessel').keypress(function (event) {

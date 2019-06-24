@@ -47,7 +47,7 @@
                                         <tr>
                                         <td><?php echo $sr;?></td>   
                                         <td><?php echo $rate['date'];?></td>
-                                        <td><?php echo $rate['Rate'];?></td>
+                                        <td><i class="fa fa-inr"></i><?php echo $rate['Rate'];?></td>
                                         <td><?php echo $rate['Description'];?></td>
 <!--                                        <td><a rel="tooltip" title="Remove" class="btn btn-danger btn-sm" onclick="return checkDelete();" href="<?php echo base_url(); ?>CargoDespatch/delete/<?php echo  $cargo['Id'];?>">
                                             <i class="material-icons">close</i>

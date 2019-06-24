@@ -26,12 +26,15 @@ class EquipmentDelay extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Equipment Delay";
             $data['linkUrl'] = "";
-            $data['mnth'] = "";
-            $data['year'] ="";
+                        $date=date_create(date('Y-m-d'));
+                        date_sub($date,date_interval_create_from_date_string("1 days"));
+                        $prev =  date_format($date,"Y-m-d");
+            $data['formdate'] = $prev;
+            $data['todate'] = date('Y-m-d');
             $t= $this->jsw_model->is_access_in(57);
             if($t==1){
             $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
-            $data['EquipmentDelay_data'] = $this->jsw_model->select_data_info('dbo.tbl_Equipment_Delay_MF');  
+            $data['EquipmentDelay_data'] = '';  
             $this->load->view('jsw/EquipmentDelay',$data);                
             }else{
                 $data['title'] = "Access Denied..!";
@@ -44,8 +47,8 @@ class EquipmentDelay extends CI_Controller {
 	} 
                 
         public function searchEquipmentDelay(){            
-            $this->form_validation->set_rules('month', 'Month', 'required');
-            $this->form_validation->set_rules('year', 'Year', 'required');
+            $this->form_validation->set_rules('formdate', 'From Date', 'required');
+            $this->form_validation->set_rules('todate', 'To Date', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                       $this->session->set_flashdata('err_msg',validation_errors());
@@ -53,31 +56,31 @@ class EquipmentDelay extends CI_Controller {
                     }
                     else
                      { 
-                        $month = $this->input->post('month');
-                        $year = $this->input->post('year');
-                        $cond = array('month' => $month,'year' => $year);
-                        $EquipmentDelay_data= $this->jsw_model->check_data_info('dbo.tbl_rate_MF',$cond);                         
-                        $this->EquipmentDelay($EquipmentDelay_data,$month,$year);
-                     }                   
+                         $startDate = $this->input->post('formdate');
+                         $endDate = $this->input->post('todate');                        
+                        $qry ="SELECT * FROM tbl_Equipment_Delay_MF where date between '$startDate' and '$endDate'";
+                        $EquipmentDelay_data = $this->db->query($qry)->result_array();
+                        $this->EquipmentDelay($EquipmentDelay_data,$startDate,$endDate);
+                     }                  
             
         }
         
-        public function EquipmentDelay($EquipmentDelay_data,$month,$year){
+        public function EquipmentDelay($EquipmentDelay_data,$startDate,$endDate){
             $data['mydiv'] = "Forms";
-            $data['mydiv2'] = "REquipment Delay";
+            $data['mydiv2'] = "Equipment Delay";
             $data['mydiv3'] = "";
             $data['title'] = "Equipment Delay";
             $data['linkUrl'] = "";
-            $data['mnth'] = $month;
-            $data['year'] =$year;
+            $data['formdate'] = $startDate;
+            $data['todate'] = $endDate;
             $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
-            $data['EquipmentDelay_data'] = $RateForm_data;
-            $this->load->view('jsw/EquipmentDelay',$data);              
+            $data['EquipmentDelay_data'] = $EquipmentDelay_data;
+            $this->load->view('jsw/EquipmentDelay',$data);           
         }
         
       public function save(){
             $this->form_validation->set_rules('date', 'Date', 'required');
-            $this->form_validation->set_rules('Delay_FIlter', 'Delay Filter', 'required');
+            $this->form_validation->set_rules('Remarks', 'Remarks', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();
@@ -96,7 +99,7 @@ class EquipmentDelay extends CI_Controller {
                                     'Equipment_Name'=> $this->input->post('Equipment_Name'),
                                     'Operator_Name'=> $this->input->post('Operator_Name'),
                                     'Remarks'=> $this->input->post('Remarks'),
-                                    'Delay_FIlter'=>$this->input->post('Delay_FIlter'),
+                                   // 'Delay_FIlter'=>$this->input->post('Delay_FIlter'),
                                     'month'=> $month,
                                     'year'=> $year
                                );
@@ -107,8 +110,8 @@ class EquipmentDelay extends CI_Controller {
       }
         
         public function update($id){
-            $this->form_validation->set_rules('Delay_FIlter', 'Delay Filter', 'required');
-            $this->form_validation->set_rules('Operator_Name', 'Operator Name', 'required');
+            $this->form_validation->set_rules('Remarks', 'Remarks', 'required');
+            //$this->form_validation->set_rules('Operator_Name', 'Remarks', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();
@@ -116,9 +119,9 @@ class EquipmentDelay extends CI_Controller {
                     else
                      { 
                                 $data= array(
-                                        'Operator_Name'=> $this->input->post('Operator_Name'),
-                                        'Remarks'=> $this->input->post('Remarks'),
-                                        'Delay_FIlter'=>$this->input->post('Delay_FIlter')
+                                        //'Operator_Name'=> $this->input->post('Operator_Name'),
+                                        'Remarks'=> $this->input->post('Remarks')
+                                       // 'Delay_FIlter'=>$this->input->post('Delay_FIlter')
                                    );
                                 $where =array('Id'=>$id);
                                 $this->jsw_model->update_data_info('dbo.tbl_Equipment_Delay_MF',$data,$where);

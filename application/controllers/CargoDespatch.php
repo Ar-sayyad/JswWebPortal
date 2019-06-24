@@ -88,6 +88,7 @@ class CargoDespatch extends CI_Controller {
                     else
                      {   
                             $trans_date = $this->input->post('date');
+                            $trips = $this->input->post('TripsForDay_FromBerthNo')." Trips/Yard";
                             $time=strtotime($trans_date);
                             $month=date("F",$time);
                             $year=date("Y",$time);
@@ -96,7 +97,7 @@ class CargoDespatch extends CI_Controller {
                                     'Mother_vessel'=> $this->input->post('Mother_vessel'),
                                     'cargo'=> $this->input->post('cargo'),
                                     'cargo_qty_for_day'=> $this->input->post('cargo_qty_for_day'),
-                                    'TripsForDay_FromBerthNo'=> $this->input->post('TripsForDay_FromBerthNo'),
+                                    'TripsForDay_FromBerthNo'=> $trips,
                                     'month'=> $month,
                                     'year'=> $year
                                );

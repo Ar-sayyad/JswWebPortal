@@ -10,7 +10,7 @@
                                 Date
                             </th>
                             <th>
-                                <input type="date" class="form-control" max="<?php echo date('Y-m-d');?>"  required="" placeholder="Date"  id="date">
+                                <input type="date" class="form-control" value="<?php echo date('Y-m-d');?>" max="<?php echo date('Y-m-d');?>"  required="" placeholder="Date"  id="date">
                             </th>
                             <th>
                                Rate <span style="color:red;">*</span>

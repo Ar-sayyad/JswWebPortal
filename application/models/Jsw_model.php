@@ -50,6 +50,12 @@ class Jsw_model extends CI_Model {
             return $this->db->get_where($table)->result_array();
         }
         
+        public function check_Search_data_info($table,$where1,$where2){
+            $this->db->where('date <= ',$where1);
+            $this->db->where('date >= ',$where2);
+            return $this->db->get($table)->result_array();
+        }
+        
          public function select_data_where_info($table){
                 
                 //$this->db->select('*');

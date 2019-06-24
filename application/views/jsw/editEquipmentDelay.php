@@ -44,33 +44,34 @@
                                     <input type="text" class="form-control" readonly value="<?php echo $row['Equipment_Name'];?>"  placeholder="Equipment Name" id="Equipment_Name">
                             </th>                           
                             <th>
-                                    Operator Name <span style="color:red;">*</span>
+                                    Operator Name 
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Operator Name" value="<?php echo $row['Operator_Name'];?>" id="Operator_Name">
+                                    <input type="text" class="form-control"  readonly="" placeholder="Operator Name" value="<?php echo $row['Operator_Name'];?>" id="Operator_Name">
                             </th> 
                         </tr>
                         <tr>
                             <th>
-                                Remarks
+                                Remarks <span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Remarks" value="<?php echo $row['Remarks'];?>"  id="Remarks">
+                                    <input type="text" class="form-control" placeholder="Remarks" required="" value="<?php echo $row['Remarks'];?>"  id="Remarks">
                             </th>                           
-                            <th>
+<!--                            <th>
                                     Delay Filter <span style="color:red;">*</span>
-                            </th> 
-                            <th>
-                                    <select class="form-control" id="Delay_FIlter" name="delay_filter" required="">
+                            </th> -->
+                            <th colspan="2"> &nbsp;
+<!--                                    <select class="form-control" id="Delay_FIlter" name="delay_filter" required="">
                                             <option value="">---Select Delay---</option>
                                             <option value="Delay" <?php if($row['Delay_FIlter']=='Delay'){ echo "Selected"; }else{}?>>Delay</option>
                                             <option value="No Cargo Available" <?php if($row['Delay_FIlter']=='No Cargo Available'){ echo "Selected"; }else{}?>>No Cargo Available</option>
-                                    </select>
+                                    </select>-->
                             </th>
                         </tr>
                             <tr>
                                 <th colspan="4" style="text-align:center">
                                     <button type="button" name="save" data-id="hello" id="saveEquipment" class="btn btn-success" value="save"><i class="material-icons">save</i> Update</button>
+                                    <button type="reset" name="Reset" class="btn btn-primary" value="reset"><i class="material-icons">replay</i> Reset</button>
                                 </th>
                             </tr>
 
@@ -88,10 +89,10 @@
    $(document).ready(function(){ 
     $("#saveEquipment").click(function(){
       $("#saveEquipment").html('<img src="<?php echo base_url();?>Theme/assets/img/loading.gif" style="width:25px;height:20px;" />');
-       $Operator_Name = $("#Operator_Name").val();
-        $Delay_FIlter = $("#Delay_FIlter").val();
+     //  $Operator_Name = $("#Operator_Name").val();
+        //$Delay_FIlter = $("#Delay_FIlter").val();
         $Remarks = $("#Remarks").val();   
-      $.post('<?php echo base_url();?>EquipmentDelay/update/<?php echo $param2;?>', {Operator_Name:$Operator_Name,Remarks:$Remarks,Delay_FIlter:$Delay_FIlter}, function(data){
+      $.post('<?php echo base_url();?>EquipmentDelay/update/<?php echo $param2;?>', {Remarks:$Remarks}, function(data){
           //alert(data);
                     if(data==1)
                           {                                  

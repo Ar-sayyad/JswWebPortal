@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/header.php';?> 
-    
+  <style>
+        .form-row{
+        padding: 5px;
+        border: 2px solid #000000;
+        border-radius: 5px;
+        margin: 0px;
+        }
+        </style>
     <body class="">
         <div class="wrapper ">
       <!-- Sidebar -->
@@ -25,11 +32,40 @@
                         <?php include 'includes/newSidebar.php';?>
                     </div>
                 </div> 
-                <div class="col-lg-10 col-md-10 col-sm-10" id="MainView">
+                <div class="col-lg-10 col-md-10 col-sm-10" id="MainView">   
 <!--                          <div class="addbtn" style="margin-top: 0px;">
                                 <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addEquipmentDelayData');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add Equipment Delay Data</button>
                            </div> -->
                     <div class="bootstrap-data-table-panel card" style="margin: 5px 0;">
+                            <div class="row form-row">
+                            <div class="col-lg-2 col-md-2 col-sm-2">&nbsp;</div>
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                            <form action="<?php echo base_url();?>EquipmentDelay/searchEquipmentDelay" method="POST" enctype="multipart/form-data"  class="searchform">
+                            <table class="table form"> 
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            From Date:<span style="color:red;">*</span>      
+                                        </th>
+                                        <th>
+                                                <input type="date" class="form-control" name="formdate" value="<?php echo $formdate;?>" placeholder="Date" required=""  id="formdate">
+                                        </th>
+                                        <th>
+                                           To Date:<span style="color:red;">*</span>    
+                                        </th>
+                                        <th>
+                                           <input type="date" class="form-control" name="todate"  value="<?php echo $todate;?>" placeholder="Date" required=""  id="todate">
+                                        </th> 
+                                        <th>
+                                            <button type="submit" name="search" data-id="hello" id="searchData" class="btn btn-primary" value="save"><i class="material-icons">search</i> Search</button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </form> 
+                             </div>
+                            <div class="col-lg-2 col-md-2 col-sm-2">&nbsp;</div>
+                            </div>
                             <div class="table-responsive">
                                 <table id="bootstrap-data-table-export" class="table table-bordered table-hover">   
                                     <thead  style="background-color: rgba(0,0,0,.2);">
@@ -41,7 +77,7 @@
                                         <th>Delay Time</th>
                                         <th>Equipment Name</th>
                                         <th>Operator Name</th>
-                                        <th>Delay Filter</th>
+                                        <!--<th>Delay Filter</th>-->
                                         <th>Remarks</th>
                                         <th>Edit</th>
                                         <!--<th>Remove</th>-->
@@ -58,7 +94,7 @@
                                         <td><?php echo $equip['Delay_Time'];?></td>
                                         <td><?php echo $equip['Equipment_Name'];?></td>
                                         <td><?php echo $equip['Operator_Name'];?></td>
-                                        <td><?php echo $equip['Delay_FIlter'];?></td>
+                                        <!--<td><?php echo $equip['Delay_FIlter'];?></td>-->
                                         <td><?php echo $equip['Remarks'];?></td>
                                         <td><a rel="tooltip" title="Edit" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_ajax"  href="#" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/editEquipmentDelay/<?php echo  $equip['Id'];?>');">
                                             <i class="material-icons">edit</i>

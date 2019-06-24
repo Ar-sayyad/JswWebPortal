@@ -11,42 +11,43 @@
                                 Date <span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="date" class="form-control" required="" placeholder="Date" max="<?php echo date('Y-m-d');?>" id="trans_date">
+                                    <input type="date" class="form-control" value="<?php echo date('Y-m-d');?>" placeholder="Date" max="<?php echo date('Y-m-d');?>" id="trans_date">
                             </th>
                             <th>
                                 Mother Vessel Name <span style="color:red;">*</span>
                             </th>
                             <th>
-                                    <input type="text" class="form-control" required="" placeholder="Mother Vessel Name" id="Mother_Vessel_Name">
+                                    <input type="text" class="form-control" autocomplete="off" required="" placeholder="Mother Vessel Name" id="Mother_Vessel_Name">
                             </th>
                         </tr>
                         <tr>
+                            <th>
+                                Under Discharge
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Under Discharge" id="At_Jetty_under_discharge">
+                            </th>
                             <th>
                                 Jetty Waiting for Discharge
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Jetty Waiting for Discharge" id="At_Jetty_waiting_for_discharge">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Jetty Waiting for Discharge" id="At_Jetty_waiting_for_discharge">
                             </th>
-                             <th>
-                                R-19 Waiting (Loaded)
-                            </th>
-                            <th>
-                                <input type="text" class="form-control" placeholder="R-19 Waiting (Loaded)" id="At_R_19_waiting_loaded">
-                            </th>
+                             
                         </tr>
                         <tr>
                             <th>
                                 R-19 Waiting (Loaded)
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="R-19 Waiting (Loaded)" id="At_R_19_waiting_loaded">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="R-19 Waiting (Loaded)" id="At_R_19_waiting_loaded">
                             </th>
                         
                             <th>
-                                Gulf - Waiting (Loaded)
+                                Gull - Waiting (Loaded)
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Gulf - Waiting (Loaded)" id="At_gulf_waiting_loaded">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Gull - Waiting (Loaded)" id="At_gulf_waiting_loaded">
                             </th>
                         </tr>
                         <tr>
@@ -54,13 +55,13 @@
                                 In transit from MV/GULL to Jetty(Loaded
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="In transit from MV/GULL to Jetty(Loaded" id="In_transit_from_MV_GULL_toJetty_Loaded">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="In transit from MV/GULL to Jetty(Loaded" id="In_transit_from_MV_GULL_toJetty_Loaded">
                             </th>                        
                             <th>
                                Under Loading at MV
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Under Loading at MV" id="Under_loading_at_MV">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Under Loading at MV" id="Under_loading_at_MV">
                             </th>
                         </tr>
                          <tr>
@@ -68,13 +69,13 @@
                                 Waiting for Loading
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Waiting for Loading" id="Waiting_for_Loading">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Waiting for Loading" id="Waiting_for_Loading">
                             </th>                        
                             <th>
                                Waiting at Jetty
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Waiting at Jetty" id="Waiting_at_jetty">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Waiting at Jetty" id="Waiting_at_jetty">
                             </th>
                         </tr>
                          <tr>
@@ -82,13 +83,13 @@
                                 Empty at Gull R-19
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Empty at Gull R-19" id="Empty_at_gull_R_19">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Empty at Gull R-19" id="Empty_at_gull_R_19">
                             </th>                        
                             <th>
                                In Transit - from Jetty to MV
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="In Transit-from Jetty to MV" id="In_transit_from_jetty_to_MV">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="In Transit-from Jetty to MV" id="In_transit_from_jetty_to_MV">
                             </th>
                         </tr>
                          <tr>
@@ -96,7 +97,7 @@
                                 Breakdown/off hired
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Breakdown/off hired" id="Breakdown_offHired">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Breakdown/off hired" id="Breakdown_offHired">
                             </th>
                             <th colspan="2"></th>
                         </tr>

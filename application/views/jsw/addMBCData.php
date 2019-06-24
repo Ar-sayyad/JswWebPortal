@@ -10,7 +10,7 @@
                                 ETA Dharamtar Date <span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="date" class="form-control"   required="" placeholder="Date"  id="ETA_Dharamtar_date">
+                                <input type="date" class="form-control"   required="" value="<?php echo date('Y-m-d');?>" placeholder="Date"  id="ETA_Dharamtar_date">
                             </th>
                             <th>
                                 ETA Dharamtar Time 
@@ -24,13 +24,13 @@
                                 MBC Name <span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="MBC Name" id="MBC_name">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="MBC Name" id="MBC_name">
                             </th>                           
                             <th>
                                Cargo <span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Cargo" id="Cargo">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Cargo" id="Cargo">
                             </th>
                             </tr>
                         <tr>
@@ -38,13 +38,13 @@
                                Balance Qty <span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Balance Qty" id="bl_qty">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Balance Qty" id="bl_qty">
                             </th>                        
                             <th>
                                 Load Port <span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" placeholder="Load Port" id="Load_Port">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Load Port" id="Load_Port">
                             </th>                            
                         </tr>
                       
