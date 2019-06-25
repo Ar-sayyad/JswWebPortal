@@ -14,92 +14,123 @@
                                     <input type="date" class="form-control" value="<?php echo date('Y-m-d');?>" placeholder="Date" max="<?php echo date('Y-m-d');?>" id="trans_date">
                             </th>
                             <th>
+                                    VCN No.<span style="color:red;">*</span>
+                            </th>
+                            <th>
+                                    <input type="text" class="form-control" autocomplete="off" required="" placeholder="VCN No." id="VCN_No">
+                            </th>
+                            </tr>
+                        <tr>
+                            <th>
                                 Mother Vessel Name <span style="color:red;">*</span>
                             </th>
                             <th>
-                                    <input type="text" class="form-control" autocomplete="off" required="" placeholder="Mother Vessel Name" id="Mother_Vessel_Name">
+                                    <input type="text" class="form-control" autocomplete="off" readonly="" placeholder="Vessel Name [ Autofill ]" id="Mother_Vessel_Name">
                             </th>
-                        </tr>
-                        <tr>
+                        
                             <th>
                                 Under Discharge
                             </th>
+                            
                             <th>
                                 <input type="text" class="form-control" autocomplete="off" placeholder="Under Discharge" id="At_Jetty_under_discharge">
                             </th>
+                            </tr>
+                        <tr>
                             <th>
                                 Jetty Waiting for Discharge
                             </th>
                             <th>
                                 <input type="text" class="form-control" autocomplete="off" placeholder="Jetty Waiting for Discharge" id="At_Jetty_waiting_for_discharge">
-                            </th>
-                             
-                        </tr>
-                        <tr>
+                            </th>                             
+                        
                             <th>
                                 R-19 Waiting (Loaded)
                             </th>
                             <th>
                                 <input type="text" class="form-control" autocomplete="off" placeholder="R-19 Waiting (Loaded)" id="At_R_19_waiting_loaded">
                             </th>
-                        
+                        </tr>
+                        <tr>
                             <th>
                                 Gull - Waiting (Loaded)
                             </th>
                             <th>
                                 <input type="text" class="form-control" autocomplete="off" placeholder="Gull - Waiting (Loaded)" id="At_gulf_waiting_loaded">
                             </th>
-                        </tr>
-                        <tr>
+                        
                             <th>
                                 In transit from MV/GULL to Jetty(Loaded
                             </th>
                             <th>
                                 <input type="text" class="form-control" autocomplete="off" placeholder="In transit from MV/GULL to Jetty(Loaded" id="In_transit_from_MV_GULL_toJetty_Loaded">
-                            </th>                        
+                            </th> 
+                        </tr>
+                        <tr>
                             <th>
                                Under Loading at MV
                             </th>
                             <th>
                                 <input type="text" class="form-control" autocomplete="off" placeholder="Under Loading at MV" id="Under_loading_at_MV">
-                            </th>
-                        </tr>
-                         <tr>
+                            </th>                       
                             <th>
                                 Waiting for Loading
                             </th>
                             <th>
                                 <input type="text" class="form-control" autocomplete="off" placeholder="Waiting for Loading" id="Waiting_for_Loading">
-                            </th>                        
+                            </th> 
+                        </tr>
+                        <tr>
                             <th>
                                Waiting at Jetty
                             </th>
                             <th>
                                 <input type="text" class="form-control" autocomplete="off" placeholder="Waiting at Jetty" id="Waiting_at_jetty">
-                            </th>
-                        </tr>
-                         <tr>
+                            </th>                        
                             <th>
                                 Empty at Gull R-19
                             </th>
                             <th>
                                 <input type="text" class="form-control" autocomplete="off" placeholder="Empty at Gull R-19" id="Empty_at_gull_R_19">
-                            </th>                        
+                            </th>
+                        </tr>
+                        <tr>
                             <th>
                                In Transit - from Jetty to MV
                             </th>
                             <th>
                                 <input type="text" class="form-control" autocomplete="off" placeholder="In Transit-from Jetty to MV" id="In_transit_from_jetty_to_MV">
+                            </th>  
+                            <th>
+                               Coastal Cargo
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Coastal Cargo" id="coastal_cargo">
+                            </th>                              
+                        </tr>
+                        <tr>                                                  
+                            <th>
+                                Hatch Cover Repair
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Hatch Cover Repair" id="hatch_cover_repair">
+                            </th>
+                            
+                            <th>
+                               Dry Dock
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" autocomplete="off" placeholder="Dry Dock" id="dry_dock">
                             </th>
                         </tr>
-                         <tr>
-                            <th>
+                        <tr>
+                                <th>
                                 Breakdown/off hired
                             </th>
                             <th>
                                 <input type="text" class="form-control" autocomplete="off" placeholder="Breakdown/off hired" id="Breakdown_offHired">
-                            </th>
-                            <th colspan="2"></th>
+                            </th>                        
+                            <th colspan="2">&nbsp;</th>
                         </tr>
                             <tr>
                                 <th colspan="4" style="text-align:center">
@@ -118,11 +149,18 @@
 </div>
 <script>
    $(document).ready(function(){ 
+           $("#VCN_No").change(function(){
+                    $VCN_No = $("#VCN_No").val(); 
+               $.post('<?php echo base_url();?>Jetty/searchVesselName', {VCN_No:$VCN_No},function(data){                       
+                       $("#Mother_Vessel_Name").val(data);
+               });
+           });
     $("#saveJetty").click(function(){
       $("#saveJetty").html('<img src="<?php echo base_url();?>Theme/assets/img/loading.gif" style="width:25px;height:20px;" />');
 //      $Month= $("#Month").val();
 //      $year= $("#year").val();      
         $trans_date = $("#trans_date").val(); 
+        $VCN_No = $("#VCN_No").val(); 
         $Mother_Vessel_Name = $("#Mother_Vessel_Name").val();
         $At_Jetty_under_discharge = $("#At_Jetty_under_discharge").val();
         $At_Jetty_waiting_for_discharge = $("#At_Jetty_waiting_for_discharge").val();
@@ -134,12 +172,15 @@
         $Waiting_at_jetty = $("#Waiting_at_jetty").val();
         $Empty_at_gull_R_19 = $("#Empty_at_gull_R_19").val();
         $In_transit_from_jetty_to_MV = $("#In_transit_from_jetty_to_MV").val();
+        $coastal_cargo = $("#coastal_cargo").val();
+        $hatch_cover_repair = $("#hatch_cover_repair").val();
+        $dry_dock = $("#dry_dock").val();
         $Breakdown_offHired = $("#Breakdown_offHired").val();
            
-      $.post('<?php echo base_url();?>Jetty/save', {trans_date:$trans_date,Mother_Vessel_Name:$Mother_Vessel_Name,At_Jetty_under_discharge:$At_Jetty_under_discharge,At_Jetty_waiting_for_discharge:$At_Jetty_waiting_for_discharge,
+      $.post('<?php echo base_url();?>Jetty/save', {trans_date:$trans_date,VCN_No:$VCN_No,Mother_Vessel_Name:$Mother_Vessel_Name,At_Jetty_under_discharge:$At_Jetty_under_discharge,At_Jetty_waiting_for_discharge:$At_Jetty_waiting_for_discharge,
       At_R_19_waiting_loaded:$At_R_19_waiting_loaded,At_gulf_waiting_loaded:$At_gulf_waiting_loaded,In_transit_from_MV_GULL_toJetty_Loaded:$In_transit_from_MV_GULL_toJetty_Loaded,
       Under_loading_at_MV:$Under_loading_at_MV,Waiting_for_Loading:$Waiting_for_Loading,Waiting_at_jetty:$Waiting_at_jetty,Empty_at_gull_R_19:$Empty_at_gull_R_19,
-      In_transit_from_jetty_to_MV:$In_transit_from_jetty_to_MV,Breakdown_offHired:$Breakdown_offHired}, function(data){
+      In_transit_from_jetty_to_MV:$In_transit_from_jetty_to_MV,coastal_cargo:$coastal_cargo,hatch_cover_repair:$hatch_cover_repair,dry_dock:$dry_dock,Breakdown_offHired:$Breakdown_offHired}, function(data){
           //alert(data);
                     if(data==1)
                           {                                  

@@ -25,12 +25,12 @@ class Jetty extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Jetty";
             $data['linkUrl'] = "";
-            $data['mnth'] = "";
-            $data['year'] ="";
+            $data['date'] = date('Y-m-d');
              $t= $this->jsw_model->is_access_in(53);
                 if($t==1){
                     $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
-                    $data['JettyForm_data'] = $this->jsw_model->select_data_info('dbo.tbl_JettyForm_MF_DPR');  
+                     $cond = array('date' => date('Y-m-d'));
+                    $data['JettyForm_data'] = $this->jsw_model->check_data_info('dbo.tbl_JettyForm_MF_DPR',$cond);  
                     $this->load->view('jsw/Jettyforms',$data);   
                 }else{
                        $data['title'] = "Access Denied..!";
@@ -44,8 +44,7 @@ class Jetty extends CI_Controller {
 	} 
                 
         public function searchJetty(){            
-            $this->form_validation->set_rules('month', 'Month', 'required');
-            $this->form_validation->set_rules('year', 'Year', 'required');
+            $this->form_validation->set_rules('date', 'Date', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                               $this->session->set_flashdata('err_msg',validation_errors());
@@ -53,23 +52,41 @@ class Jetty extends CI_Controller {
                     }
                     else
                      { 
-                        $month = $this->input->post('month');
-                        $year = $this->input->post('year');
-                      $cond = array('month' => $month,'year' => $year);
+                        $date= $this->input->post('date');
+                        $cond = array('date' => $date);
                          $JettyForm_data= $this->jsw_model->check_data_info('dbo.tbl_JettyForm_MF_DPR',$cond);                         
-                        $this->Jetty($JettyForm_data,$month,$year);
+                        $this->Jetty($JettyForm_data,$date);
                      }                   
             
         }
         
-        public function Jetty($JettyForm_data,$month,$year){
+        public function searchVesselName(){
+                $this->form_validation->set_rules('VCN_No', 'VCN_No', 'required');
+            if ($this->form_validation->run() == FALSE)
+                     {
+                              $this->session->set_flashdata('err_msg',validation_errors());
+                                redirect(base_url() . 'Jetty');
+                    }
+                    else
+                     { 
+                        $VCN_No= $this->input->post('VCN_No');
+                        $cond = array('VAN_ID' => $VCN_No);
+                         $VCN_No_data= $this->jsw_model->check_data_info('dbo.tbl_vcn_mv_cargo_mf',$cond);   
+                         foreach($VCN_No_data as $vcn){
+                                 echo $vcn['VESSEL_NAME'];
+                         }
+                     }              
+                
+        }
+        
+
+        public function Jetty($JettyForm_data,$date){
             $data['mydiv'] = "Forms";
             $data['mydiv2'] = "Jetty";
             $data['mydiv3'] = "";
             $data['title'] = "Jetty";
             $data['linkUrl'] = "";
-            $data['mnth'] = $month;
-            $data['year'] =$year;
+            $data['date'] = $date;
             $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
             $data['JettyForm_data'] = $JettyForm_data;
             $this->load->view('jsw/Jettyforms',$data);              
@@ -77,6 +94,7 @@ class Jetty extends CI_Controller {
         
       public function save(){
             $this->form_validation->set_rules('trans_date', 'Date', 'required');
+            $this->form_validation->set_rules('VCN_No', 'VCN No.', 'required');
             $this->form_validation->set_rules('Mother_Vessel_Name', 'Mother Vessel Name', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
@@ -91,6 +109,7 @@ class Jetty extends CI_Controller {
                             $data= array(
                                     'date'=> $trans_date,
                                     'At_Jetty_under_discharge'=> $this->input->post('At_Jetty_under_discharge'),
+                                    'vcn_no'=> $this->input->post('VCN_No'),
                                     'Mother_Vessel_Name' => $this->input->post('Mother_Vessel_Name'),
                                     'At_Jetty_waiting_for_discharge'=> $this->input->post('At_Jetty_waiting_for_discharge'),
                                     'At_R_19_waiting_loaded'=> $this->input->post('At_R_19_waiting_loaded'),
@@ -102,6 +121,9 @@ class Jetty extends CI_Controller {
                                     'Waiting_at_jetty'=> $this->input->post('Waiting_at_jetty'),
                                     'Empty_at_gull_R_19'=> $this->input->post('Empty_at_gull_R_19'),
                                     'In_transit_from_jetty_to_MV'=> $this->input->post('In_transit_from_jetty_to_MV'),
+                                    'coastal_cargo'=> $this->input->post('coastal_cargo'),
+                                    'hatch_cover_repair'=> $this->input->post('hatch_cover_repair'),
+                                    'dry_dock'=> $this->input->post('dry_dock'),
                                     'Breakdown_offHired'=> $this->input->post('Breakdown_offHired'),
                                     'month'=> $month,
                                     'year'=> $year
