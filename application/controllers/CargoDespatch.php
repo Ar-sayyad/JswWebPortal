@@ -26,12 +26,12 @@ class CargoDespatch extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "Cargo Despatch";
             $data['linkUrl'] = "";
-            $data['mnth'] = "";
-            $data['year'] ="";
+            $data['date'] = date('Y-m-d');
             $t= $this->jsw_model->is_access_in(55);
             if($t==1){
             $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
-            $data['CargoDespatchform_data'] = $this->jsw_model->select_data_info('dbo.tbl_cargo_despatch_road_MF_DPR');  
+            $cond = array('date' => date('Y-m-d'));
+            $data['CargoDespatchform_data'] = $this->jsw_model->check_data_info('dbo.tbl_cargo_despatch_road_MF_DPR',$cond);  
             $this->load->view('jsw/CargoDespatchform',$data);                
             }else{
                 $data['title'] = "Access Denied..!";
@@ -44,8 +44,7 @@ class CargoDespatch extends CI_Controller {
 	} 
                 
         public function searchCargoDespatch(){            
-            $this->form_validation->set_rules('month', 'Month', 'required');
-            $this->form_validation->set_rules('year', 'Year', 'required');
+            $this->form_validation->set_rules('date', 'Date', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                       $this->session->set_flashdata('err_msg',validation_errors());
@@ -53,23 +52,42 @@ class CargoDespatch extends CI_Controller {
                     }
                     else
                      { 
-                        $month = $this->input->post('month');
-                        $year = $this->input->post('year');
-                        $cond = array('month' => $month,'year' => $year);
+                        $date = $this->input->post('date');
+                        $cond = array('date' => $date);
                         $CargoDespatch_data= $this->jsw_model->check_data_info('dbo.tbl_cargo_despatch_road_MF_DPR',$cond);                         
-                        $this->CargoDespatch($CargoDespatch_data,$month,$year);
+                        $this->CargoDespatch($CargoDespatch_data,$date);
                      }                   
             
         }
         
-        public function CargoDespatch($CargoDespatch_data,$month,$year){
+         public function searchVesselName(){
+                $this->form_validation->set_rules('VCN_No', 'VCN_No', 'required');
+            if ($this->form_validation->run() == FALSE)
+                     {
+                              $this->session->set_flashdata('err_msg',validation_errors());
+                                redirect(base_url() . 'Jetty');
+                    }
+                    else
+                     { 
+                        $VCN_No= $this->input->post('VCN_No');
+                        $cond = array('VAN_ID' => $VCN_No);
+                         $VCN_No_data= $this->jsw_model->check_data_info('dbo.tbl_vcn_mv_cargo_mf',$cond);   
+                         
+                         foreach($VCN_No_data as $vcn){
+                                echo  $phpArray =($vcn['VESSEL_NAME'].",".$vcn['CARGO_NAME']);
+                                // echo json_encode($phpArray);
+                         }
+                     }              
+                
+        }
+        
+        public function CargoDespatch($CargoDespatch_data,$date){
             $data['mydiv'] = "Forms";
             $data['mydiv2'] = "Cargo Despatch";
             $data['mydiv3'] = "";
             $data['title'] = "Cargo Despatch";
             $data['linkUrl'] = "";
-            $data['mnth'] = $month;
-            $data['year'] =$year;
+            $data['date'] = $date;
             $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
             $data['CargoDespatchform_data'] = $CargoDespatch_data;
             $this->load->view('jsw/CargoDespatchform',$data);              
@@ -77,10 +95,12 @@ class CargoDespatch extends CI_Controller {
         
       public function save(){
             $this->form_validation->set_rules('date', 'Date', 'required');
+            $this->form_validation->set_rules('VCN_No', 'VCN No.', 'required');
              $this->form_validation->set_rules('Mother_vessel', 'Mother Vessel', 'required');
               $this->form_validation->set_rules('cargo', 'Cargo', 'required');
                $this->form_validation->set_rules('cargo_qty_for_day', 'Cargo Qty', 'required');
                 $this->form_validation->set_rules('TripsForDay_FromBerthNo', 'Trips', 'required');
+                $this->form_validation->set_rules('Selection', 'Selection', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();
@@ -88,12 +108,14 @@ class CargoDespatch extends CI_Controller {
                     else
                      {   
                             $trans_date = $this->input->post('date');
-                            $trips = $this->input->post('TripsForDay_FromBerthNo')." Trips/Yard";
+                            $Selection = $this->input->post('Selection');
+                            $trips = $this->input->post('TripsForDay_FromBerthNo')." ".$Selection;
                             $time=strtotime($trans_date);
                             $month=date("F",$time);
                             $year=date("Y",$time);
                             $data= array(
                                     'date'=> $trans_date,
+                                    'vcn_num'=> $this->input->post('VCN_No'),
                                     'Mother_vessel'=> $this->input->post('Mother_vessel'),
                                     'cargo'=> $this->input->post('cargo'),
                                     'cargo_qty_for_day'=> $this->input->post('cargo_qty_for_day'),

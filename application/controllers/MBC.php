@@ -7,7 +7,7 @@ class MBC extends CI_Controller {
         parent::__construct();
         $this->load->database();        	
         $this->load->library('session');
-	$this->load->library('form_validation');
+        $this->load->library('form_validation');
         $this->load->library('user_agent');
         $this->load->model('jsw_model');
        // $this->jsw_model->is_logged_in();
@@ -26,12 +26,12 @@ class MBC extends CI_Controller {
             $data['mydiv3'] = "";
             $data['title'] = "MBC";
             $data['linkUrl'] = "";
-            $data['mnth'] = "";
-            $data['year'] ="";
+            $data['date'] = date('Y-m-d');
             $t= $this->jsw_model->is_access_in(54);
             if($t==1){
                 $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
-                $data['MBCForm_data'] = $this->jsw_model->select_data_info('dbo.tbl_MBC_MF_DPR');  
+                $cond = array('date' =>date('Y-m-d'));
+                $data['MBCForm_data'] = $this->jsw_model->check_data_info('dbo.tbl_MBC_MF_DPR',$cond);  
                 $this->load->view('jsw/MBCform',$data);                
             }else{
                 $data['title'] = "Access Denied..!";
@@ -44,8 +44,7 @@ class MBC extends CI_Controller {
 	} 
                 
         public function searchMBC(){            
-            $this->form_validation->set_rules('month', 'Month', 'required');
-            $this->form_validation->set_rules('year', 'Year', 'required');
+            $this->form_validation->set_rules('date', 'Date', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                               $this->session->set_flashdata('err_msg',validation_errors());
@@ -53,23 +52,21 @@ class MBC extends CI_Controller {
                     }
                     else
                      { 
-                        $month = $this->input->post('month');
-                        $year = $this->input->post('year');
-                        $cond = array('month' => $month,'year' => $year);
+                        $date = $this->input->post('date');
+                        $cond = array('date' => $date);
                         $MBCForm_data= $this->jsw_model->check_data_info('dbo.tbl_MBC_MF_DPR',$cond);                         
-                        $this->MBC($MBCForm_data,$month,$year);
+                        $this->MBC($MBCForm_data,$date);
                      }                   
             
         }
         
-        public function MBC($MBCForm_data,$month,$year){
+        public function MBC($MBCForm_data,$date){
             $data['mydiv'] = "Forms";
             $data['mydiv2'] = "MBC";
             $data['mydiv3'] = "";
             $data['title'] = "MBC";
             $data['linkUrl'] = "";
-            $data['mnth'] = $month;
-            $data['year'] =$year;
+            $data['date'] = $date;
             $data['month_info'] = $this->jsw_model->select_data_info('dbo.TblMonth'); 
             $data['MBCForm_data'] = $MBCForm_data;
             $this->load->view('jsw/MBCform',$data);              
@@ -77,6 +74,7 @@ class MBC extends CI_Controller {
         
       public function save(){
             $this->form_validation->set_rules('ETA_Dharamtar', 'Date-Time', 'required');
+             $this->form_validation->set_rules('date', 'Date', 'required');
              $this->form_validation->set_rules('MBC_name', 'MBC Name', 'required');
              $this->form_validation->set_rules('Cargo', 'Cargo', 'required');
              $this->form_validation->set_rules('bl_qty', 'Balance Qty', 'required');
@@ -92,6 +90,7 @@ class MBC extends CI_Controller {
                             $month=date("F",$time);
                             $year=date("Y",$time);
                             $data= array(
+                                    'date'=> $this->input->post('date'),
                                     'ETA_Dharamtar'=> $trans_date,
                                     'MBC_name'=> $this->input->post('MBC_name'),
                                     'Cargo'=> $this->input->post('Cargo'),

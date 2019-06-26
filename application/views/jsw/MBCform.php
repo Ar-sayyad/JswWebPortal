@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/header.php';?> 
-    
+     <style>
+        .addbtn{
+        padding: 5px;
+        height: 97px;
+        border: 2px solid #000000;
+        border-radius: 5px;
+        margin: 0px;
+        background-color: white;
+        }
+        </style>
     <body class="">
         <div class="wrapper ">
       <!-- Sidebar -->
@@ -27,7 +36,24 @@
                 </div>                      
                 <div class="col-lg-10 col-md-10 col-sm-10" id="MainView">
                           <div class="addbtn" style="margin-top: 0px;">
-                                <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addMBCData');" class="btn btn-primary" style="float: right" > <i class="material-icons">add_circle_outline</i> Add MBC ETA Data</button>
+                                  <form action="<?php echo base_url();?>MBC/searchMBC" method="POST" enctype="multipart/form-data"  class="searchform" style="float:left;width: 70%">
+                                    <table class="table form"> 
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                     Date:<span style="color:red;">*</span>      
+                                                </th>
+                                                <th style="width:40%">
+                                                        <input type="date" class="form-control" name="date" value="<?php echo $date;?>" max="<?php echo date('Y-m-d');?>" placeholder="Date" required=""  id="formdate">
+                                                </th>
+                                                <th>
+                                                    <button type="submit" name="search" data-id="hello" id="searchData" class="btn btn-info" value="save"><i class="material-icons">search</i> Search</button>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </form> 
+                                <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addMBCData');" class="btn btn-primary" style="float:right;width: 18%;margin-top: 20px;" > <i class="material-icons">add_circle_outline</i> Add MBC ETA Data</button>
                            </div> 
                     <div class="bootstrap-data-table-panel card" style="margin: 5px 0;">
                             <div class="table-responsive">
@@ -35,6 +61,7 @@
                                     <thead style="background-color: rgba(0,0,0,.2);">
                                       <tr>
                                         <th>SR</th>
+                                        <th>Date</th>
                                         <th>ETA Dharamtar</th>
                                         <th>MBC Name</th>
                                         <th>Cargo</th>
@@ -48,6 +75,7 @@
                                       <?php  if(!empty($MBCForm_data)){  $sr=1; foreach($MBCForm_data as $mbc){?>
                                         <tr>
                                         <td><?php echo $sr;?></td>   
+                                        <td><?php echo $mbc['date'];?></td>
                                         <td><?php echo $mbc['ETA_Dharamtar'];?></td>
                                         <td><?php echo $mbc['MBC_name'];?></td>
                                         <td><?php echo $mbc['Cargo'];?></td>

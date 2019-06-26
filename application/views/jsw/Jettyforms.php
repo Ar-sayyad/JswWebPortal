@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 
-                 <div class="col-lg-10 col-md-10 col-sm-10" id="MainView" style="overflow-x: scroll;">                          
+                 <div class="col-lg-10 col-md-10 col-sm-10" >                          
                           <div class="addbtn" style="margin-top: 0px;">
                                 <form action="<?php echo base_url();?>Jetty/searchJetty" method="POST" enctype="multipart/form-data"  class="searchform" style="float:left;width: 70%">
                                     <table class="table form"> 
@@ -56,6 +56,7 @@
                                 </form> 
                                 <button data-toggle="modal" data-target="#modal_ajax" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/addJettyData');" class="btn btn-primary table" style="float:right;width: 18%;margin-top: 20px;" > <i class="material-icons">add_circle_outline</i> Add Barge Status</button>
                          </div> 
+                         <div class="col-lg-12 col-md-12 col-sm-12"  style="overflow-x: scroll;" id="MainView" >
                     <div class="bootstrap-data-table-panel card" style="width: 2800px;margin: 5px 0;">
                            
                             <div class="table-responsive">
@@ -67,7 +68,7 @@
                                         <th style="width: 150px !important;">VCN No.</th>
                                         <th style="width: 150px !important;">Mother Vessel</th>
                                         <th style="width: 200px !important;">Un. Discharge</th>
-                                        <th style="width: 150px !important;">Wait Discharge</th>
+                                        <th style="width: 150px !important;">Waiting for Disch.</th>
                                         <th style="width: 200px !important;">R-19 Waiting(Loaded)</th>
                                         <th style="width: 200px !important;">Gull-Waiting(Loaded)</th>
                                         <th style="width: 200px !important;">MV/GULL to Jetty</th>
@@ -111,6 +112,7 @@
                                 </table>
                             </div>
                         </div>
+                         </div>
                    
                 </div>
                 <!-- end col-md-12 -->

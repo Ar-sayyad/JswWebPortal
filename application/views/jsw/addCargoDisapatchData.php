@@ -40,42 +40,54 @@
                             <th>
                                 <input type="date" class="form-control" required="" value="<?php echo date('Y-m-d');?>" placeholder="Date" max="<?php echo date('Y-m-d');?>" id="date">
                             </th>
-                            <th>
-                                    Mother Vessel<span style="color:red;">*</span>
+                             <th>
+                                    VCN No.<span style="color:red;">*</span>
                             </th>
                             <th>
-                                    <input type="text" class="form-control" autocomplete="off" required="" placeholder="Mother Vessel" id="Mother_vessel">
+                                    <input type="text" class="form-control" autocomplete="off" required="" placeholder="VCN No." id="VCN_No">
                             </th>
                         </tr>
                         <tr>
                             <th>
-                                Cargo<span style="color:red;">*</span>
+                                    Mother Vessel
                             </th>
                             <th>
-                                <input type="text" class="form-control" autocomplete="off" required="" placeholder="Cargo" id="cargo">
+                                <input type="text" class="form-control" autocomplete="off" readonly="" placeholder="Mother Vessel [Auto]" id="Mother_vessel">
                             </th>
+                        
+                            <th>
+                                Cargo
+                            </th>
+                        
+                            <th>
+                                <input type="text" class="form-control" autocomplete="off" readonly="" placeholder="Cargo [Auto]" id="cargo">
+                            </th>
+                        </tr>
+                        <tr>
                             <th>
                                 Cargo Qty For Day<span style="color:red;">*</span>
                             </th>
                             <th>
                                 <input type="text" class="form-control" autocomplete="off" required="" placeholder="Cargo Qty For Day" id="cargo_qty_for_day">
                             </th>
-                        </tr>
-                        <tr>
+                        
                             <th>
                                 Trips For Day From Berth No<span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" autocomplete="off" required="" placeholder="Trips For Day From Berth No" id="TripsForDay_FromBerthNo">
+                                    <input type="text" class="form-control" autocomplete="off" required="" style="width: 49% !important;float:left;" placeholder="Trips For Day From Berth No" id="TripsForDay_FromBerthNo">
+                                <select name="Selection" class="form-control" required="" style="width: 49% !important;float: left;margin-left: 5px;" id="Selection">
+                                        <option value="">--Select Type--</option>
+                                        <option value="Trips/Yard">Trips/Yard</option>
+                                        <option value="Trips/Jetty">Trips/Jetty</option>
+                                </select>
                             </th>
-                            <th colspan="2">&nbsp;</th>
                         </tr>
-                       
                                 <th colspan="4" style="text-align:center">
                                     <button type="button" name="save" data-id="hello" id="saveCargo" class="btn btn-success" value="save"><i class="material-icons">save</i> Save</button>
                                      <button type="reset" name="Reset" class="btn btn-primary" value="reset"><i class="material-icons">replay</i> Reset</button>
                                 </th>
-                            </tr>
+                        </tr>
 
                         </thead>
 
@@ -87,18 +99,25 @@
 </div>
 <script>
    $(document).ready(function(){ 
+            $("#VCN_No").change(function(){
+                    $VCN_No = $("#VCN_No").val(); 
+               $.post('<?php echo base_url();?>CargoDespatch/searchVesselName', {VCN_No:$VCN_No},function(data){
+                        var array = data.split(",");
+                       $("#Mother_vessel").val(array[0]);
+                       $("#cargo").val(array[1]);
+               });
+           });
     $("#saveCargo").click(function(){
-      $("#saveCargo").html('<img src="<?php echo base_url();?>Theme/assets/img/loading.gif" style="width:25px;height:20px;" />');
-//      $Month= $("#Month").val();
-//      $year= $("#year").val();      
+      $("#saveCargo").html('<img src="<?php echo base_url();?>Theme/assets/img/loading.gif" style="width:25px;height:20px;" />');   
         $date = $("#date").val(); 
+        $VCN_No = $("#VCN_No").val(); 
         $Mother_vessel = $("#Mother_vessel").val();
         $cargo = $("#cargo").val();
         $cargo_qty_for_day= $("#cargo_qty_for_day").val();
         $TripsForDay_FromBerthNo = $("#TripsForDay_FromBerthNo").val();
-           
-      $.post('<?php echo base_url();?>CargoDespatch/save', {date:$date,Mother_vessel:$Mother_vessel,cargo:$cargo,
-      cargo_qty_for_day:$cargo_qty_for_day,TripsForDay_FromBerthNo:$TripsForDay_FromBerthNo}, function(data){
+        $Selection = $("#Selection").val();
+      $.post('<?php echo base_url();?>CargoDespatch/save', {date:$date,VCN_No:$VCN_No,Mother_vessel:$Mother_vessel,cargo:$cargo,
+      cargo_qty_for_day:$cargo_qty_for_day,TripsForDay_FromBerthNo:$TripsForDay_FromBerthNo,Selection:$Selection}, function(data){
           //alert(data);
                     if(data==1)
                           {                                  

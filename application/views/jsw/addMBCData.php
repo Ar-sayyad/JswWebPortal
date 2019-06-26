@@ -84,7 +84,7 @@
         $bl_qty = $("#bl_qty").val();
         $Load_Port= $("#Load_Port").val();
            
-      $.post('<?php echo base_url();?>MBC/save', {ETA_Dharamtar:$ETA_Dharamtar,MBC_name:$MBC_name,Cargo:$Cargo,bl_qty:$bl_qty,Load_Port:$Load_Port}, function(data){
+      $.post('<?php echo base_url();?>MBC/save', {date:$ETA_Dharamtar_dt,ETA_Dharamtar:$ETA_Dharamtar,MBC_name:$MBC_name,Cargo:$Cargo,bl_qty:$bl_qty,Load_Port:$Load_Port}, function(data){
           //alert(data);
                     if(data==1)
                           {                                  
