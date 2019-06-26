@@ -63,6 +63,7 @@
                                 <table id="bootstrap-data-table-export" class="table table-bordered table-hover">   
                                     <thead style="background-color: rgba(0,0,0,.2);">
                                       <tr>
+                                        <th style="width: 50px !important;">Edit</th>
                                         <th style="width: 50px !important;">SR</th>
                                         <th style="width: 150px !important;">Date</th>
                                         <th style="width: 150px !important;">VCN No.</th>
@@ -75,7 +76,7 @@
                                         <th style="width: 200px !important;">Under Loading at MV</th>
                                         <th style="width: 200px !important;">Waiting for Loading</th>
                                         <th style="width: 200px !important;">Waiting at Jetty</th>
-                                        <th style="width: 250px !important;">Empty at Gull R-19</th>
+                                        <th style="width: 200px !important;">Empty at Gull R-19</th>
                                         <th style="width: 250px !important;">In Transit-from Jetty to MV</th>
                                         <th style="width: 200px !important;">Coastal Cargo</th>
                                         <th style="width: 200px !important;">Hatch Cover Repair</th>
@@ -87,6 +88,11 @@
                                     <tbody>
                                       <?php  if(!empty($JettyForm_data)){  $sr=1; foreach($JettyForm_data as $jetty){?>
                                         <tr>
+                                        <td>
+                                             <a rel="tooltip" title="Edit" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_ajax"  href="#" onclick="showAjaxModal('<?php echo base_url();?>Home/popup/jsw/editJettyData/<?php echo  $jetty['Id'];?>');">
+                                            <i class="material-icons">edit</i>
+                                            </a>
+                                        </td>
                                         <td><?php echo $sr;?></td>   
                                         <td><?php echo $jetty['date'];?></td>
                                         <td><?php echo $jetty['vcn_no'];?></td>

@@ -18,21 +18,21 @@
                             <th>
                                 <input type="time" class="form-control"  value="00:00:00"  required="" placeholder="Time"  id="ETA_Dharamtar_time">
                             </th>
-                             </tr>
+                        </tr>
                         <tr>
                             <th>
                                 MBC Name <span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" autocomplete="off" placeholder="MBC Name" id="MBC_name">
+                                <input type="text" class="form-control" placeholder="MBC Name" id="MBC_name">
                             </th>                           
                             <th>
                                Cargo <span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" autocomplete="off" placeholder="Cargo" id="Cargo">
+                                <input type="text" class="form-control" placeholder="Cargo" id="Cargo">
                             </th>
-                            </tr>
+                        </tr>
                         <tr>
                             <th>
                                Balance Qty <span style="color:red;">*</span>
@@ -44,19 +44,16 @@
                                 Load Port <span style="color:red;">*</span>
                             </th>
                             <th>
-                                <input type="text" class="form-control" autocomplete="off" placeholder="Load Port" id="Load_Port">
+                                <input type="text" class="form-control" placeholder="Load Port" id="Load_Port">
                             </th>                            
+                        </tr>                      
+                        <tr>
+                            <th colspan="4" style="text-align:center">
+                                <button type="button" name="save" data-id="hello" id="saveMBC" class="btn btn-success" value="save"><i class="material-icons">save</i> Save</button>
+                                 <button type="reset" name="Reset" class="btn btn-primary" value="reset"><i class="material-icons">replay</i> Reset</button>
+                            </th>
                         </tr>
-                      
-                            <tr>
-                                <th colspan="4" style="text-align:center">
-                                    <button type="button" name="save" data-id="hello" id="saveMBC" class="btn btn-success" value="save"><i class="material-icons">save</i> Save</button>
-                                     <button type="reset" name="Reset" class="btn btn-primary" value="reset"><i class="material-icons">replay</i> Reset</button>
-                                </th>
-                            </tr>
-
                         </thead>
-
                     </table>
                 </form>
                 </div>

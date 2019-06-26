@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+date_default_timezone_set("Asia/Kolkata");
 class Jetty extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
         $this->load->database();        	
         $this->load->library('session');
-	$this->load->library('form_validation');
+        $this->load->library('form_validation');
         $this->load->model('jsw_model');
         //$this->jsw_model->is_logged_in();
         $this->load->helper('file');
@@ -135,7 +135,9 @@ class Jetty extends CI_Controller {
       }
         
         public function update($id){
-            $this->form_validation->set_rules('trans_date', 'Date', 'required');
+            $this->form_validation->set_rules('trans_date', 'Date', 'required');            
+            $this->form_validation->set_rules('VCN_No', 'VCN No.', 'required');
+            $this->form_validation->set_rules('Mother_Vessel_Name', 'Mother Vessel Name', 'required');
             if ($this->form_validation->run() == FALSE)
                      {
                             echo validation_errors();
@@ -143,30 +145,62 @@ class Jetty extends CI_Controller {
                     else
                      {   
                             $trans_date = $this->input->post('trans_date');
-                            $time=strtotime($trans_date);
-                            $month=date("F",$time);
-                            $year=date("Y",$time);
-                            $data= array(
-                                    'date'=> $trans_date,
-                                    'At_Jetty_under_discharge'=> $this->input->post('At_Jetty_under_discharge'),
-                                    'Mother_Vessel_Name' => $this->input->post('Mother_Vessel_Name'),
-                                    'At_Jetty_waiting_for_discharge'=> $this->input->post('At_Jetty_waiting_for_discharge'),
-                                    'At_R_19_waiting_loaded'=> $this->input->post('At_R_19_waiting_loaded'),
-                                    'At_gulf_waiting_loaded'=> $this->input->post('At_gulf_waiting_loaded'),
-                                    'In_transit_from_MV_GULL_toJetty_Loaded'=> $this->input->post('In_transit_from_MV_GULL_toJetty_Loaded'),
-                                    'Under_loading_at_MV'=> $this->input->post('Under_loading_at_MV'),
-                                    'At_R_19_waiting_loaded'=> $this->input->post('Waiting_for_Loading'),
-                                    'Waiting_for_Loading'=> $this->input->post('At_R_19_waiting_loaded'),
-                                    'Waiting_at_jetty'=> $this->input->post('Waiting_at_jetty'),
-                                    'Empty_at_gull_R_19'=> $this->input->post('Empty_at_gull_R_19'),
-                                    'In_transit_from_jetty_to_MV'=> $this->input->post('In_transit_from_jetty_to_MV'),
-                                    'Breakdown_offHired'=> $this->input->post('Breakdown_offHired'),
-                                    'month'=> $month,
-                                    'year'=> $year
-                               );
-                           $where =array('Id'=>$id);
-                            $this->jsw_model->update_data_info('dbo.tbl_JettyForm_MF_DPR',$data,$where);
-                            echo 1;
+                            $today = date('Y-m-d');
+                            $twelve = date('H:i:s',strtotime("12 PM"));
+                            $now = date('H:i:s');
+                            $date=date_create($trans_date);
+                             date_add($date,date_interval_create_from_date_string("1 days"));
+                             $next =  date_format($date,"Y-m-d");
+                                if($today == $next){
+                                      if($twelve > $now){
+                                              $data= array(
+                                               // 'date'=> $trans_date,
+                                                'At_Jetty_under_discharge'=> $this->input->post('At_Jetty_under_discharge'),
+                                                'vcn_no'=> $this->input->post('VCN_No'),
+                                                'Mother_Vessel_Name' => $this->input->post('Mother_Vessel_Name'),
+                                                'At_Jetty_waiting_for_discharge'=> $this->input->post('At_Jetty_waiting_for_discharge'),
+                                                'At_R_19_waiting_loaded'=> $this->input->post('At_R_19_waiting_loaded'),
+                                                'At_gulf_waiting_loaded'=> $this->input->post('At_gulf_waiting_loaded'),
+                                                'In_transit_from_MV_GULL_toJetty_Loaded'=> $this->input->post('In_transit_from_MV_GULL_toJetty_Loaded'),
+                                                'Under_loading_at_MV'=> $this->input->post('Under_loading_at_MV'),
+                                                'At_R_19_waiting_loaded'=> $this->input->post('Waiting_for_Loading'),
+                                                'Waiting_for_Loading'=> $this->input->post('At_R_19_waiting_loaded'),
+                                                'Waiting_at_jetty'=> $this->input->post('Waiting_at_jetty'),
+                                                'Empty_at_gull_R_19'=> $this->input->post('Empty_at_gull_R_19'),
+                                                'In_transit_from_jetty_to_MV'=> $this->input->post('In_transit_from_jetty_to_MV'),
+                                                'Breakdown_offHired'=> $this->input->post('Breakdown_offHired')
+                                           );
+                                        $where =array('Id'=>$id);
+                                        $this->jsw_model->update_data_info('dbo.tbl_JettyForm_MF_DPR',$data,$where);
+                                        echo 1;
+                                      } 
+                                      else {
+                                         echo 2;   
+                                      }
+                                } elseif ($trans_date ==$today){  
+                                        $data= array(
+                                               // 'date'=> $trans_date,
+                                                'At_Jetty_under_discharge'=> $this->input->post('At_Jetty_under_discharge'),
+                                                'vcn_no'=> $this->input->post('VCN_No'),
+                                                'Mother_Vessel_Name' => $this->input->post('Mother_Vessel_Name'),
+                                                'At_Jetty_waiting_for_discharge'=> $this->input->post('At_Jetty_waiting_for_discharge'),
+                                                'At_R_19_waiting_loaded'=> $this->input->post('At_R_19_waiting_loaded'),
+                                                'At_gulf_waiting_loaded'=> $this->input->post('At_gulf_waiting_loaded'),
+                                                'In_transit_from_MV_GULL_toJetty_Loaded'=> $this->input->post('In_transit_from_MV_GULL_toJetty_Loaded'),
+                                                'Under_loading_at_MV'=> $this->input->post('Under_loading_at_MV'),
+                                                'At_R_19_waiting_loaded'=> $this->input->post('Waiting_for_Loading'),
+                                                'Waiting_for_Loading'=> $this->input->post('At_R_19_waiting_loaded'),
+                                                'Waiting_at_jetty'=> $this->input->post('Waiting_at_jetty'),
+                                                'Empty_at_gull_R_19'=> $this->input->post('Empty_at_gull_R_19'),
+                                                'In_transit_from_jetty_to_MV'=> $this->input->post('In_transit_from_jetty_to_MV'),
+                                                'Breakdown_offHired'=> $this->input->post('Breakdown_offHired')
+                                           );
+                                       $where =array('Id'=>$id);
+                                        $this->jsw_model->update_data_info('dbo.tbl_JettyForm_MF_DPR',$data,$where);
+                                        echo 1;
+                            }else{
+                                    echo   2;     
+                                }
                      }
                          
         }
