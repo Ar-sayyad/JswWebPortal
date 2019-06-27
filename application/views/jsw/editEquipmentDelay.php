@@ -51,6 +51,12 @@
                             </th> 
                         </tr>
                         <tr>
+                           <th>
+                                    Main Delay 
+                            </th>
+                            <th>
+                                    <input type="text" class="form-control"  readonly="" placeholder="Main Delay" value="<?php echo $row['MainDelay'];?>" id="MainDelay">
+                            </th> 
                             <th>
                                 Remarks <span style="color:red;">*</span>
                             </th>
