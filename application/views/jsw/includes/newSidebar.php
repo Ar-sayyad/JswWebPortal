@@ -140,6 +140,12 @@ $cond = array('userType' => $this->session->userdata('userType'));
                                 <span class="sidebar-normal"> MHS PATH - 7 </span>
                             </a>
                         </li>
+                   <?php if($title=='MHS PATH - 8'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1059, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1059, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/newmhsPathEight">
+                                <i class="material-icons">filter_7</i>
+                                <span class="sidebar-normal"> MHS PATH - 8 </span>
+                            </a>
+                        </li>
                </ul>
             </div>
         </li>
@@ -237,6 +243,85 @@ $cond = array('userType' => $this->session->userdata('userType'));
                     <span class="sidebar-normal"> Motor Current </span>
                 </a>
             </li>
+            
+            <?php if($mydiv3=='TRANSFER'){?><li class="nav-item mydiv3 active"> <?php }else{?> <li class="nav-item mydiv3"><?php }?>
+            <a class="nav-link" data-toggle="collapse" href="#TransExamples">
+                <i class="material-icons">airplay</i> TRANSFER<b class="caret"></b>
+            </a>
+            <?php if($mydiv3=='TRANSFER'){?><div class="collapse show" id="TransExamples"><?php }else{?> <div class="collapse" id="TransExamples"><?php }?>                                               
+                <ul class="nav">
+                    <?php if($title=='TRANSFER TOWEER - 1'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1060, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1060, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/tranTowerOne">
+                                 <i class="material-icons">airplay</i>
+                                <span class="sidebar-normal"> TRANSFER TOWEER - 1 </span>
+                            </a>
+                        </li>
+                    <?php if($title=='TRANSFER TOWEER - 5'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1061, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1061, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/tranTowerTwo">
+                                <i class="material-icons">airplay</i>
+                                <span class="sidebar-normal"> TRANSFER TOWEER - 5 </span>
+                            </a>
+                        </li>            
+                    <?php if($title=='TRANSFER TOWER-102'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1062, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1062, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/tranTower102">
+                                <i class="material-icons">airplay</i>
+                                <span class="sidebar-normal"> TRANSFER TOWER-102 </span>
+                            </a>
+                        </li>
+                     <?php if($title=='TRANSFER TOWER-103'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1066, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1066, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/tranTower103">
+                                <i class="material-icons">airplay</i>
+                                <span class="sidebar-normal"> TRANSFER TOWER-103 </span>
+                            </a>
+                        </li>
+                    <?php if($title=='TRANSFER TOWER-103 A'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1063, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1063, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/tranTower103A">
+                                <i class="material-icons">airplay</i>
+                                <span class="sidebar-normal"> TRANSFER TOWER-103 A </span>
+                            </a>
+                        </li>
+                    <?php if($title=='TRANSFER TOWER-103 B'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1064, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1064, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/tranTower103B">
+                                <i class="material-icons">airplay</i>
+                                <span class="sidebar-normal"> TRANSFER TOWER-103 B </span>
+                            </a>
+                        </li>
+                    <?php if($title=='TRANSFER TOWER-103 D'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1065, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1065, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/tranTower103D">
+                                <i class="material-icons">airplay</i>
+                                <span class="sidebar-normal"> TRANSFER TOWER-103 D </span>
+                            </a>
+                        </li>
+                   <?php if($title=='TRANSFER TOWER-PC 1'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1067, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1067, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/tranTowerPC1">
+                                <i class="material-icons">airplay</i>
+                                <span class="sidebar-normal"> TRANSFER TOWER-PC 1 </span>
+                            </a>
+                        </li>
+                    <?php if($title=='TRANSFER TOWER-R 1'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1068, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1068, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/tranTowerR1">
+                                <i class="material-icons">airplay</i>
+                                <span class="sidebar-normal"> TRANSFER TOWER-R 1 </span>
+                            </a>
+                        </li>
+                    <?php if($title=='TRANSFER TOWER-R 1 A'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1070, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1070, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/tranTowerR1A">
+                                <i class="material-icons">airplay</i>
+                                <span class="sidebar-normal">TRANSFER TOWER-R 1 A </span>
+                            </a>
+                        </li>            
+                    <?php if($title=='TRANSFER TOWER-TC 1'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1071, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1071, $array);?>" ><?php }?>
+                            <a class="nav-link"  href="<?php echo base_url();?>MHS/tranTowerTC1">
+                                <i class="material-icons">airplay</i>
+                                <span class="sidebar-normal"> TRANSFER TOWER-TC 1 </span>
+                            </a>
+                        </li>                           
+
+                </ul>
+            </div>
+        </li>
+        
+        
         </ul>
 <!-----MHS----->
 <ul class="nav Menus" id="bulMenu" style="display:none;">
@@ -409,22 +494,27 @@ $cond = array('userType' => $this->session->userdata('userType'));
                 </li>
            <?php if($title=='MBC'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(54, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(54, $array);?>" ><?php }?>
                      <a class="nav-link"  href="<?php echo base_url();?>MBC">
-                        <i class="material-icons">filter_2</i> MBC ETA
+                        <i class="material-icons">filter_2</i> MBC ETA DHARAMTAR
+                    </a>
+                </li>
+        <?php if($title=='ETA Mumbai'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(1072, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(1072, $array);?>" ><?php }?>
+                     <a class="nav-link"  href="<?php echo base_url();?>ETAMumbai">
+                        <i class="material-icons">filter_3</i> MBC ETA MUMBAI
                     </a>
                 </li>
             <?php if($title=='Cargo Despatch'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(55, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(55, $array);?>" ><?php }?>
                      <a class="nav-link"  href="<?php echo base_url();?>CargoDespatch">
-                        <i class="material-icons">filter_3</i> Cargo Despatch
+                        <i class="material-icons">filter_4</i> Cargo Despatch
                     </a>
                 </li>
             <?php if($title=='Rate Form'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(56, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(56, $array);?>" ><?php }?>
                      <a class="nav-link"  href="<?php echo base_url();?>RateForm">
-                        <i class="material-icons">filter_4</i> Rate Form
+                        <i class="material-icons">filter_5</i> Rate Form
                     </a>
                 </li>
             <?php if($title=='Equipment Delay'){?><li class="nav-item mydiv4 activeMenu <?php echo Search(57, $array);?>" > <?php }else{?> <li class="nav-item mydiv4 <?php echo Search(57, $array);?>" ><?php }?>
                 <a class="nav-link"  href="<?php echo base_url();?>EquipmentDelay">
-                        <i class="material-icons">filter_5</i> Equipment Delay
+                        <i class="material-icons">filter_6</i> Equipment Delay
                     </a>
                 </li>
         </ul>

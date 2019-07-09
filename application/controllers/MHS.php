@@ -27,7 +27,7 @@ class MHS extends CI_Controller {
             $data['page'] = "10";
             $t= $this->jsw_model->is_access_in(10);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30136";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30282";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -49,7 +49,7 @@ class MHS extends CI_Controller {
             $data['page'] = "11";
             $t= $this->jsw_model->is_access_in(11);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30146";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30271";
             $this->load->view('jsw/newmhsPathOne',$data);             
             }else{
                 $data['title'] = "Access Denied..!";
@@ -71,7 +71,7 @@ class MHS extends CI_Controller {
             $data['page'] = "12";
             $t= $this->jsw_model->is_access_in(12);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30147";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30272";
             $this->load->view('jsw/newmhsPathOne',$data);             
             }else{
                 $data['title'] = "Access Denied..!";
@@ -93,7 +93,7 @@ class MHS extends CI_Controller {
             $data['page'] = "13";
             $t= $this->jsw_model->is_access_in(13);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30148";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30275";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -114,7 +114,7 @@ class MHS extends CI_Controller {
             $data['page'] = "14";
             $t= $this->jsw_model->is_access_in(14);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30149";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30277";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -156,7 +156,7 @@ class MHS extends CI_Controller {
             $data['page'] = "16";
             $t= $this->jsw_model->is_access_in(16);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30151";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30276";
             $this->load->view('jsw/newmhsPathOne',$data);              
             }else{
                 $data['title'] = "Access Denied..!";
@@ -177,7 +177,7 @@ class MHS extends CI_Controller {
             $data['page'] = "17";
             $t= $this->jsw_model->is_access_in(17);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30152";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30273";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -188,16 +188,28 @@ class MHS extends CI_Controller {
                        redirect(base_url().'Login');        
                }
 	}   
-//        public function newmhsPathEight()
-//	{
-//           $data['mydiv'] = "DASHBOARD";
-//            $data['mydiv2'] = "MHS";
-//            $data['mydiv3'] = "New MHS Overview";
-//            $data['title'] = "MHS PATH - 8";
-//            $data['page'] = "18";
-//            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/20068";
-//            $this->load->view('jsw/newmhsPathOne',$data);             
-//	}   
+          
+           public function newmhsPathEight()
+	{
+                if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "New MHS Overview";
+            $data['title'] = "MHS PATH - 8";
+            $data['page'] = "1059";
+            $t= $this->jsw_model->is_access_in(1059);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30274";
+            $this->load->view('jsw/newmhsPathOne',$data);            
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }        
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}
         
                 
         public function oldmhsOverview()
@@ -210,7 +222,7 @@ class MHS extends CI_Controller {
             $data['page'] = "18";
             $t= $this->jsw_model->is_access_in(18);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30137";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30283";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -254,7 +266,7 @@ class MHS extends CI_Controller {
             $data['page'] = "20";
             $t= $this->jsw_model->is_access_in(20);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30139";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30240";
             $this->load->view('jsw/newmhsPathOne',$data);             
             }else{
                 $data['title'] = "Access Denied..!";
@@ -275,7 +287,7 @@ class MHS extends CI_Controller {
             $data['page'] = "21";
             $t= $this->jsw_model->is_access_in(21);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30140";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30245";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -296,7 +308,7 @@ class MHS extends CI_Controller {
             $data['page'] = "22";
             $t= $this->jsw_model->is_access_in(22);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30141";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30234";
             $this->load->view('jsw/newmhsPathOne',$data);              
             }else{
                 $data['title'] = "Access Denied..!";
@@ -318,7 +330,7 @@ class MHS extends CI_Controller {
             $data['page'] = "23";
             $t= $this->jsw_model->is_access_in(23);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30142";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30249";
             $this->load->view('jsw/newmhsPathOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -339,7 +351,7 @@ class MHS extends CI_Controller {
             $data['page'] = "24";
             $t= $this->jsw_model->is_access_in(24);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30143";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30257";
             $this->load->view('jsw/newmhsPathOne',$data);           
             }else{
                 $data['title'] = "Access Denied..!";
@@ -360,7 +372,7 @@ class MHS extends CI_Controller {
             $data['page'] = "25";
             $t= $this->jsw_model->is_access_in(25);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30144";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30258";
             $this->load->view('jsw/newmhsPathOne',$data);              
             }else{
                 $data['title'] = "Access Denied..!";
@@ -381,7 +393,7 @@ class MHS extends CI_Controller {
             $data['page'] = "26";
             $t= $this->jsw_model->is_access_in(26);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30145";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30279";
             $this->load->view('jsw/newmhsPathOne',$data);           
             }else{
                 $data['title'] = "Access Denied..!";
@@ -402,7 +414,7 @@ class MHS extends CI_Controller {
             $data['page'] = "27";
             $t= $this->jsw_model->is_access_in(27);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30153";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30261";
             $this->load->view('jsw/newmhsPathOne',$data);           
             }else{
                 $data['title'] = "Access Denied..!";
@@ -424,7 +436,7 @@ class MHS extends CI_Controller {
             $data['page'] = "27";
             $t= $this->jsw_model->is_access_in(27);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30154";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30263";
             $this->load->view('jsw/newmhsPathOne',$data);           
             }else{
                 $data['title'] = "Access Denied..!";
@@ -470,6 +482,248 @@ class MHS extends CI_Controller {
             if($t==1){              
             $data['linkUrl'] = "";
             $this->load->view('jsw/MotorCurrent',$data);            
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}   
+          
+          public function tranTowerOne()
+	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "TRANSFER";
+            $data['title'] = "TRANSFER TOWEER - 1";
+            $data['page'] = "1060";
+            $t= $this->jsw_model->is_access_in(1060);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30214";
+            $this->load->view('jsw/newmhsPathOne',$data);           
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}   
+       
+          public function tranTowerTwo()
+	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "TRANSFER";
+            $data['title'] = "TRANSFER TOWEER - 5";
+            $data['page'] = "1061";
+            $t= $this->jsw_model->is_access_in(1061);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30215";
+            $this->load->view('jsw/newmhsPathOne',$data);           
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}   
+          
+          public function tranTower102()
+	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "TRANSFER";
+            $data['title'] = "TRANSFER TOWER-102";
+            $data['page'] = "1062";
+            $t= $this->jsw_model->is_access_in(1062);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30217";
+            $this->load->view('jsw/newmhsPathOne',$data);           
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}   
+          
+          public function tranTower103()
+	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "TRANSFER";
+            $data['title'] = "TRANSFER TOWER-103";
+            $data['page'] = "1066";
+            $t= $this->jsw_model->is_access_in(1066);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30207";
+            $this->load->view('jsw/newmhsPathOne',$data);           
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}   
+          
+          public function tranTower103A()
+	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "TRANSFER";
+            $data['title'] = "TRANSFER TOWER-103 A";
+            $data['page'] = "1063";
+            $t= $this->jsw_model->is_access_in(1063);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30218";
+            $this->load->view('jsw/newmhsPathOne',$data);           
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}   
+          
+          public function tranTower103B()
+	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "TRANSFER";
+            $data['title'] = "TRANSFER TOWER-103 B";
+            $data['page'] = "1064";
+            $t= $this->jsw_model->is_access_in(1064);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30216";
+            $this->load->view('jsw/newmhsPathOne',$data);           
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}   
+          
+          public function tranTower103D()
+	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "TRANSFER";
+            $data['title'] = "TRANSFER TOWER-103 D";
+            $data['page'] = "1065";
+            $t= $this->jsw_model->is_access_in(1065);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30206";
+            $this->load->view('jsw/newmhsPathOne',$data);           
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}   
+          
+          public function tranTowerPC1()
+	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "TRANSFER";
+            $data['title'] = "TRANSFER TOWER-PC 1";
+            $data['page'] = "1067";
+            $t= $this->jsw_model->is_access_in(1067);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30208";
+            $this->load->view('jsw/newmhsPathOne',$data);           
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}   
+          
+          public function tranTowerR1()
+	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "TRANSFER";
+            $data['title'] = "TRANSFER TOWER-R 1";
+            $data['page'] = "1068";
+            $t= $this->jsw_model->is_access_in(1068);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30209";
+            $this->load->view('jsw/newmhsPathOne',$data);           
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}   
+          
+          public function tranTowerR1A()
+	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "TRANSFER";
+            $data['title'] = "TRANSFER TOWER-R 1 A";
+            $data['page'] = "1070";
+            $t= $this->jsw_model->is_access_in(1070);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30210";
+            $this->load->view('jsw/newmhsPathOne',$data);           
+            }else{
+                $data['title'] = "Access Denied..!";
+                $data['icons'] = "error";
+                $this->load->view('jsw/denied',$data);
+                }   
+                 }else{
+                       redirect(base_url().'Login');        
+               }
+	}   
+          
+          public function tranTowerTC1()
+	{
+                 if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('user_login') == 1 ){  
+           $data['mydiv'] = "DASHBOARD";
+            $data['mydiv2'] = "MHS";
+            $data['mydiv3'] = "TRANSFER";
+            $data['title'] = "TRANSFER TOWER-TC 1";
+            $data['page'] = "1071";
+            $t= $this->jsw_model->is_access_in(1071);
+            if($t==1){              
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30211";
+            $this->load->view('jsw/newmhsPathOne',$data);           
             }else{
                 $data['title'] = "Access Denied..!";
                 $data['icons'] = "error";

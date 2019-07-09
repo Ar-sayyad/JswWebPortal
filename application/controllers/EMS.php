@@ -27,7 +27,7 @@ class EMS extends CI_Controller {
             $data['page'] = "33";
             $t= $this->jsw_model->is_access_in(33);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30155";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30156";
             $this->load->view('jsw/emsOne',$data);          
             }else{
                 $data['title'] = "Access Denied..!";
@@ -49,7 +49,7 @@ class EMS extends CI_Controller {
             $data['page'] = "33";
              $t= $this->jsw_model->is_access_in(33);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30155";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30156";
             $this->load->view('jsw/emsOne',$data);            
             }else{
                 $data['title'] = "Access Denied..!";
@@ -71,7 +71,7 @@ class EMS extends CI_Controller {
             $data['page'] = "34";
              $t= $this->jsw_model->is_access_in(34);
             if($t==1){              
-            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30156";
+            $data['linkUrl'] = "https://172.21.25.29/PIVision/PB/#/PBDisplays/30155";
             $this->load->view('jsw/emsOne',$data);             
             }else{
                 $data['title'] = "Access Denied..!";
